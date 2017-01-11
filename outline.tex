@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%% author.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% template for chapters to the Handbook of Exoplanets
+% modified by H. Deeg from the 'template.tex' provided by Springer for the svmult.cls class
+% 20Mar 2016
+%
+%%%%%%%%%%%%%%%% Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[graybox,natbib,nosecnum]{svmult}
+\bibpunct{(}{)}{;}{a}{}{,} % suppress commas between author-names and year
+
+\pdfoutput=1   %forces use of pdflatex. Disable if you prefer to use .eps or .ps figures.
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage[normalem]{ulem}	% for strike-through of text with \sout{}  
+\usepackage{hyperref}  %for hyperlinks
+
+\usepackage{soul}   % for high-lighting of text
+% see the list of further useful packages
+% in the Reference Guide
+
+% expansions of  journal abbreviations from bibtex entries by ADS
+% adapted to Springer Basic style (no periods in abbreviations)
+\newcommand*\aap{A\&A}
+\let\astap=\aap
+\newcommand*\aapr{A\&A Rev}
+\newcommand*\aaps{A\&AS}
+\newcommand*\actaa{Acta Astron}
+\newcommand*\aj{AJ}
+\newcommand*\ao{Appl Opt}
+\let\applopt\ao
+\newcommand*\apj{ApJ}
+\newcommand*\apjl{ApJ}
+\let\apjlett\apjl
+\newcommand*\apjs{ApJS}
+\let\apjsupp\apjs
+\newcommand*\aplett{Astrophys Lett}
+\newcommand*\apspr{Astrophys Space Phys Res}
+\newcommand*\apss{Ap\&SS}
+\newcommand*\araa{ARA\&A}
+\newcommand*\azh{AZh}
+\newcommand*\baas{BAAS}
+\newcommand*\bac{Bull astr Inst Czechosl}
+\newcommand*\bain{Bull Astron Inst Netherlands}
+\newcommand*\caa{Chinese Astron Astrophys}
+\newcommand*\cjaa{Chinese J Astron Astrophys}
+\newcommand*\fcp{Fund Cosmic Phys}
+\newcommand*\gca{Geochim Cosmochim Acta}
+\newcommand*\grl{Geophys Res Lett}
+\newcommand*\iaucirc{IAU Circ}
+\newcommand*\icarus{Icarus}
+\newcommand*\jcap{J Cosmology Astropart Phys}
+\newcommand*\jcp{J Chem Phys}
+\newcommand*\jgr{J Geophys Res}
+\newcommand*\jqsrt{J Quant Spectr Rad Transf}
+\newcommand*\jrasc{JRASC}
+\newcommand*\memras{MmRAS}
+\newcommand*\memsai{Mem Soc Astron Italiana}
+\newcommand*\mnras{MNRAS}
+\newcommand*\na{New A}
+\newcommand*\nar{New A Rev}
+\newcommand*\nat{Nature}
+\newcommand*\nphysa{Nucl Phys A}
+\newcommand*\pasa{PASA}
+\newcommand*\pasj{PASJ}
+\newcommand*\pasp{PASP}
+\newcommand*\physrep{Phys Rep}
+\newcommand*\physscr{Phys Scr}
+\newcommand*\planss{Planet Space Sci}
+\newcommand*\pra{Phys Rev A}
+\newcommand*\prb{Phys Rev B}
+\newcommand*\prc{Phys Rev C}
+\newcommand*\prd{Phys Rev D}
+\newcommand*\pre{Phys Rev E}
+\newcommand*\prl{Phys Rev Lett}
+\newcommand*\procspie{Proc SPIE}
+\newcommand*\qjras{QJRAS}
+\newcommand*\rmxaa{Rev Mexicana Astron Astrofis}
+\newcommand*\skytel{S\&T}
+\newcommand*\solphys{Sol Phys}
+\newcommand*\sovast{Soviet Ast}
+\newcommand*\ssr{Space Sci Rev}
+\newcommand*\zap{ZAp}
+
+
+\newcommand{\hbindex}[1]{\hl{#1}\index{#1}}  %highlights index entries
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title*{Atmosphere Characterization of Transiting Planets}
+% Use \titlerunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\author{Laura Kreidberg}
+% Use \authorrunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\institute{Laura Kreidberg \at Harvard Society of Fellows, 78 Mount Auburn Street, Cambridge, MA, 02138, \email{laura.kreidberg@cfa.harvard.edu}}
+%
+% Use the package "url.sty" to avoid
+% problems with special characters
+% used in your e-mail or web address
+%
+\maketitle
+
+
+\abstract{Abstract.}
+%This document is intended as a template and guide for the preparation of chapters for the Handbook of Exoplanets, using latex. It complements the `Guidelines for Authors of the Exoplanet Handbook', which are distributed as a separate document. This template was adapted from Springer's template `author.tex' for contributed books, using the style svmult.cls (distributed together with this template). \\ Each chapter should be preceded by an abstract (10--15 lines long) that summarizes the content. The abstract will appear \textit{online} at \url{www.SpringerLink.com} and at ADS and be available with unrestricted access. This allows unregistered users to read the abstract as a teaser for the complete chapter. For the title you are encouraged to follow the tips for Search Engine Optimization given below.}
+
+people to search:
+	Ehrenreich, Sing, Knutson, Bean, Desert, Stevenson, Snellen (brogi, birkby, de kok), Crossfield, Wakeford, Huitson, Deming, McCullough, Kreidberg 
+	Madhusudhan, Fortney, Morley, Heng (sodium), Seager, Benneke, Line, Barstow,
+
+\section{Introduction }
+"Don't you just hate it when you travel 1,200 light years to a planet scientists have assured you is "Earthlike," and you get there, and there's, like, NO ATMOSPHERE?!!" -- Martin BG, Potomac, MD
+
+reader comment on New York Times article, "Two Promising Places to Live, 1,200 Light-Years From Earth", April 18, 2013 
+
+
+
+Atmosphere characterization has the potential to reveal the nature, origins, climate, and habitability of extrasolar planets.
+
+references: Ian's review, Deming \& Seager review
+
+History -- first, sodium in 209, followed not long after the discovery of the first transiting planet
+		thermal emission 
+		climate - Knutson Spitzer phase curves
+		water with HST/WFC3
+
+ideal objects:
+	small bright stars - rprs is better; cite planet occurrence papers (Dressing, Howard, etc.)
+	photon noise - give example with throughput
+
+greatest hits:
+	GJ 1214b - clouds
+	HD 209458b -
+	GJ 436b - hydrogen escape
+	55 Cnc e - thermal emission
+	WASP-43b - chemical abundances 
+	HAT-P-7b - weather
+	HAT-P-11b - water in a smaller planet 
+	TRAPPIST-1b, Proxima b, 
+
+topics:
+	C/O, thermal inversions, clouds, mean molecular weight, rayleigh scattering, albedo
+
+\section{Techniques} 
+- transmission spectroscopy
+- emission spectroscopy
+- reflection spectroscopy
+- eclipse mapping
+- phase curves
+
+- scaling relations
+	x expected precision for HST vs. JWST; photon-limited uncertainty on transit depth relative to H mag of 9 (scale by transit duration, H mag, telescope size, throughput) 
+	x size of signal in emission and transmission
+
+\section{Facilities}
+- space based
+	x Spitzer (thermal emission)
+	x HST (H2O)
+- ground-based
+	x high res (Snellen et al.)
+	x low res  (Bean, Desert)
+
+Wavelengths:
+ - lyman-alpha: evaporation
+ - sodium, potassium: upper atmosphere
+ - molecules
+
+\section{High Precision Measurements}
+- systematics (divide-white, analytic models, 
+- red noise (wavelets, gaussian process)
+- noise floors
+- limb darkening
+- background stars
+- nightside flux
+- clouds
+- star spots (HD 189733b)
+- model degeneracies (Kevin's GJ 436c paper; absolute transit depth)
+- photometry vs. spectroscopy
+- retrieval
+- model selection and priors; equilibrium chemistry
+- dayside average (patchy clouds Line; T/P profile Kat Feng)
+- seeing terminator in transmission - wide range of pressures and temperatures
+
+\section{Results}
+- chemical abundances
+- climate
+- clouds
+- demographics (Sing et al, Stevenson et al.)
+
+\section{Future Prospects}
+ - JWST
+ - TESS
+ - ECHO, ARIEL
+ - future prospects: larger sample, smaller planets, broader wavelength range
+
+\section{Bibliography}
+References use the `Springer Basic Style'. Examples for different types of works are given in \href{https://meteor.springer.com/exoplanets/?id=435&tab=About&mode=ReadPage&entity=3283}{\ul{Springer's syle sheet (clickable link)}}. 
+\noindent Please note the following on the reference-style:
+\begin{itemize}
+\item{Initials of first and middle names are concatenated without space, e.g Smith, John Francis appears as Smith JF}
+\item{Separate authors by commas; \emph{no} ampersands are used.}
+\item{If there are {\bf more then 5 authors}, then {\bf list the first 3 and et al.'}}
+\item{{\bf Include titles} (possibly shortened ones), {\bf also for journal articles}!  }
+\item{Use journal abbreviations at least for these major journals in Astronomy: A\&A, AJ, ApJ, ARAA, MNRAS, PASP, PASJ. }
+\item{Abbreviated Journal names do \emph{not} contain periods. Numerous further journals are defined at the begin of this template. }
+\item{The references should be sorted in alphabetical order. If there are several works by the same author, use this order: }
+\begin{enumerate}
+\item All works by the author alone, ordered chronologically by year of publication
+\item All works by the author with a coauthor, ordered alphabetically by coauthor
+\item All works by the author with several coauthors, ordered chronologically by year of publication.
+\end{enumerate}
+\end{itemize}
+The bibliography will receive a final editing by Springer, so you do not need to worry on style issues as long as all required information is given.
+
+For the most common types of works, examples are also given here, whose appearance may be consulted in the reference-section: 
+\begin{itemize}
+\item[-]{Journal paper: \citep{2013A&A...550A..67P} Listing the DOI is optional. }
+\item[-]{Journal paper, many authors: \citep{almenara09} }
+\item[-]{Book: \citep{all73}  }
+\item[-]{Book, 3 authors: \citep{giclas+71}  }
+\item[-]{Chapter in book: \citep{2015hae..book.1501B}  \emph{Bibtex users, see comment in section on bibtex.} }
+\item[-]{Proceedings:  \citep{Boisnard06}  }
+\item[-]{PhD thesis: \citep{AlmenaraThesis10}  }
+\end{itemize}
+
+\subsection{bibtex}
+The use of bibtex is recommended, taking care of the style issues listed previously. Bibex will use the style file 'spbasicHBexo.bst', distributed together with this template. The  .bib file associated to this template, HBexoTemplatebib.bib', was compiled from ADS with minor modifications.\\
+
+$\bullet$ In bibtex entries sourced from ADS (and possibly also from other sources) , we noted that {\bf replacement of @INBOOK with @INPROCEEDINGS} generates a more complete citation that includes book-title and editors; it also avoids some bibtex-warnings.
+
+\section{Cross-References}
+Please keep this as the last section. If you are aware of other chapters in the handbook that are closely related to yours, you may indicate the titles of these chapters, but please not more than 10 of them. If uncertain on the exact title, attempt an approximation so that the editors can insert the exact title later. Editors may also add further chapters here. Please indicate one chapter per line as show in example below. {\bf You should delete these instructions in your contribution.}
+\begin{itemize}
+\item{Other worlds in ancient greek philosophy}
+\item{Exoplanet detection in the 21st century}
+\item{Fundamental limits to knowledge on exoplanets}
+\end{itemize}
+
+\begin{acknowledgement}
+Optionally, include a short acknowledgment.  Else, out-comment this section. Not more than a few lines please.
+\end{acknowledgement}
+
+%  IF you do NOT use bibtex, put comments before the following 2 lines
+\bibliographystyle{spbasicHBexo}  %for bibtex
+\bibliography{HBexoTemplatebib} %for bibtex-example
+
+% IF you do NOT use bibtex, remove comments from all following lines, until \end{document}
+%\begin{thebibliography}{}
+%\bibitem[Akaike (1974)]{akaike74} Akaike H (1974) A New Look at the Statistical Model Identification. IEEE  Transactions on Automatic Control 19:716--723
+%\bibitem[Allen(1973)]{all73} Allen C (1973) Astrophysical Quantities. London: Athlone Press
+%\bibitem[Almenara(2010)]{AlmenaraThesis10} Almenara J (2010) Detecci{\'o}n de planetas en sistemas binarios eclipsantes. PhD thesis, Univ. de La Laguna, Tenerife, Spain
+%\bibitem[Almenara et~al(2009)]{almenara09} Almenara JM, Deeg HJ, Aigrain S et~al (2009) Rate and nature of false  positives in the CoRoT exoplanet search. \aap 506:337--341, doi 10.1051/0004-6361/200911926, eprint 0908.1172
+%\bibitem[Belmonte(2015)]{2015hae..book.1501B} Belmonte JA (2015) Orientation of Egyptian Temples: An Overview. In: Ruggles CLN (ed) Handbook of Archaeoastronomy and Ethnoastronomy, p 1501,  doi {10.1007/978-1-4614-6141-8-146}
+%\bibitem[Boisnard and Auvergne(2006)]{Boisnard06}{Boisnard} L {Auvergne} M (2006) {CoRoT in Brief}. In: {Fridlund} M, {Baglin}  A, {Lochard} J {Conroy} L (eds) ESA Special Publication, ESA Special  Publication, vol 1306, p~19
+%\bibitem[{{Giclas} et~al(1971){Giclas}, {Burnham}, and {Thomas}}]{giclas+71}{Giclas} HL, {Burnham} R {Thomas} NG (1971) Lowell proper motion survey Northern Hemisphere. The G numbered stars. 8991 stars fainter than magnitude  8 with motions larger than 0.26''/year. Flagstaff, Arizona: Lowell  Observatory, 1971
+%\bibitem[{{Parviainen} et~al(2013){Parviainen}, {Deeg}, and {Belmonte}}]{2013A&A...550A..67P} Parviainen H, Deeg HJ Belmonte JA (2013) Secondary eclipses in the CoRoT light curves. A homogeneous search based on Bayesian model selection. \aap  550:A67, doi 10.1051/0004-6361/201220081, eprint 1211.5361
+%\end{thebibliography}
+
+\end{document}
