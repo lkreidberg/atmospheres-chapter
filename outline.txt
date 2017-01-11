@@ -1,0 +1,91 @@
+Introduction 
+------------
+"Don't you just hate it when you travel 1,200 light years to a planet scientists have assured you is "Earthlike," and you get there, and there's, like, NO ATMOSPHERE?!!" -- Martin BG, Potomac, MD
+
+reader comment on New York Times article, "Two Promising Places to Live, 1,200 Light-Years From Earth", April 18, 2013 
+
+
+
+Atmosphere characterization has the potential to reveal the nature, origins, climate, and habitability of extrasolar planets.
+
+
+History:
+	sodium in 209, following not long after the discovery of the first transiting planet
+	thermal emission 
+	climate - Knutson Spitzer phase curves
+	water with HST/WFC3
+
+ideal objects:
+	small bright stars - rprs is better; cite planet occurrence papers (Dressing, Howard, etc.)
+	photon noise - give example with throughput
+
+Techniques
+----------
+- transmission spectroscopy
+- emission spectroscopy
+- reflection spectroscopy
+- eclipse mapping
+- phase curves
+
+- scaling relations?
+
+Facilities
+----------
+- space based
+	x Spitzer (thermal emission)
+	x HST (H2O)
+- ground-based
+	x high res (Snellen et al.)
+	x low res  (Bean, Desert)
+
+Wavelengths:
+------------
+ - lyman-alpha: evaporation
+ - sodium, potassium: upper atmosphere
+ - molecules
+
+\section{High Precision Measurements}
+- systematics (divide-white, analytic models, 
+- red noise (wavelets, gaussian process)
+- noise floors
+- limb darkening
+- background stars
+- nightside flux
+- clouds
+- star spots (HD 189733b)
+- model degeneracies (Kevin's GJ 436c paper; absolute transit depth)
+- photometry vs. spectroscopy
+- retrieval
+- model selection and priors; equilibrium chemistry
+- dayside average (patchy clouds Line; T/P profile Kat Feng)
+- seeing terminator in transmission - wide range of pressures and temperatures
+
+Results
+-------
+- greatest hits:
+	GJ 1214b - clouds
+	HD 209458b -
+	GJ 436b - hydrogen escape
+	55 Cnc e - thermal emission
+	WASP-43b - chemical abundances 
+	HAT-P-7b - weather
+	HAT-P-11b - water in a smaller planet 
+	TRAPPIST-1b, Proxima b, 
+- chemical abundances (C/O, metallicity)
+- climate (inversions, albedo, heat circulation)
+- aerosols
+- demographics (Sing et al, Stevenson et al.)
+
+Future Prospects
+----------------
+ - JWST
+ - TESS
+ - ECHO, ARIEL
+ - future prospects: larger sample, smaller planets, broader wavelength range
+
+references: 
+-----------
+	Ian's review, Deming \& Seager review
+	observational programs: Ehrenreich, Sing, Knutson, Bean, Desert, Stevenson, Snellen (brogi, birkby, de kok), Crossfield, Wakeford, Huitson, Deming, McCullough, Kreidberg 
+	theory: Madhusudhan, Fortney, Morley, Heng (esp. sodium), Seager, Benneke, Line, Barstow,
+
