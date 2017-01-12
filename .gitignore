@@ -5,5 +5,6 @@
 *.idx
 *.out
 *.bbl
+*.bst
 HBexo*
 *sh
