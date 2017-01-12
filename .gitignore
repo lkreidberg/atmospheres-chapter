@@ -1,5 +1,9 @@
 *.pdf
 *.log
 *.aux
+*.blg
+*.idx
+*.out
+*.bbl
 HBexo*
 *sh
