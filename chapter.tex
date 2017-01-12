@@ -127,7 +127,7 @@
 
 
 \section{Introduction }
-"Don't you just hate it when you travel 1,200 light years to a planet scientists have assured you is "Earthlike," and you get there, and there's, like, NO ATMOSPHERE?!!" -- Martin BG, Potomac, MD
+%"Don't you just hate it when you travel 1,200 light years to a planet scientists have assured you is "Earthlike," and you get there, and there's, like, NO ATMOSPHERE?!!" -- Martin BG, Potomac, MD
 
 
 
@@ -137,81 +137,39 @@ In this chapter we will focus on exoplanet atmosphere characterization using the
 %As the planet moves through its orbit, it can absorb
 %Changes in the sum total brightness with time can be traced to emission, reflection, or absorption by the planet's atmosphere.
 
-The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host. During a transit, the planet blocks a small fraction of the stellar flux, roughly equal to the area of the planet relative to the area of the host star, $\delta = R_p^2/R_s^2$. 
+The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host. During a transit, the planet blocks a small fraction of the stellar flux that is roughly equal to the area of the planet relative to the area of the host star. We refer to this fraction as the \hbindex{transit depth}, $\delta = R_p^2/R_s^2$.
 
-The key idea behind transmission spectroscopy is that the planet radius is not actually constant: rather, it depends on the wavelength of light used for the transit observation.  This variation in transit depth with wavelength, referred to as the \hbindex{transmission spectrum}, is due to the planet's atmosphere. At wavelengths where the atmosphere is more opaque, the planet blocks slightly more flux.
+The key idea behind transmission spectroscopy is that the apparent size of the planet is not actually a single value: rather, it depends on the wavelength of light used for the observation.  This change in transit depth with wavelength, referred to as the \hbindex{transmission spectrum}, is due to the planet's atmosphere. At wavelengths where the atmosphere is relatively more opaque, the planet blocks slightly more stellar flux.
 
-The change in transit depth with wavelength is given by 
+The typical scale of features in the transmission spectrum is set by the \hbindex{atmospheric scale height} $H$. For an atmosphere in hydrostatic equilibrium, the scale height is 
 
 \begin{equation}
-\Delta_\delta = 
-\end{equation} 
+H = \frac{K_bT_{eq}}{\mu g}
+\end{equation}
+where $K_b$ is the Boltzmann constant, $T_{eq}$ is the planet's \hbindex{equilibrium temperature}, $\mu$ is the mean molecular mass, and $g$ is the surface gravity (FIXME). A hydrogen-dominated atmosphere like that of Jupiter has $\mu = 2.2$, whereas an Earth-like atmosphere has $\mu = 29$ (FIXME).
 
+Assuming the planet's radius is larger by $n$ scale heights at wavelengths with high opacity, the amplitude of features in the spectrum is given by
 
-A cousin of the emission spectroscopy technique is reflection spectroscopy.
+\begin{eqnarray}
+\delta_\lambda &=& \frac{(R_p + nH_\lambda)^2}{R_s^2} - \frac{R_p^2}{R_s^2}\\
+ & \approx & 2R_pH_\lambda/R_s^2.
+\end{eqnarray} 
+
+Observations of transiting hot Jupiters at low spectral resolution have had $n \approx 2$ \citep{stevenson16}.  
+
+It should be emphasized how small these variations in transit depth are. Even for the best case scenario -- a large, low surface gravity planet with a hot atmosphere, orbiting a small star -- the amplitude of features is just $\sim0.1\%$. For an Earth analog, the expected amplitude is FIXME times smaller.  
+
+A close cousin of the transmission spectroscopy method is emission spectroscopy.  
 
 
 \section{Bibliography}
-References use the `Springer Basic Style'. Examples for different types of works are given in \href{https://meteor.springer.com/exoplanets/?id=435&tab=About&mode=ReadPage&entity=3283}{\ul{Springer's syle sheet (clickable link)}}. 
-\noindent Please note the following on the reference-style:
-\begin{itemize}
-\item{Initials of first and middle names are concatenated without space, e.g Smith, John Francis appears as Smith JF}
-\item{Separate authors by commas; \emph{no} ampersands are used.}
-\item{If there are {\bf more then 5 authors}, then {\bf list the first 3 and et al.'}}
-\item{{\bf Include titles} (possibly shortened ones), {\bf also for journal articles}!  }
-\item{Use journal abbreviations at least for these major journals in Astronomy: A\&A, AJ, ApJ, ARAA, MNRAS, PASP, PASJ. }
-\item{Abbreviated Journal names do \emph{not} contain periods. Numerous further journals are defined at the begin of this template. }
-\item{The references should be sorted in alphabetical order. If there are several works by the same author, use this order: }
-\begin{enumerate}
-\item All works by the author alone, ordered chronologically by year of publication
-\item All works by the author with a coauthor, ordered alphabetically by coauthor
-\item All works by the author with several coauthors, ordered chronologically by year of publication.
-\end{enumerate}
-\end{itemize}
-The bibliography will receive a final editing by Springer, so you do not need to worry on style issues as long as all required information is given.
 
-For the most common types of works, examples are also given here, whose appearance may be consulted in the reference-section: 
-\begin{itemize}
-\item[-]{Journal paper: \citep{2013A&A...550A..67P} Listing the DOI is optional. }
-\item[-]{Journal paper, many authors: \citep{almenara09} }
-\item[-]{Book: \citep{all73}  }
-\item[-]{Book, 3 authors: \citep{giclas+71}  }
-\item[-]{Chapter in book: \citep{2015hae..book.1501B}  \emph{Bibtex users, see comment in section on bibtex.} }
-\item[-]{Proceedings:  \citep{Boisnard06}  }
-\item[-]{PhD thesis: \citep{AlmenaraThesis10}  }
-\end{itemize}
-
-\subsection{bibtex}
-The use of bibtex is recommended, taking care of the style issues listed previously. Bibex will use the style file 'spbasicHBexo.bst', distributed together with this template. The  .bib file associated to this template, HBexoTemplatebib.bib', was compiled from ADS with minor modifications.\\
-
-$\bullet$ In bibtex entries sourced from ADS (and possibly also from other sources) , we noted that {\bf replacement of @INBOOK with @INPROCEEDINGS} generates a more complete citation that includes book-title and editors; it also avoids some bibtex-warnings.
-
-\section{Cross-References}
-Please keep this as the last section. If you are aware of other chapters in the handbook that are closely related to yours, you may indicate the titles of these chapters, but please not more than 10 of them. If uncertain on the exact title, attempt an approximation so that the editors can insert the exact title later. Editors may also add further chapters here. Please indicate one chapter per line as show in example below. {\bf You should delete these instructions in your contribution.}
-\begin{itemize}
-\item{Other worlds in ancient greek philosophy}
-\item{Exoplanet detection in the 21st century}
-\item{Fundamental limits to knowledge on exoplanets}
-\end{itemize}
 
 \begin{acknowledgement}
-Optionally, include a short acknowledgment.  Else, out-comment this section. Not more than a few lines please.
+FIXME
 \end{acknowledgement}
 
-%  IF you do NOT use bibtex, put comments before the following 2 lines
 \bibliographystyle{spbasicHBexo}  %for bibtex
 \bibliography{HBexoTemplatebib} %for bibtex-example
-
-% IF you do NOT use bibtex, remove comments from all following lines, until \end{document}
-%\begin{thebibliography}{}
-%\bibitem[Akaike (1974)]{akaike74} Akaike H (1974) A New Look at the Statistical Model Identification. IEEE  Transactions on Automatic Control 19:716--723
-%\bibitem[Allen(1973)]{all73} Allen C (1973) Astrophysical Quantities. London: Athlone Press
-%\bibitem[Almenara(2010)]{AlmenaraThesis10} Almenara J (2010) Detecci{\'o}n de planetas en sistemas binarios eclipsantes. PhD thesis, Univ. de La Laguna, Tenerife, Spain
-%\bibitem[Almenara et~al(2009)]{almenara09} Almenara JM, Deeg HJ, Aigrain S et~al (2009) Rate and nature of false  positives in the CoRoT exoplanet search. \aap 506:337--341, doi 10.1051/0004-6361/200911926, eprint 0908.1172
-%\bibitem[Belmonte(2015)]{2015hae..book.1501B} Belmonte JA (2015) Orientation of Egyptian Temples: An Overview. In: Ruggles CLN (ed) Handbook of Archaeoastronomy and Ethnoastronomy, p 1501,  doi {10.1007/978-1-4614-6141-8-146}
-%\bibitem[Boisnard and Auvergne(2006)]{Boisnard06}{Boisnard} L {Auvergne} M (2006) {CoRoT in Brief}. In: {Fridlund} M, {Baglin}  A, {Lochard} J {Conroy} L (eds) ESA Special Publication, ESA Special  Publication, vol 1306, p~19
-%\bibitem[{{Giclas} et~al(1971){Giclas}, {Burnham}, and {Thomas}}]{giclas+71}{Giclas} HL, {Burnham} R {Thomas} NG (1971) Lowell proper motion survey Northern Hemisphere. The G numbered stars. 8991 stars fainter than magnitude  8 with motions larger than 0.26''/year. Flagstaff, Arizona: Lowell  Observatory, 1971
-%\bibitem[{{Parviainen} et~al(2013){Parviainen}, {Deeg}, and {Belmonte}}]{2013A&A...550A..67P} Parviainen H, Deeg HJ Belmonte JA (2013) Secondary eclipses in the CoRoT light curves. A homogeneous search based on Bayesian model selection. \aap  550:A67, doi 10.1051/0004-6361/201220081, eprint 1211.5361
-%\end{thebibliography}
 
 \end{document}
