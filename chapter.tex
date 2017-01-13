@@ -162,7 +162,7 @@ Assuming the planet's radius is larger by $n$ scale heights at wavelengths with 
 \end{eqnarray} 
 Observations of hot Jupiters have typically had $n\approx2$ \citep{stevenson16}. 
 
-It should be emphasized how miniscule these variations in transit depth are. Even for the best case scenario -- a hot, hydrogen-rich atmosphere with low surface gravity -- the amplitude of features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size.
+It should be emphasized how miniscule these variations in transit depth are. Even for the best case scenario -- a hot, hydrogen-rich atmosphere with low surface gravity -- the amplitude of features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. Transmission spectrum measurements therefore require extraordinary care and investment of telescope resources, as discussed in FIXME.
 
 \subsection{Occultation Spectroscopy}
 A close cousin of the transit spectroscopy method is \hbindex{occultation spectroscopy}, which measures thermal emission and reflection from the planet. Rather than observing the planet during transit, it is observed at secondary eclipse, when it passes behind the host star. The eclipse provides a baseline measurement of the stellar flux alone. When the planet rotates back into view, any increase in brightness can be attributed to the planet's thermal emission and reflected light.
@@ -182,15 +182,16 @@ Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal
 At short wavelengths, reflected light from the planet may also be detectable. It is convenient to quantify the amount of reflected light in terms of a ``perfect" mirror: a flat, reflecting disk with the same cross-sectional area as the planet. The ratio of reflected light from the fully illuminated planet, relative to reflection by a perfect mirror, is the geometric albedo $A_g$. The total reflected light signal is then:
 
 \begin{equation}
-F_{reflect} = A_g(R_p/a)^2.
+F_{reflect} = A_g(R_p/a)^2 I(\alpha). FIXME
 \end{equation}
-
+where $a$ is the planet's semi-major axis.
 
 \runinhead{Phase Curves}
-Short-period planets that are tidally locked to their host stars pose a unique opportunity for thermal emission measurements. The rotation period for these planets is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn. Continuous observation  
+Short-period planets that are tidally locked to their host stars pose a unique opportunity for thermal emission and reflected light measurements. The rotation period for these planets is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn. A \hbindex{phase curve} observation consists of continuous time series photometry or spectroscopy of a planet over its orbit, using the stellar flux at secondary eclipse as a baseline. These observations are powerful in that they probe atmospheric physics and chemistry over a wider geographic region than transits or eclipses alone; however, they are challenging from a practical standpoint because they require long stares at a single object, as we discuss in FIXME. %In principle it is possible to apply this technique to longer period planets that are not tidally locked; however, in addition to the feasibility challenge the interpretation is also problematic. 
 
 \runinhead{Eclipse Mapping}
-Another niche technique for the emission spectrum is 
+All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which relies on precise observations of secondary eclipse ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail. In particular, for planets with a nonzero impact parameter, the eclipse mapping technique is sensitive to changes in brightness with latitude (as higher latitudes are first to enter and exit eclipse).
+% This approach is based on the fact that planets are not uniformly bright. In the case of a hot gas giant, the hottest part of the atmosphere may be offset from the substellar point due to atmospheric circulation. For a terrestrial planet, continents and oceans with varying reflectivity may be present. 
 
 
 \section{Observing}
