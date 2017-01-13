@@ -108,6 +108,7 @@
 \begin{document}
 
 \title*{Exoplanet Atmosphere Measurements from Transmission Spectroscopy and other Planet-Star Combined Light Observations}
+\titlerunning{Atmosphere Measurements from Combined Light Observations} 
 % Use \titlerunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
 \author{Laura Kreidberg}
@@ -137,29 +138,62 @@ In this chapter we will focus on exoplanet atmosphere characterization using the
 %As the planet moves through its orbit, it can absorb
 %Changes in the sum total brightness with time can be traced to emission, reflection, or absorption by the planet's atmosphere.
 
-The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host. During a transit, the planet blocks a small fraction of the stellar flux that is roughly equal to the area of the planet relative to the area of the host star. We refer to this fraction as the \hbindex{transit depth}, $\delta = R_p^2/R_s^2$.
+\subsection{Transit Spectroscopy}
+The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host. During a transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the host star. We refer to this fraction as the \hbindex{transit depth}, $\delta = (R_p/R_s)^2$.
 
-The key idea behind transmission spectroscopy is that the apparent size of the planet is not actually a single value: rather, it depends on the wavelength of light used for the observation.  This change in transit depth with wavelength, referred to as the \hbindex{transmission spectrum}, is due to the planet's atmosphere. At wavelengths where the atmosphere is relatively more opaque, the planet blocks slightly more stellar flux.
+The key idea behind transmission spectroscopy is that the apparent size of the planet is not actually a single value: rather, it depends on the wavelength of light used for the observation.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms, molecules, or condensates, the planet blocks slightly more stellar flux.
+This change in transit depth with wavelength is the \hbindex{transmission spectrum}, so named because it due to transmission of stellar flux on the slant path through the planet's atmosphere.
 
-The typical scale of features in the transmission spectrum is set by the \hbindex{atmospheric scale height} $H$. For an atmosphere in hydrostatic equilibrium, the scale height is 
+
+Modeling the transmission spectrum requires radiative transfer calculation for light on the slant path through the planet's atmosphere. 
+
+The size of features in the transmission spectrum is set by the \hbindex{scale height} $H$. The scale height is the change in altitude over which the atmospheric pressure drops by a factor of $e$, assuming hydrostatic equilibrium. We can express $H$ in terms of the planet's physical properties:  
 
 \begin{equation}
 H = \frac{K_bT_{eq}}{\mu g}
 \end{equation}
-where $K_b$ is the Boltzmann constant, $T_{eq}$ is the planet's \hbindex{equilibrium temperature}, $\mu$ is the mean molecular mass, and $g$ is the surface gravity (FIXME). A hydrogen-dominated atmosphere like that of Jupiter has $\mu = 2.2$, whereas an Earth-like atmosphere has $\mu = 29$ (FIXME).
+where $K_b$ is the Boltzmann constant, $T_{eq}$ is the planet's \hbindex{equilibrium temperature}, $\mu$ is the mean molecular mass, and $g$ is the surface gravity (FIXME). 
 
 Assuming the planet's radius is larger by $n$ scale heights at wavelengths with high opacity, the amplitude of features in the spectrum is given by
 
 \begin{eqnarray}
-\delta_\lambda &=& \frac{(R_p + nH_\lambda)^2}{R_s^2} - \frac{R_p^2}{R_s^2}\\
- & \approx & 2R_pH_\lambda/R_s^2.
+\delta_\lambda &=& \frac{(R_p + nH)^2}{R_s^2} - \frac{R_p^2}{R_s^2}\\
+ & \approx & 2R_pH/R_s^2.
 \end{eqnarray} 
+Observations of hot Jupiters have typically had $n\approx2$ \citep{stevenson16}. 
 
-Observations of transiting hot Jupiters at low spectral resolution have had $n \approx 2$ \citep{stevenson16}.  
+It should be emphasized how miniscule these variations in transit depth are. Even for the best case scenario -- a hot, hydrogen-rich atmosphere with low surface gravity -- the amplitude of features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size.
 
-It should be emphasized how small these variations in transit depth are. Even for the best case scenario -- a large, low surface gravity planet with a hot atmosphere, orbiting a small star -- the amplitude of features is just $\sim0.1\%$. For an Earth analog, the expected amplitude is FIXME times smaller.  
+\subsection{Occultation Spectroscopy}
+A close cousin of the transit spectroscopy method is \hbindex{occultation spectroscopy}, which measures thermal emission and reflection from the planet. Rather than observing the planet during transit, it is observed at secondary eclipse, when it passes behind the host star. The eclipse provides a baseline measurement of the stellar flux alone. When the planet rotates back into view, any increase in brightness can be attributed to the planet's thermal emission and reflected light.
 
-A close cousin of the transmission spectroscopy method is emission spectroscopy.  
+For the short-period planets that have been studied so far, the dominant source of thermal emission is re-radiation of incident stellar flux (rather than latent heat of formation, as seen for directly imaged planets). Thus the typical size of the emission signal can be predicted from the planet's equilibrium temperature:
+
+\begin{equation}
+\label{eqn:fpfs}
+\frac{F_p}{F_s} = \frac{B(\lambda, T_{eq})}{B(\lambda, T_s)}\left(\frac{R_p}{R_s}\right)^2
+\end{equation}
+where $F_p/F_s$ is the planet-to-star flux ratio, $B(\lambda, T)$ is the blackbody spectral radiance at temperature $T$, and $R_p/R_s$ is the planet-to-star radius ratio. Since the planet is cooler than the star, the flux ratio is larger at longer wavelengths. For example, the planet-to-star flux for the hot Jupiter HD 209458b is just 50 parts per million at 1 $\mu$m, but increases to over 1000 ppm at 4.5 $\mu$m \citep{line16}.
+
+Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is unity.  As opacity increases, so does the altitude of the photosphere.  Therefore, since temperature changes with altitude, the observed atmosphere may be above or below $T_{eq}$, depending on the wavelength of the measurement. 
+
+%A useful way to describe the temperature of the photosphere is the \hbindex{brightness temperature}: the temperature a blackbody needed to replicate the observed spectral intensity at a given wavelength.
+
+At short wavelengths, reflected light from the planet may also be detectable. It is convenient to quantify the amount of reflected light in terms of a ``perfect" mirror: a flat, reflecting disk with the same cross-sectional area as the planet. The ratio of reflected light from the fully illuminated planet, relative to reflection by a perfect mirror, is the geometric albedo $A_g$. The total reflected light signal is then:
+
+\begin{equation}
+F_{reflect} = A_g(R_p/a)^2.
+\end{equation}
+
+
+\runinhead{Phase Curves}
+Short-period planets that are tidally locked to their host stars pose a unique opportunity for thermal emission measurements. The rotation period for these planets is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn. Continuous observation  
+
+\runinhead{Eclipse Mapping}
+Another niche technique for the emission spectrum is 
+
+
+\section{Observing}
 
 
 \section{Bibliography}
@@ -170,6 +204,6 @@ FIXME
 \end{acknowledgement}
 
 \bibliographystyle{spbasicHBexo}  %for bibtex
-\bibliography{HBexoTemplatebib} %for bibtex-example
+\bibliography{chapter} %for bibtex-example
 
 \end{document}
