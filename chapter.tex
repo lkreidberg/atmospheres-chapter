@@ -99,6 +99,12 @@
 
 \newcommand{\hbindex}[1]{\hl{#1}\index{#1}}  %highlights index entries
 
+\newcommand{\project}[1]{\textsl{#1}}
+\newcommand{\JWST}{\project{JWST}}
+\newcommand{\HST}{\project{HST}}
+\newcommand{\Spitzer}{\project{Spitzer}}
+
+
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
                        % your makeindex program
@@ -193,12 +199,38 @@ Short-period planets that are tidally locked to their host stars pose a unique o
 All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which relies on precise observations of secondary eclipse ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail. In particular, for planets with a nonzero impact parameter, the eclipse mapping technique is sensitive to changes in brightness with latitude (as higher latitudes are first to enter and exit eclipse).
 % This approach is based on the fact that planets are not uniformly bright. In the case of a hot gas giant, the hottest part of the atmosphere may be offset from the substellar point due to atmospheric circulation. For a terrestrial planet, continents and oceans with varying reflectivity may be present. 
 
+\section{Observing Facilities}
+Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus relatively large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task.
 
-\section{Observing}
+\subsection{Space-Based}
+\runinhead{Hubble Space Telescope}
+The preeminent facility for exoplanet atmosphere characterization is the \emph{Hubble Space Telescope} (\HST).
+\HST\ offers three main advantages in observing exoplanets. It is space-based, so free from atmospheric turbulence that limits the precision of ground-based observations. In addition, it gives access to wavelength regions that are blocked by the Earth's atmosphere (ultra-violet and water absorption bands).  Finally, its relatively large aperture (2.7 m) enables the collection of enough flux to push down the photon noise and reveal small signals.
 
+There are two instruments on \HST\ commonly used for atmosphere characterization. One is the Wide Field Camera 3 (WFC3), \HST's newest detector (installed in the last servicing mission in 2009). WFC3 is usually employed in its near-infrared spectroscopy mode, which provides low resolution (R=FIXME) spectroscopy from $0.8 - 1.7$ $\mu$m. A major innovation in observing strategy was the implementation of ``spatial scanning" mode for WFC3, which slews the telescope in the spatial direction during an exposure. This mode spreads the flux over more pixels, averaging over variations in individual pixel sensitvity. It also enables longer exposures of bright targets without saturating the detector, which improves the duty cycle of the observations by a factor of FIXME.
+
+The other instrument frequently used for exoplanet observations is the Space Telescope Imaging Spectrograph (STIS), a low-resolution UV/optical instrument. Though  
+
+The biggest downside to using \HST\ for exoplanets is that it cannot perform continuous observations. The telescope orbits the Earth every 96 minutes, so for roughly half that time (during Earth occultation) observations are interrupted. 
+
+\runinhead{Spitzer Space Telescope}
+In addition to \HST\, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. It was originally built to provide infrared spectroscopy from 3 - 180 $\mu$m.  In 2009, \Spitzer\ ran out of coolant and began its Warm Mission, which provides broadband photometry at 3.6 and 4.5 $\mu$m.  Most exoplanet observations have taken place during the Warm Mission, since relatively few planets were known prior to 2009!
+
+\Spitzer's strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit at L2, and has led the way in observations of thermal phase curves, as we discuss in Section FIXME.
+
+\subsection{Ground-Based}
+\runinhead{Multi-Object Spectroscopy}
+\runinhead{High Resolution Spectroscopy}
+
+\section{Achieving the Highest Precision Measurements}
+\subsection{Instrument Systematics}
+\subsection{Astrophysical Systematics}
+
+\section{Science from Atmosphere Studies}
+
+\section{Future Prospects}
 
 \section{Bibliography}
-
 
 \begin{acknowledgement}
 FIXME
