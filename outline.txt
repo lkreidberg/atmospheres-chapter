@@ -49,6 +49,7 @@ Wavelengths:
 - red noise (wavelets, gaussian process)
 - noise floors
 - limb darkening
+- optimal extraction
 - background stars
 - nightside flux
 - clouds
