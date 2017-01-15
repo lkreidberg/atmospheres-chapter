@@ -227,13 +227,9 @@ In addition to \HST, the other space-based observing facility is \Spitzer, an 85
 The Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, the airmass, precipitable water vapor, cloud coverage, and other quantities vary, introducing systematic bias in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
 
 \runinhead{Photometry and Multi-Object Spectrographs}
-One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the atmosphere, and thus their light curves exhibit close-to-identical systematic trends as the target. The target light curve is then divided by the sum of the comparison star light curves to remove systematics. 
+One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics. 
 
-The same principle applies to spectroscopic observations, but requires a slighty more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the star, and some fraction of flux is lost beyond the slit's edge. These slit losses depend on the seeing and vary with time, preventing precise light curve 
-
- To work around this problem, one can use a multi-object spectrograph with a custom mask with wide slits ($>10''$), a technique first developed by \cite{bean10}. By observing the target and comparison stars through wide slits, 
-
-There are several spectrographs available that have this capability, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  This technique enables close to space-based precision from the ground.
+The same principle applies to spectroscopic observations, but requires a slighty more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom mask that has wide slits ($>10''$), a technique first developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  There are several multi-object spectrographs available with a custom slit mask option, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
 
 \runinhead{High Resolution Spectrographs}
 Another creative technique uses high resolution spectroscopy.
@@ -245,6 +241,7 @@ But there are additional sources of noise - both instrumental and astrophysical 
  
 \subsection{Instrument Systematics}
 \subsection{Astrophysical Systematics}
+
 
 \section{Science from Atmosphere Studies}
 
