@@ -138,7 +138,7 @@
 
 
 
-\section{Techniques} 
+\section{Fundamental Techniques} 
 In this chapter we will focus on exoplanet atmosphere characterization using the combined light from the planet and its host star. In contrast to direct imaging, which seeks to mask the stellar flux, the combined light approach capitalizes on the star as a constant reference point. 
 
 %As the planet moves through its orbit, it can absorb
@@ -208,18 +208,21 @@ Detecting the tiny signals from exoplanet atmospheres is a formidable challenge.
 The preeminent facility for exoplanet atmosphere characterization is the \emph{Hubble Space Telescope} (\HST).
 \HST\ offers three main advantages in observing exoplanets. It is (obviously) in space, so free from atmospheric turbulence that limits the precision of ground-based observations. In addition, it gives access to wavelength regions that are blocked by the Earth's atmosphere (ultra-violet and water absorption bands).  Finally, its relatively large aperture (2.7 m) enables the collection of enough flux to push down the photon noise and reveal small signals.
 
-There are two instruments on \HST\ commonly used for atmosphere characterization. One is the Wide Field Camera 3 (WFC3), \HST's newest detector (installed in the last servicing mission in 2009). WFC3 is usually employed in its near-infrared spectroscopy mode, which provides low resolution (R=FIXME) spectroscopy from $0.8 - 1.7$ $\mu$m. A major innovation in observing strategy was the implementation of ``spatial scanning" mode for WFC3, which slews the telescope in the spatial direction during an exposure \citep[first used by][]{deming13}. This mode spreads the flux over more pixels, averaging over variations in individual pixel sensitvity. It also enables longer exposures of bright targets without saturating the detector, which improves the duty cycle of the observations by a factor of FIXME.
+There are two instruments on \HST\ commonly used for atmosphere characterization. One is the Wide Field Camera 3 (WFC3), \HST's newest detector (installed in the last servicing mission in 2009). WFC3 is usually employed in its near-infrared spectroscopy mode, which provides low resolution (R=FIXME) spectroscopy from $0.8 - 1.7$ $\mu$m. This wavelength range covers strong absorption bands from water. It also sensitive to methane, carbon monoxide, carbon dioxide.
+
+A major innovation in observing strategy for WFC3 was the implementation of ``spatial scanning" mode, which slews the telescope in the spatial direction during an exposure \citep[first used by][]{deming13}. This mode spreads the flux over more pixels, averaging over variations in individual pixel sensitvity. It also enables longer exposures of bright targets without saturating the detector, which improves the duty cycle of the observations by a factor of FIXME.
 
 The other instrument frequently used for exoplanet observations is the Space Telescope Imaging Spectrograph (STIS), a low-resolution UV/optical instrument. Though  
 %fringing/cosmic rays
-replaces NICMOS
+
+Past \HST\ observations used the NICMOS instrument, which is no longer available 
 
 The biggest downside to using \HST\ for exoplanets is that it cannot perform continuous observations. The telescope orbits the Earth every 96 minutes, so for roughly half that time (during Earth occultation) observations are interrupted. 
 
 \runinhead{Spitzer Space Telescope}
 In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. It was originally built to provide infrared spectroscopy from 3 - 160 $\mu$m.  In 2009, \Spitzer\ ran out of coolant and began its Warm Mission, which provides broadband photometry at 3.6 and 4.5 $\mu$m.  Most exoplanet observations have taken place during the Warm Mission, since relatively few planets were known prior to 2009!
 
-\Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in observations of thermal phase curves, as we discuss in Section FIXME. 
+Because of its smaller aperture, \Spitzer\ light curves are lower precision than \HST observations - FIXME give example. \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in observations of thermal phase curves, as we discuss in Section FIXME. 
 
 %Intrapixel effect
 
@@ -229,10 +232,14 @@ The Earth's atmosphere is an impediment to measuring precise light curves becaus
 \runinhead{Photometry and Multi-Object Spectrographs}
 One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics. 
 
-The same principle applies to spectroscopic observations, but requires a slighty more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom mask that has wide slits ($>10''$), a technique first developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  There are several multi-object spectrographs available with a custom slit mask option, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
+The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  There are several multi-object spectrographs available with a custom slit mask option, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
 
 \runinhead{High Resolution Spectrographs}
-Another creative technique uses high resolution spectroscopy.
+Another creative ground-based technique uses high resolution spectroscopy to measure the planet's transmission, emission, or reflection spectrum.  The underlying idea, first described by \citep{FIXME}, is that the spectrum of the planet's atmosphere is Doppler shifted due to its orbital motion. This Doppler shift separates the planet spectrum from both the host star spectrum and telluric absorption in the Earth's atmosphere. For reference, the hot Jupiter HD 209458b has an orbital velocity of $140\pm10$ km sec$^-1$ \citep{snellen10}, corresponding to a wavelength shift of $5\times10^{-4}\times \lambda$.  
+
+The strength of the planet's individual Doppler-shifted spectral lines is too weak to detect with current instrumentation. However, the spectrum can be cross-correlated with a template, thereby harnessing the power of many lines.  The correlation strength is highest when the template is Doppler shifted to the planet's rest frame and matches its chemical composition.
+
+The most widely used instrument for this technique is VLT/CRIRES, which provides $R=10^5$ spectroscopy from $1-5.3\,\mu$m using a $0.2"$ slit (FIXME).  The near-infrared wavelength range is ideal because it covers many (FIXME) molecular lines. An additional advantage is that the VLT has adaptive optics capability to increase the SNR of the spectra.  The technique has also been tested with a few other platforms, including Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
 The fundamental limitation to how precise a measurement can be is photon noise. Atmosphere characterization from combined light measurements relies on differential measurement ; requires FIXME photons per 
@@ -240,12 +247,29 @@ The fundamental limitation to how precise a measurement can be is photon noise. 
 But there are additional sources of noise - both instrumental and astrophysical - that must be carefully corrected by the observer.
  
 \subsection{Instrument Systematics}
+\runinhead{Persistence}
+\runinhead{Intrapixel Effect}
+\runinhead{Saturation}
 \subsection{Astrophysical Systematics}
+\runinhead{Cosmic Rays}
+\runinhead{Stellar Activity}
+\runinhead{}
+\runinhead{}
 
+\subsection{Light Curve Modeling}
+\runinhead{MCMC}
 
-\section{Science from Atmosphere Studies}
+\section{Major Results from Atmosphere Studies}
+
+\subsection{Molecular and Atomic Abundances}
+
+\subsection{Climate}
+\runinhead{Winds}
+
+\subsection{Aerosols}
 
 \section{Future Prospects}
+%CRIRES +
 
 \section{Bibliography}
 

@@ -82,6 +82,7 @@ Future Prospects
  - JWST
  - TESS
  - ECHO, ARIEL
+ - ground based high dispersion coupled with starlight suppresion
  - future prospects: larger sample, smaller planets, broader wavelength range
 
 references: 
