@@ -248,18 +248,20 @@ Photon noise is the fundamental limitation for atmosphere studies. Even assuming
 The photon limit is a major obstacle: it prevents us from characterizing planets around all but the very brightest stars.  The best targets typically have H mag $< 10$ (or V $< 10$ for optical observations).  
 %Most spectral features are of order 100 ppm, requiring $N \sim 10^8$ photons \emph{per spectral bin} to detect. 
 
-In reality, there are many additional sources of noise. In this rest of this section we outline what they are and how to mitigate them. 
+In addition to photon noise, there are many additional sources of error. In this rest of this section we outline what they are and how to mitigate them. 
 
 \subsection{Instrument Systematics}
 The ideal instrument would record every incident photon. Current detectors have come a long way in achieving this goal, but they aren't perfect. 
-\runinhead{Persistence}
-Near-infrared detectors have impure
+\runinhead{Bias, Dark Current, Flatfield}
+\runinhead{Charge Trapping}
+Near-infrared detectors exhibit a phenomenon known as \bibindex{persistence}, which refers to af. Related to persistence
 burn-in, afterward they are repeatable
 
 \runinhead{Intrapixel Effect}
 \runinhead{Saturation}
-\subsection{Astrophysical Systematics}
+\runinhead{Fringing}
 \runinhead{Cosmic Rays}
+\subsection{Astrophysical Systematics}
 \runinhead{Stellar Activity}
 \runinhead{}
 \runinhead{}
@@ -269,12 +271,45 @@ burn-in, afterward they are repeatable
 
 \section{Major Results from Atmosphere Studies}
 
-\subsection{Molecular and Atomic Abundances}
+\subsection{Chemical Composition}
+%One of the biggest strengths of atmosphere characterization is that it can reveal the planet's chemical composition. There are a few basic 
+Before jumping into observational results, here is a brief summary of what chemical species we might expect to find. 
+
+Based on the diversity seen in the Solar System, we anticipate a wide range of chemical compositions for exoplanets. However, we can make some educated guesses informed by the building blocks of planet formation. 
+
+Gas giants are expected to have hydrogen-rich \emph{primordial} atmospheres, i.e. leftover from accreted from the protoplanetary disk.  After hydrogen and helium, the most abundant elements are carbon and oxygen \citep{anders89}. 
+
+Absorbing species (i.e., atoms or molecules that absorb and emit photons) are easiest to detect when they have a large optical depth. 
+
+The easiest absorbers to detect have some combination of large abundance and large absorption cross-section.  After hydrogen and helium, the most abundant elements are carbon and oxygen \citep{anders89}.  In planetary atmospheres, these elements are typically found in molecular form: water (H$_2$O), carbon monoxide (CO), and carbon dioxide (CO$_2$) are all expected to be common. 
+
+In addition to these molecules, some lower abundance species with very large absorption cross-sections could be seen, including the alkali metals (particular sodium) and titanium and vanadium oxides (TiO and VO). Even though the abundance of these 
+
+
+
+Observations of planet masses and radii have shown a turning point in bulk composition from gaseous to rocky at around 1.6 Earth radii \citep{weiss14, rogers15}. These smaller rocky worlds are likely to have secondary atmospheres, outga
+
+\runinhead{Detections}
+A first step is to infer the presence of atoms and molecules. 
+hydrogen, water, CO, alkalis, nitrogen?
+
+\runinhead{Absolute Abundances and Metallicity}
+
+\runinhead{Abundance Ratios}
+
+\runinhead{Disequilibrium}
 
 \subsection{Climate}
 \runinhead{Winds}
 
 \subsection{Aerosols}
+Aerosol is an umbrella term for clouds and hazes
+three lines of evidence - weaker than expected features in transmission
+high albedos (shiny)
+scattering slope in optical transmission spectra
+
+\subsection{Atmospheric Escape}
+
 
 \section{Future Prospects}
 %CRIRES +
