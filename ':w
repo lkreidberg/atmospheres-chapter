@@ -273,20 +273,19 @@ burn-in, afterward they are repeatable
 
 \subsection{Chemical Composition}
 %One of the biggest strengths of atmosphere characterization is that it can reveal the planet's chemical composition. There are a few basic 
-Before jumping into observational results, here is a brief summary of what chemical species we might expect to find.  We know from the planets of the Solar System that a wide range of chemical compositions are possible. However, we can make some educated guesses about basic atmospheric constituents based on the building blocks of planet formation.
+Before jumping into observational results, here is a brief summary of what chemical species we might expect to find. 
 
-Gas giants are expected to have atmospheres rich in hydrogen and helium accreted from the protoplanetary disk.  Some metals are accreted in gas form along with the H/He, and the atmosphere can be further metal-enriched by planetesimal impacts (FIXME). The most abundant metals are carbon and oxygen \citep{anders89}.  At the temperatures and pressures in planetary atmospheres, these elements combine into molecules: water (H$_2$O), carbon monoxide (CO), and carbon dioxide (CO$_2$).  (Molecular oxygen reacts quickly with neutral hydrogen and is not expected to be seen in abundance.) In addition to these very abundant molecules, a few trace species with large absorption cross-sections may also be seen. These include the alkali metals (particularly sodium, Na) and titanium and vanadium oxides (TiO and VO).  
+We know from the planets of the Solar System that a wide range of chemical compositions are possible. However, we can make some educated guesses about basic atmospheric constituents based on the building blocks of planet formation.
 
-The atmospheres of terrestrial planets are less predictable. Hydrogen and helium escape easily from small rocky worlds, so their atmospheres are more likely due to outgassing from the planet interior. Their compositions may evolve significantly due to geologic cycling -- or the presence of life (FIXME). 
-%Observations of planet masses and radii have shown a turning point in bulk composition from gaseous to rocky at around 1.6 Earth radii \citep{weiss14, rogers15}. 
-%These smaller rocky worlds are likely to have secondary atmospheres, outga
+Gas giants are expected to have atmospheres rich in hydrogen and helium accreted from the protoplanetary disk.  Some metals are accreted in gas form along with the H/He, and the atmosphere can be further metal-enriched by planetesimal impacts (FIXME). The most abundant metals are carbon and oxygen \citep{anders89}.  In planetary atmospheres, these elements are typically found in molecular form: water (H$_2$O), carbon monoxide (CO), and carbon dioxide (CO$_2$).  (Molecular oxygen reacts quickly with neutral hydrogen and is not expected to be seen in abundance.) In addition to these very abundant molecules, some trace species with very large absorption cross-sections could be seen, including the alkali metals (particular sodium) and titanium and vanadium oxides (TiO and VO). 
+
+
+
+Observations of planet masses and radii have shown a turning point in bulk composition from gaseous to rocky at around 1.6 Earth radii \citep{weiss14, rogers15}. These smaller rocky worlds are likely to have secondary atmospheres, outga
 
 \runinhead{Detections}
-Much of exoplanet atmosphere characterization to date has focused on basic inventory: what atoms and molecules are present?  Several absorbers have been unambiguously identified so far, including H$_2$O, CO, Na, FIXME. 
-
-The most common is H$_2$O detections from \HST/WFC3.
-
-There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide, and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O). It is possible to   
+A first step is to infer the presence of atoms and molecules. 
+hydrogen, water, CO, alkalis, nitrogen?
 
 \runinhead{Absolute Abundances and Metallicity}
 
@@ -294,20 +293,17 @@ There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the
 
 \runinhead{Disequilibrium}
 
-\subsection{Atmospheric Escape}
 \subsection{Climate}
 \runinhead{Winds}
 
 \subsection{Aerosols}
-Aerosols -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets too. Evidence for aerosols shows up in both transmission and reflection spectra.
-
-Transmission spectra are especially sensitive to the presence of clouds and hazes due to the slant viewing geometry during transit (FIXME: fig?) \citep{fortney05}. The optical path of photons is long, so even trace species have large optical depth relative to a face-on view. 
-
-- weaker than expected features in transmission
+Aerosol is an umbrella term for clouds and hazes
+three lines of evidence - weaker than expected features in transmission
 high albedos (shiny)
 scattering slope in optical transmission spectra
 
-\subsection{Super Earths?}
+\subsection{Atmospheric Escape}
+
 
 \section{Future Prospects}
 %CRIRES +
