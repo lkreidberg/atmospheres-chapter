@@ -150,7 +150,7 @@ The most widely used combined-light technique is transmission spectroscopy. For 
 The key idea behind transmission spectroscopy is that the apparent size of the planet is not actually a single value: rather, it depends on the wavelength of light used for the observation.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms, molecules, or condensates, the planet blocks slightly more stellar flux.
 This change in transit depth with wavelength is the \hbindex{transmission spectrum}, so named because it due to transmission of stellar flux on the slant path through the planet's atmosphere.
 
-FIXME: say what a transit light curve is and show a figure
+FIXME: say what a transit light curve is and show a figure. Define "spectroscopic channel" and "white light curve".
 
 Modeling the transmission spectrum requires radiative transfer calculation for light on the slant path through the planet's atmosphere. 
 
@@ -216,6 +216,7 @@ The other instrument frequently used for exoplanet observations is the Space Tel
 %fringing/cosmic rays
 
 Past \HST\ observations used the NICMOS instrument, which is no longer available 
+These results \citep{tinetti07, swain08} have been reanalyzed over time as data analysis techniques have grown more sophisticated \citep{gibson11}
 
 The biggest downside to using \HST\ for exoplanets is that it cannot perform continuous observations. The telescope orbits the Earth every 96 minutes, so for roughly half that time (during Earth occultation) observations are interrupted. 
 
@@ -242,12 +243,19 @@ The strength of the planet's individual Doppler-shifted spectral lines is too we
 The most widely used instrument for this technique is VLT/CRIRES, which provides $R=10^5$ spectroscopy from $1-5.3\,\mu$m using a $0.2"$ slit (FIXME).  The near-infrared wavelength range is ideal because it covers many (FIXME) molecular lines. An additional advantage is that the VLT has adaptive optics capability to increase the SNR of the spectra.  The technique has also been tested with a few other platforms, including Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
-The fundamental limitation to how precise a measurement can be is photon noise. Atmosphere characterization from combined light measurements relies on differential measurement ; requires FIXME photons per 
+Photon noise is the fundamental limitation for atmosphere studies. Even assuming a perfect detector and perfect observing conditions, the measured light curve will still exhibit white Gaussian noise with standard deviation $\sqrt{N}$, where $N$ is the number of photons collected per exposure. (For a derivation see FIXME.) 
 
-But there are additional sources of noise - both instrumental and astrophysical - that must be carefully corrected by the observer.
- 
+The photon limit is a major obstacle: it prevents us from characterizing planets around all but the very brightest stars.  The best targets typically have H mag $< 10$ (or V $< 10$ for optical observations).  
+%Most spectral features are of order 100 ppm, requiring $N \sim 10^8$ photons \emph{per spectral bin} to detect. 
+
+In reality, there are many additional sources of noise. In this rest of this section we outline what they are and how to mitigate them. 
+
 \subsection{Instrument Systematics}
+The ideal instrument would record every incident photon. Current detectors have come a long way in achieving this goal, but they aren't perfect. 
 \runinhead{Persistence}
+Near-infrared detectors have impure
+burn-in, afterward they are repeatable
+
 \runinhead{Intrapixel Effect}
 \runinhead{Saturation}
 \subsection{Astrophysical Systematics}
