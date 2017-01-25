@@ -146,6 +146,8 @@ The most widely used combined-light technique is transmission spectroscopy. For 
 
 The key idea behind transmission spectroscopy is that the apparent size of the planet is not actually a single value: rather, it depends on the wavelength of light used for the observation.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.
 This change in transit depth with wavelength is the \hbindex{transmission spectrum}, so named because it due to transmission of stellar flux on the slant path through the planet's atmosphere.
+ 
+FIXME: say here how you actually *get* the specturm.
 
 A complete model of the transmission spectrum requires radiative transfer calculation for light on the slant path through the planet's atmosphere \citep{seager00}, a computationally intensive task. However, we can make a rough prediction of the size of features in the transmission spectrum based on the atmospheric \hbindex{scale height} $H$. The scale height is the change in altitude over which the pressure drops by a factor of $e$. Assuming hydrostatic equilibrium, $H$ is: 
 
@@ -260,21 +262,12 @@ where $S(t)$ is the systematics model (for signals that are not astrophysical; e
 The transit is the most computationally challenging component to model because the star is not uniformly bright. \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}. For the case of eclipses, the same models can be used, but with the stellar brightness fixed at a constant value.  The planet's phase variation is typically fit using a sinusoid with period equal to the planet's orbital period, with the option of adding higher harmonics \citep[e.g.][]{knutson12, stevenson16}. Alternatively, one can fit an ``orange slice" model that assumes constant planet brightness over slices in longitude \citep{knutson07, cowan08}. 
 %A third option is to create a physically motivated temperature map and calculate the \citep{zhang16}. 
 
-\runinhead{Estimating Parameter Uncertainties}
+\subsection{Estimating Parameter Uncertainties}
 As for all measurements, correctly estimating the uncertainty is as important as the detection of the planet atmosphere itself.  The best approach for determining the uncertainties depends primarily on whether the noise is correlated in time.  (FIXME Show this in a figure). 
 
-In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters with correlated uncertainties. More sophisticated MCMC methods have been developed to address this problem, including differential evolution MCMC \citep{}, or affine-invariant sampling \citep{goodman}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
+In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters with correlated uncertainties. More sophisticated MCMC methods have been developed to address this problem, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
 
-If after the signal and systematics have been modeled their is still residual red noise 
-reduced $\xi^2$ and binning.
-
-MCMC
-emcee
-White noise
-red noise
-	prayer bead
-	wavelet
-	Gaussian process
+Estimating uncertainties is more challenging in the presence of ``red", time-correlated noise. Red noise is easily identified by eye in the residuals of the light curve fit (see Figure FIXME). To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{FIXME}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, these methods can increase parameter uncertainties by factors of several.  
 
 \subsection{Sources of Error}
 
@@ -332,7 +325,7 @@ There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the
 \runinhead{Winds}
 
 \subsection{Aerosols}
-Aerosols -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets too. Evidence for aerosols shows up in both transmission and reflection spectra.
+aerosols -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets too. Evidence for aerosols shows up in both transmission and reflection spectra.
 
 Transmission spectra are especially sensitive to the presence of clouds and hazes due to the slant viewing geometry during transit (FIXME: fig?) \citep{fortney05}. The optical path of photons is long, so even trace species have large optical depth relative to a face-on view. 
 
