@@ -215,16 +215,17 @@ In addition to \HST, the other space-based observing facility is \Spitzer, an 85
 %Most exoplanet observations have taken place during the Warm Mission, since relatively few planets were known prior to 2009!
 %Intrapixel effect
 
+FIXME: consolidate with previous section
 \subsection{Ground-Based}
 The Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing time-correlated red noise in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
 
 \runinhead{Photometry and Multi-Object Spectrographs}
-One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  The same principle applices to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
+One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
 
 %The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  There are several multi-object spectrographs available with a custom slit mask option, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
 
 \runinhead{High Resolution Spectrographs}
-Another creative ground-based technique uses high resolution spectroscopy to measure the planet's transmission, emission, or reflection spectrum.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  This technique requires high resolution spectroscopy ($R \sim 10^5$) and high SNR spectra (FIXME: how high?), so is only possible with a few current facilities. The most widely used instrument is VLT/CRIRES (FIXME), and there have also been detections with Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
+Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  This technique requires a high resolution spectrograph to separate individual spectral lines ($R \sim 10^5$) and high SNR spectra (FIXME: how high?), so is only possible with a few current facilities. The most widely used instrument is VLT/CRIRES (FIXME), and there have also been detections with Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
 
  %For reference, the hot Jupiter HD 209458b has an orbital velocity of $140\pm10$ km sec$^-1$ \citep{snellen10}, corresponding to a wavelength shift of $5\times10^{-4}\times \lambda$.  Such a shift is detectable 
 
@@ -257,7 +258,11 @@ where $S(t)$ is the systematics model (for signals that are not astrophysical; e
 Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}. 
 
 %The physical parameters for the orbit are the period $P$, time of inferior conjunction $t_0$, orbital separation $a$, inclination $i$, eccentricity $e$.  The orbital solution can be obtained via Kepler's law \citep{murray99}.
-The eclipse model $E(t)$ is a more straightforward calculation: it is simply the overlapping area of two circles (the sky-projected disk of the star and planet), scaled by the planet-to-star flux ratio $F_p/F_s$ \citep{mandel02}.  This model assumes the brightness of the planet is constant, and neglects planetary limb darkening or other variation in temperature/reflectivity. In practice these variations are only detectable for the highest precision light curves \citep{FIXME}. 
+The eclipse model is a more straightforward calculation: 
+\begin{equation}
+E(t) = 1 + F_p/F_s (1 - \alpha(t)) 
+\end{equation}
+where $F_p/F_s$ is the planet-to-star flux ratio and $\alpha(t)$ is the fraction of the planet disk eclipsed by the star (easily calculated from the overlapping area of two circles). This model assumes the brightness of the planet is constant, and neglects planetary limb darkening or other variation in temperature/reflectivity. In practice, these variations are only detectable for the highest precision light curves \citep{FIXME}. 
 
 The planet's phase variation is typically fit using a sinusoid with period equal to the planet's orbital period, with the option of adding higher harmonics \citep[e.g.][]{knutson12, stevenson16}. Alternatively, one can fit an ``orange slice" model that assumes constant planet brightness over slices in longitude \citep{knutson07, cowan08}. 
 %A third option is to create a physically motivated temperature map and calculate the \citep{zhang16}. 
@@ -272,28 +277,33 @@ Estimating uncertainties is more difficult in the presence of ``red", time-corre
 \subsection{Sources of Error}
 
 \runinhead{Photon Noise}
-Photon noise is the fundamental limitation for atmosphere studies. Even assuming a perfect detector and perfect observing conditions, the measured light curve will still exhibit white Gaussian noise with standard deviation $\sqrt{N}$, where $N$ is the number of photons collected per exposure. (For a derivation see FIXME.) 
+\hbindex{Photon noise} is the fundamental limit on the precision of a light curve. A star emits $N \pm \sqrt{N}$ photons per unit time. The $\sqrt{N}$ noise arises because each atom in the star emits a photon with some small probability, so the total number emitted per time interval follows a Poisson distribution. The relative error ($\sqrt{N}/N$) decreases as $N$ increases, so bright stars yield more precise light curves.  The best target systems for atmosphere characterization typically have H mag $< 10$ for infrared observations (or V $< 10$ for optical).  
 
-The photon limit is a major obstacle: it prevents us from characterizing planets around all but the very brightest stars.  The best targets typically have H mag $< 10$ (or V $< 10$ for optical observations).  
-%Most spectral features are of order 100 ppm, requiring $N \sim 10^8$ photons \emph{per spectral bin} to detect. 
-
-In addition to photon noise, there are many additional sources of error. In this rest of this section we outline what they are and how to mitigate them. 
+The precision of a light curve is often quantified by how close it is to the photon-limited noise floor. Space-based observations often reach the photon limit \citep{sing11, kreidberg14a, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}.
 
 \runinhead{Instrument Systematics}
-The ideal instrument would record every incident photon. Current detectors have come a long way in achieving this goal, but they aren't perfect. 
-\runinhead{Bias, Dark Current, Flatfield}
-\runinhead{Charge Trapping}
-Near-infrared detectors exhibit a phenomenon known as \hbindex{persistence}, which refers to af. Related to persistence
-burn-in, afterward they are repeatable
+The ideal instrument would record every incident photon. In reality, detectors have varying sensitivity 
 
-\runinhead{Intrapixel Effect}
-\runinhead{Cosmic Rays}
+Modern detectors have come a long way in achieving this goal, but they are not perfect. Here we summarize a few common effects that 
+
+All the usual steps in data reduction must be taken: correcting for bias, dark current, and flatfielding. We focus here on specific noise sources that are not commonly taken into account, as they are only relevant for the special case of sub-percent precision spectrophotometry.
+
+\begin{itemize}
+\item{\emph{Charge trapping}.}
+\item{\emph{Intrapixel effect.}}
+\end{itemize}
 
 \runinhead{Astrophysical Systematics}
-\runinhead{Stellar Activity}
-\runinhead{}
-\runinhead{}
+There are also 
+\begin{itemize}
+\item{\emph{Stellar activity.} No star is a perfectly constant light source; over a stellar rotation period (typically weeks to months), star spots rotate in and out of view, and total spot coverage changes over longer timescales. The effect on the transit depth 
 
+\citep{mccullough}.}
+\item{\emph{Unocculted star spots.} In addition to the , star spots also }
+\item{\emph{Background stars.} Roughly half of stars have one or more bound companions \citep{raghavan10}. If the companion flux is blended with that of the host star, it dilutes the planet signal. Transit and eclipse depths must be multiplied by a correction factor $1 + \beta(\lambda)$ where $\beta$ is the ratio of the background star to host star flux. High contrast imaging is often needed to detect close companions \citep[e.g.][]{bechter14}, and should be obtained for systems that are targets for atmosphere characterization.}
+\item{\emph{Incorrect limb darkening.}}
+\item{\emph{Planet .}}
+\end{itemize}
 
 \section{Major Results from Atmosphere Studies}
 
