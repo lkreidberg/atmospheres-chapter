@@ -296,11 +296,10 @@ All the usual steps in data reduction must be taken: correcting for bias, dark c
 \runinhead{Astrophysical Systematics}
 There are also 
 \begin{itemize}
-\item{\emph{Stellar activity.} No star is a perfectly constant light source; over a stellar rotation period (typically weeks to months), star spots rotate in and out of view, and total spot coverage changes over longer timescales. The effect on the transit depth 
-
-\citep{mccullough}.}
-\item{\emph{Unocculted star spots.} In addition to the , star spots also }
 \item{\emph{Background stars.} Roughly half of stars have one or more bound companions \citep{raghavan10}. If the companion flux is blended with that of the host star, it dilutes the planet signal. Transit and eclipse depths must be multiplied by a correction factor $1 + \beta(\lambda)$ where $\beta$ is the ratio of the background star to host star flux. High contrast imaging is often needed to detect close companions \citep[e.g.][]{bechter14}, and should be obtained for systems that are targets for atmosphere characterization.}
+\item{\emph{Stellar activity.} No star is a perfectly constant light source; over a stellar rotation period (typically weeks to months), star spots rotate in and out of view, and total spot coverage changes over longer timescales. The effect on the transit depth.}
+\item{\emph{Unocculted star spots.} Even for observations taken at a single epoch, unocculted spots can bias the transmission spectrum. To first order, the difference in temperature between the spot and the stellar photosphere introduces a slope in the planet spectrum. If the spots are cool enough for molecules to form, they can even produce spurious spectral features, as there is no way to distinguish absorption due to the spot from absorption by the atmosphere. The effect from spots can be corrected by multiplying the planet spectrum by a factor $(1−s(1−F_\lambda(\mathrm{spot})/F_\lambda(\mathrm{phot})))^{-1}$, where $s$ is the spot covering fraction and $F_\lambda$ is the spectral radiance \citep{mccullough14}. The spot properties are not usually known, but can be estimated based on the amplitude of photometric variability (FIXME cite Pont, Sing?) } 
+ 
 \item{\emph{Incorrect limb darkening.}}
 \item{\emph{Planet .}}
 \end{itemize}
