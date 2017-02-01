@@ -102,6 +102,7 @@
 \newcommand{\project}[1]{\textsl{#1}}
 \newcommand{\JWST}{\project{JWST}}
 \newcommand{\HST}{\project{HST}}
+\newcommand{\tess}{\project{TESS}}
 \newcommand{\Spitzer}{\project{Spitzer}}
 
 
@@ -245,8 +246,6 @@ Designing a successful observation is in some ways more of an art than a science
 \item{\emph{Avoid pushing the detector to its limit.} The best targets for atmosphere characterization orbit bright stars, and a common temptation is to lengthen exposure times to collect as many of those photons as possible. However, as the detector approaches saturation its behavior is harder to  }
 \end{itemize}
 
-\subsection{Data Reduction}
-
 \subsection{Light Curve Fitting}
 The reduced data consist of a time series of brightness measurements (either a ``white" light curve summed up over the entire bandpass, or spectroscopic light curves created by binning the spectrum into channels).  The most general model for the data is:
 
@@ -255,7 +254,7 @@ F(t) = S(t) \times T(t) \times E(t) \times \phi(t)
 \end{equation}
 where $S(t)$ is the systematics model (for signals that are not astrophysical; e.g., a linear trend with time), $T(t)$ is the transit model, $E(t)$ is the eclipse, and $\phi(t)$ is the phase variation from reflected and emitted light. In cases where only a transit or eclipse is observed, the phase variation can usually be neglected.
 
-Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}. 
+Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}.  FIXME say more about limb darkening.
 
 %The physical parameters for the orbit are the period $P$, time of inferior conjunction $t_0$, orbital separation $a$, inclination $i$, eccentricity $e$.  The orbital solution can be obtained via Kepler's law \citep{murray99}.
 The eclipse model is a more straightforward calculation: 
@@ -270,7 +269,7 @@ The planet's phase variation is typically fit using a sinusoid with period equal
 \subsection{Estimating Parameter Uncertainties}
 As for all measurements, correctly estimating the uncertainty on the planet spectrum is as important as the detection itself.  The best approach for determining the uncertainties depends primarily on whether the noise is correlated in time.  
 
-In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters with correlated uncertainties. Sophisticated MCMC methods have been developed to address this problem, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
+In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters, correlated uncertainties, or multi-modal solutions. Sophisticated MCMC methods have been developed to address these issues, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
 
 Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise. Red noise is easily identified by eye in the residuals of the light curve fit (see Figure FIXME). To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{FIXME}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
 
@@ -279,36 +278,56 @@ Estimating uncertainties is more difficult in the presence of ``red", time-corre
 \runinhead{Photon Noise}
 \hbindex{Photon noise} is the fundamental limit on the precision of a light curve. A star emits $N \pm \sqrt{N}$ photons per unit time. The $\sqrt{N}$ noise arises because each atom in the star emits a photon with some small probability, so the total number emitted per time interval follows a Poisson distribution. The relative error ($\sqrt{N}/N$) decreases as $N$ increases, so bright stars yield more precise light curves.  The best target systems for atmosphere characterization typically have H mag $< 10$ for infrared observations (or V $< 10$ for optical).  
 
-The precision of a light curve is often quantified by how close it is to the photon-limited noise floor. Space-based observations often reach the photon limit \citep{sing11, kreidberg14a, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}.
+The precision of a light curve is often quantified by how close it is to the photon-limited noise floor. Space-based observations often reach the photon limit \citep{sing11, kreidberg14a, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}. FIXME say something about rms.
 
 \runinhead{Instrument Systematics}
-The ideal instrument would record every incident photon. In reality, detectors have varying sensitivity 
-
-Modern detectors have come a long way in achieving this goal, but they are not perfect. Here we summarize a few common effects that 
-
-All the usual steps in data reduction must be taken: correcting for bias, dark current, and flatfielding. We focus here on specific noise sources that are not commonly taken into account, as they are only relevant for the special case of sub-percent precision spectrophotometry.
+The ideal detector would record every incident photon.  Modern detectors have come a long way in achieving this goal, but they are not perfect.  In addition to the usual steps in data reduction (bias and dark correction, flatfielding), there are some considerations that are specific to sub-percent precision spectrophotometry needed for atmosphere characterization.
 
 \begin{itemize}
-\item{\emph{Charge trapping}.}
-\item{\emph{Intrapixel effect.}}
+\item{\emph{Charge trapping}. Near-infrared detectors (e.g. \HST/WFC3) have impurities that can trap photoelectrons \citep{smith08}. As the traps fill up exponentially over time, the observed count rate increases by a factor of approximately $1 - R e^{-t/\tau}$, where $R$ and $\tau$ depend on the detector and illumination level.  This same mechanism is responsible for image persistence, the afterglow the appears as charge traps are released. The effect can be corrected with analytic models to photon-limited precision \citep{deming13, line16}. 
+}
+\item{\emph{Intrapixel effect.} Detector pixels do not have perfectly uniform spatial sensitivity, so the measured flux is correlated with the $X, Y$ position of the centroid of the image. This effect is the dominant systematic error for infrared measurements (e.g. \Spitzer/IRAC). Many techniques have been developed to model intrapixel variation, including \texttt{BLISS} mapping \citep{stevenson12}, pixel-level decorrelation \citep{deming15}, and ICA \citep{morello15}.}
+%\item{\emph{Undersampling}.}
+\item{\emph{Geometric effects.} Distortion, moving spectrum.}
 \end{itemize}
 
 \runinhead{Astrophysical Systematics}
-There are also 
+Systematic errors also arise from incorrect models for the stellar or planet flux. 
+
 \begin{itemize}
-\item{\emph{Background stars.} Roughly half of stars have one or more bound companions \citep{raghavan10}. If the companion flux is blended with that of the host star, it dilutes the planet signal. Transit and eclipse depths must be multiplied by a correction factor $1 + \beta(\lambda)$ where $\beta$ is the ratio of the background star to host star flux. High contrast imaging is often needed to detect close companions \citep[e.g.][]{bechter14}, and should be obtained for systems that are targets for atmosphere characterization.}
-\item{\emph{Stellar activity.} No star is a perfectly constant light source; over a stellar rotation period (typically weeks to months), star spots rotate in and out of view, and total spot coverage changes over longer timescales. The effect on the transit depth.}
-\item{\emph{Unocculted star spots.} Even for observations taken at a single epoch, unocculted spots can bias the transmission spectrum. To first order, the difference in temperature between the spot and the stellar photosphere introduces a slope in the planet spectrum. If the spots are cool enough for molecules to form, they can even produce spurious spectral features, as there is no way to distinguish absorption due to the spot from absorption by the atmosphere. The effect from spots can be corrected by multiplying the planet spectrum by a factor $(1−s(1−F_\lambda(\mathrm{spot})/F_\lambda(\mathrm{phot})))^{-1}$, where $s$ is the spot covering fraction and $F_\lambda$ is the spectral radiance \citep{mccullough14}. The spot properties are not usually known, but can be estimated based on the amplitude of photometric variability (FIXME cite Pont, Sing?) } 
- 
-\item{\emph{Incorrect limb darkening.}}
-\item{\emph{Planet .}}
+\item{\emph{Background stars.} Roughly half of stars have one or more bound companions \citep{raghavan10}. If the companion flux is blended with that of the host star, it dilutes the planet signal. Transit and eclipse depths must be multiplied by a correction factor $1 + \beta(\lambda)$ where $\beta$ is the ratio of the background star to host star flux. High contrast imaging is needed to detect close companions, and should be obtained for systems that are targets for atmosphere characterization.}
+\item{\emph{Star spots.} To first order, the temperature difference between the stellar photosphere and the spotted region introduces a slope in the planet spectrum. If the spots are cool enough for molecules to form (e.g. water), they can even produce spurious spectral features, as there is no way to distinguish between absorption due to the spot and absorption by the planet atmosphere. The effect from spots can be corrected by multiplying the planet spectrum by a factor $(1-s\times[1-F_{\lambda,\mathrm{spot}}/F_{\lambda,\mathrm{phot}}])^{-1}$, where $s$ is the spot covering fraction and $F_\lambda$ is spectral radiance for the spot or the photosphere \citep{mccullough14}. The spot properties can be estimated based on the amplitude of long-term photometric variability in the stellar lightcurve or from spot crossing during transit \citep[e.g.][]{pont08}.} 
+\item{\emph{Stellar activity.} Variations in star spot coverage are also a source of bias in transit depth measurements. To correct transit depths taken at different epochs, one can obtain photometric monitoring of the host star to estimate changes in $s$ and correct the depths with the above scale factor.} 
+\item{\emph{Nightside emission from the planet.} For the hottest planets, thermal emission from the nightside may contribute significant flux during the transit. The nightside temperature depends on the planet's heat redistribution and cloud coverage, so can only be measured directly from phase curve observations. To correct for nightside flux, the transit depths should be multiplied be a factor FIXME \citep{kipping10}.} 
+\item{\emph{Tidal distortion.}}
 \end{itemize}
 
 \section{Major Results from Atmosphere Studies}
+In this section we overview the state of the art 
+
+\subsection{Expectations}
+Before jumping into observational results, let us set the stage with some a priori predictions for what we expect to see. 
+
+A first question is, what are the basic building blocks of planet formation?  We can make 
+
+primary atmosphere, accreted from the protoplanetary disk, should be rich in hydrogen and helium, which are the dominant component of the disk by mass. These planets could form either by core accretion \citep{pollack96}, or gravitational collapse \citep{}.
+
+
+We know from the planets of the Solar System that a wide range of chemical compositions are possible. However, we can make some educated guesses about basic atmospheric constituents based on the building blocks of planet formation.
+
+Mass and radius measurements
+
+temperature structure
+
+A third feature of Solar System
+
 
 \subsection{Chemical Composition}
-%One of the biggest strengths of atmosphere characterization is that it can reveal the planet's chemical composition. There are a few basic 
-Before jumping into observational results, here is a brief summary of what chemical species we might expect to find.  We know from the planets of the Solar System that a wide range of chemical compositions are possible. However, we can make some educated guesses about basic atmospheric constituents based on the building blocks of planet formation.
+Before jumping into observational results, here is a brief summary of what chemical species we might expect to find.  
+
+The bulk composition of gas giants planets is dominated by hydrogen and helium.
+
+After hydrogen and helium, the most abundant elements are carbon and oxygen \citep{anders89}. At the temperatures and pressures typical for planetary atmosphers, these elements are generally expected to be found in molecular form, e.g., water (H$_2$O), methane (CH$_4$), carbon monoxide (CO), and carbon dioxide (CO$_2$).
 
 Gas giants are expected to have atmospheres rich in hydrogen and helium accreted from the protoplanetary disk.  Some metals are accreted in gas form along with the H/He, and the atmosphere can be further metal-enriched by planetesimal impacts (FIXME). The most abundant metals are carbon and oxygen \citep{anders89}.  At the temperatures and pressures in planetary atmospheres, these elements combine into molecules: water (H$_2$O), carbon monoxide (CO), and carbon dioxide (CO$_2$).  (Molecular oxygen reacts quickly with neutral hydrogen and is not expected to be seen in abundance.) In addition to these very abundant molecules, a few trace species with large absorption cross-sections may also be seen. These include the alkali metals (particularly sodium, Na) and titanium and vanadium oxides (TiO and VO).  
 
@@ -330,7 +349,13 @@ There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the
 \runinhead{Disequilibrium}
 
 \subsection{Atmospheric Escape}
+
+
 \subsection{Climate}
+Temperature pressure profile
+
+
+
 \runinhead{Winds}
 
 \subsection{Aerosols}
@@ -345,8 +370,21 @@ scattering slope in optical transmission spectra
 \subsection{Super Earths?}
 
 \section{Future Prospects}
+We are on the threshold of a revolution in exoplanet atmosphere characterization thanks to several upcoming observing facilities. 
+
+The first of these is the Transiting Exoplanet Survey Satellite (\tess), a planet finding mission scheduled to launch in 2018 \citep{ricker14}.  The goal of \tess\ is to search the 200,000 brightest stars in the sky for transiting planets, with an expected yield of nearly 2000 \citep{sullivan15}. In contrast to the majority of transiting planets discovered to date by \Kepler \citep{}, the \tess\ planets will have bright enough host stars for precise atmosphere characterization. The sample will also include longer period and smaller planets than are typically discovered by ground-based surveys of bright stars, opening the door to studying a more diverse sample.
+
+The second game-changer is \jwst. The primary technical limitations in atmosphere characterization thus far have been aperture size and wavelength coverage, and \jwst\ offers major improvements on both fronts. It has roughly ten times the collecting area of \hst\, and provides spectroscopy from the optical to the infrared ($0.6 - 28\,\mu$m). These improvements will make it possible to study giant planets at higher S/N and push to sub-Neptune to  and smaller planets . The expanded wavelength coverage will enable the first unambiguous detection of many molecules (including methane, carbon dioxide, and ammonia). With \jwst's infrared sensitivity we will detect thermal emission from cooler objects, perhaps including some in the habitable zone.
+
+There are also major advances planned for ground-based observing facilities. CRIRES+ 
+
+ The next generation of large, 30 m class telescopes
 %CRIRES +
 %noise floor
+
+\runinhead{Earth-Like Planets}
+transmission spectroscopy is gonna be hard
+nearest transiting, habitable-zone terrestrial planet is expected to be within FIXME parsecs \citep{dressing16}.
 
 \section{Bibliography}
 
