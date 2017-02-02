@@ -102,8 +102,9 @@
 \newcommand{\project}[1]{\textsl{#1}}
 \newcommand{\JWST}{\project{JWST}}
 \newcommand{\HST}{\project{HST}}
-\newcommand{\tess}{\project{TESS}}
+\newcommand{\TESS}{\project{TESS}}
 \newcommand{\Spitzer}{\project{Spitzer}}
+\newcommand{\Kepler}{\project{Kepler}}
 
 
 \makeindex             % used for the subject index
@@ -194,6 +195,17 @@ Short-period planets that are tidally locked to their host stars pose a unique o
 All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which relies on precise observations of secondary eclipse ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail \citep{rauscher07}. In particular, for planets with a nonzero impact parameter, the eclipse mapping technique is sensitive to changes in brightness with latitude (as higher latitudes are first to enter and exit eclipse). 
 % This approach is based on the fact that planets are not uniformly bright. In the case of a hot gas giant, the hottest part of the atmosphere may be offset from the substellar point due to atmospheric circulation. For a terrestrial planet, continents and oceans with varying reflectivity may be present. 
 
+\subsection{Ground-Based}
+The observing techniques described above are best suited to space telescopes: Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing time-correlated red noise in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
+
+\runinhead{Photometry and Multi-Object Spectrographs}
+One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  %The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
+
+The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  There are several multi-object spectrographs available with a custom slit mask option, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
+
+\runinhead{High Resolution Spectrographs}
+Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. %This technique requires a high resolution spectrograph to separate individual spectral lines ($R \sim 10^5$) and high SNR spectra (FIXME: how high?), so is only possible with a few current facilities. The most widely used instrument is VLT/CRIRES (FIXME), and there have also been detections with Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
+
 \section{Observing Facilities}
 Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent \citep[e.g.][]{evans16}. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of January 2017).
 
@@ -204,33 +216,11 @@ Observing exoplanets from space is advantageous in several ways. First, space te
 The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the Wide Field Camera 3 (WFC3) and the Space Telescope Imaging Spectrograph (STIS). 
 
 WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features (FIXME ref).  As of 2017, WFC3 measurements are the gold standard in atmosphere characterization: they are photon-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
-%The WFC3 detector is easier set relative to past results from NICMOS, which have been frequently debated in the literature \citep{gibson11}.
 
 The other \HST\ instrument frequently used for exoplanet observations is STIS, a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals (e.g., sodium, potassium, magnesium), as well as the Lyman-$\alpha$ transition of atomic hydrogen. 
 
-%The biggest downside to using \HST\ for exoplanets is that it cannot perform continuous observations. The telescope orbits the Earth every 96 minutes, so for roughly half that time (during Earth occultation) observations are interrupted. 
-
 \runinhead{Spitzer Space Telescope}
 In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m.  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in observations of thermal phase curves \citep[e.g.][]{knutson07}. 
-
-%Most exoplanet observations have taken place during the Warm Mission, since relatively few planets were known prior to 2009!
-%Intrapixel effect
-
-FIXME: consolidate with previous section
-\subsection{Ground-Based}
-The Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing time-correlated red noise in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
-
-\runinhead{Photometry and Multi-Object Spectrographs}
-One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
-
-%The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  There are several multi-object spectrographs available with a custom slit mask option, including Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
-
-\runinhead{High Resolution Spectrographs}
-Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  This technique requires a high resolution spectrograph to separate individual spectral lines ($R \sim 10^5$) and high SNR spectra (FIXME: how high?), so is only possible with a few current facilities. The most widely used instrument is VLT/CRIRES (FIXME), and there have also been detections with Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
-
- %For reference, the hot Jupiter HD 209458b has an orbital velocity of $140\pm10$ km sec$^-1$ \citep{snellen10}, corresponding to a wavelength shift of $5\times10^{-4}\times \lambda$.  Such a shift is detectable 
-
-%The strength of the planet's individual Doppler-shifted spectral lines is too weak to detect with current instrumentation. However, the spectrum can be cross-correlated with a template, thereby harnessing the power of many lines.  The correlation strength is highest when the template is Doppler shifted to the planet's rest frame and matches its chemical composition.
 
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
@@ -299,41 +289,28 @@ Systematic errors also arise from incorrect models for the stellar or planet flu
 \item{\emph{Star spots.} To first order, the temperature difference between the stellar photosphere and the spotted region introduces a slope in the planet spectrum. If the spots are cool enough for molecules to form (e.g. water), they can even produce spurious spectral features, as there is no way to distinguish between absorption due to the spot and absorption by the planet atmosphere. The effect from spots can be corrected by multiplying the planet spectrum by a factor $(1-s\times[1-F_{\lambda,\mathrm{spot}}/F_{\lambda,\mathrm{phot}}])^{-1}$, where $s$ is the spot covering fraction and $F_\lambda$ is spectral radiance for the spot or the photosphere \citep{mccullough14}. The spot properties can be estimated based on the amplitude of long-term photometric variability in the stellar lightcurve or from spot crossing during transit \citep[e.g.][]{pont08}.} 
 \item{\emph{Stellar activity.} Variations in star spot coverage are also a source of bias in transit depth measurements. To correct transit depths taken at different epochs, one can obtain photometric monitoring of the host star to estimate changes in $s$ and correct the depths with the above scale factor.} 
 \item{\emph{Nightside emission from the planet.} For the hottest planets, thermal emission from the nightside may contribute significant flux during the transit. The nightside temperature depends on the planet's heat redistribution and cloud coverage, so can only be measured directly from phase curve observations. To correct for nightside flux, the transit depths should be multiplied be a factor FIXME \citep{kipping10}.} 
-\item{\emph{Tidal distortion.}}
 \end{itemize}
 
 \section{Major Results from Atmosphere Studies}
 In this section we overview the state of the art 
 
 \subsection{Expectations}
-Before jumping into observational results, let us set the stage with some a priori predictions for what we expect to see. 
+We know from the Solar System that atmospheric composition can vary widely from planet to planet; however, we can make educated guesses based on the building blocks for planet formation.  Planets form in disks of gas and dust surrounding young stars.  The disk is made predominantly of hydrogen and helium, followed by oxygen, carbon, and other metals \citep{anders89}.  The details of how exactly planets form are complex \citep{FIXME}, but the end result is that gas and ice giants retain primordial atmospheres made of disk material, whereas lower mass planets have secondary atmospheres formed by outgassing or sublimation of ices \citep{FIXME}.
 
-A first question is, what are the basic building blocks of planet formation?  We can make 
+The easiest chemical species to detect are not necessarily the most abundant. Observability depends on both the abundance \emph{and} absorption cross-section of the species in question. Even though molecular hydrogen is the dominant component of giant planet atmospheres, it is not the dominant absorber at most wavelengths. Lower abundance 
 
-primary atmosphere, accreted from the protoplanetary disk, should be rich in hydrogen and helium, which are the dominant component of the disk by mass. These planets could form either by core accretion \citep{pollack96}, or gravitational collapse \citep{}.
+and Rayleigh scattering in the optical \citep{lecavelier08}.
 
+At the temperatures and pressures typical for planetary atmosphers, other molecules are generally expected to be found in molecular form, e.g., water (H$_2$O), methane (CH$_4$), carbon monoxide (CO), and carbon dioxide (CO$_2$).  
 
-We know from the planets of the Solar System that a wide range of chemical compositions are possible. However, we can make some educated guesses about basic atmospheric constituents based on the building blocks of planet formation.
+In addition to these very abundant molecules, a few trace species with large absorption cross-sections may also be seen. These include the alkali metals (particularly sodium, Na) and titanium and vanadium oxides (TiO and VO).  
 
-Mass and radius measurements
+%In the core accretion model of planet formation, planetesimals made of rock and ice eventually grow massive enough to accrete surrounding disk material \citep{pollack96}
+%The planet composition is divided into three main components:  gas (in this context only H/He), ice (e.g., H$_2$O, CH$_4$, CO, CO$_2$, NH$_3$), and rock (iron, silicates).
 
-temperature structure
-
-A third feature of Solar System
-
+clouds
 
 \subsection{Chemical Composition}
-Before jumping into observational results, here is a brief summary of what chemical species we might expect to find.  
-
-The bulk composition of gas giants planets is dominated by hydrogen and helium.
-
-After hydrogen and helium, the most abundant elements are carbon and oxygen \citep{anders89}. At the temperatures and pressures typical for planetary atmosphers, these elements are generally expected to be found in molecular form, e.g., water (H$_2$O), methane (CH$_4$), carbon monoxide (CO), and carbon dioxide (CO$_2$).
-
-Gas giants are expected to have atmospheres rich in hydrogen and helium accreted from the protoplanetary disk.  Some metals are accreted in gas form along with the H/He, and the atmosphere can be further metal-enriched by planetesimal impacts (FIXME). The most abundant metals are carbon and oxygen \citep{anders89}.  At the temperatures and pressures in planetary atmospheres, these elements combine into molecules: water (H$_2$O), carbon monoxide (CO), and carbon dioxide (CO$_2$).  (Molecular oxygen reacts quickly with neutral hydrogen and is not expected to be seen in abundance.) In addition to these very abundant molecules, a few trace species with large absorption cross-sections may also be seen. These include the alkali metals (particularly sodium, Na) and titanium and vanadium oxides (TiO and VO).  
-
-The atmospheres of terrestrial planets are less predictable. Hydrogen and helium escape easily from small rocky worlds, so their atmospheres are more likely due to outgassing from the planet interior. Their compositions may evolve significantly due to geologic cycling -- or the presence of life (FIXME). 
-%Observations of planet masses and radii have shown a turning point in bulk composition from gaseous to rocky at around 1.6 Earth radii \citep{weiss14, rogers15}. 
-%These smaller rocky worlds are likely to have secondary atmospheres, outga
 
 \runinhead{Detections}
 Much of exoplanet atmosphere characterization to date has focused on basic inventory: what atoms and molecules are present?  Several absorbers have been unambiguously identified so far, including H$_2$O, CO, Na, FIXME. 
@@ -372,19 +349,20 @@ scattering slope in optical transmission spectra
 \section{Future Prospects}
 We are on the threshold of a revolution in exoplanet atmosphere characterization thanks to several upcoming observing facilities. 
 
-The first of these is the Transiting Exoplanet Survey Satellite (\tess), a planet finding mission scheduled to launch in 2018 \citep{ricker14}.  The goal of \tess\ is to search the 200,000 brightest stars in the sky for transiting planets, with an expected yield of nearly 2000 \citep{sullivan15}. In contrast to the majority of transiting planets discovered to date by \Kepler \citep{}, the \tess\ planets will have bright enough host stars for precise atmosphere characterization. The sample will also include longer period and smaller planets than are typically discovered by ground-based surveys of bright stars, opening the door to studying a more diverse sample.
+The first of these is the Transiting Exoplanet Survey Satellite (\TESS), a planet finding mission scheduled to launch in 2018 \citep{ricker14}.  The goal of \TESS\ is to search the 200,000 brightest stars in the sky for transiting planets, with an expected yield of nearly 2000 discoveries \citep{sullivan15}. In contrast to the majority of transiting planets discovered to date by \Kepler \citep{}, the \TESS\ planets will have bright enough host stars for precise atmosphere characterization. The sample will also include longer period and smaller planets than are typically discovered by ground-based surveys of bright stars, opening the door to new parameter space. 
 
-The second game-changer is \jwst. The primary technical limitations in atmosphere characterization thus far have been aperture size and wavelength coverage, and \jwst\ offers major improvements on both fronts. It has roughly ten times the collecting area of \hst\, and provides spectroscopy from the optical to the infrared ($0.6 - 28\,\mu$m). These improvements will make it possible to study giant planets at higher S/N and push to sub-Neptune to  and smaller planets . The expanded wavelength coverage will enable the first unambiguous detection of many molecules (including methane, carbon dioxide, and ammonia). With \jwst's infrared sensitivity we will detect thermal emission from cooler objects, perhaps including some in the habitable zone.
+The second game-changer is \JWST. The primary technical limitations in atmosphere characterization thus far have been aperture size and wavelength coverage, and \JWST\ offers major improvements on both fronts. It has roughly ten times the collecting area of \HST\, and provides spectroscopy from the optical to the infrared ($0.6 - 28\,\mu$m) \citep{FIXME}. The improvement in precision will make it possible to push down to sub-Neptune and smaller planets, and to study giant planets at high S/N. The expanded wavelength coverage will also enable the first unambiguous detection of many new molecules (including methane, carbon dioxide, and ammonia). Finally, \JWST's infrared detector will be sensitive to thermal emission from cooler objects, including potentially habitable worlds.
 
-There are also major advances planned for ground-based observing facilities. CRIRES+ 
-
- The next generation of large, 30 m class telescopes
+%There are also major advances planned for ground-based observing facilities. CRIRES+ 
+% The next generation of large, 30 m class telescopes
 %CRIRES +
 %noise floor
 
 \runinhead{Earth-Like Planets}
-transmission spectroscopy is gonna be hard
-nearest transiting, habitable-zone terrestrial planet is expected to be within FIXME parsecs \citep{dressing16}.
+The nearest transiting, Earth-like planet is predicted to be 12 parsecs away \citep{dressing16}.
+
+
+A recent exciting discovery is Proxima b, a likely terrestrial planet recieving 70\% Earth insolation \citep{anglada16}. 
 
 \section{Bibliography}
 
