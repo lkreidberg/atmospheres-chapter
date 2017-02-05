@@ -136,12 +136,13 @@
 
 
 \section{Introduction }
-%"Don't you just hate it when you travel 1,200 light years to a planet scientists have assured you is "Earthlike," and you get there, and there's, like, NO ATMOSPHERE?!!" -- Martin BG, Potomac, MD
+Stars are both a help and a hindrance to characterizing exoplanet atmospheres.  Isolating the light from the planet alone is a formidable task (see Chapter FIXME), and great effort must be undertaken to block out stellar flux. Alternatively, one can make use of the star as a constant reference point. 
 
+In this chapter we will focus on the latter approach: exoplanet atmosphere characterization using the combined light from the planet and its host star. 
 
+In contrast to direct imaging, which seeks to mask the stellar flux, the combined light approach capitalizes on the star as a constant reference point. As the planet moves through its orbit, it absorbs, re-emits, and reflects light from its host star. These planetary signals can be measured differentially relative to the baseline stellar flux.
 
 \section{Observing Techniques} 
-In this chapter we will focus on exoplanet atmosphere characterization using the combined light from the planet and its host star. In contrast to direct imaging, which seeks to mask the stellar flux, the combined light approach capitalizes on the star as a constant reference point. As the planet moves through its orbit, it absorbs, re-emits, and reflects light from its host star. These planetary signals can be measured differentially relative to the baseline stellar flux.
 
 \subsection{Transit Spectroscopy}
 The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host. The resulting time series of brightness measurements is known as the transit light curve. During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the host star (as illustrated in Figure FIXME). We refer to this fraction as the \hbindex{transit depth}, $\delta = (R_p/R_s)^2$. 
@@ -297,7 +298,7 @@ In this section we discuss observational highlights, with a focus on transmissio
 \subsection{Expectations}
 We know from the Solar System that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation.  
 
-Planets form in disks of gas and dust surrounding young stars.  The disk is made predominantly of hydrogen and helium. Trace amounts of heavier elements (metals) are also present, the most abundant being oxygen, carbon, and nitrogen \citep{anders89}.  Exactly how planets arise from this initial disk is a topic of considerable complexity \citep{FIXME}, but the end result is that gas and ice giants retain primordial atmospheres made of disk material, whereas lower mass planets have secondary atmospheres formed by outgassing or sublimation of ices \citep{FIXME}.  Given this picture of planet formation, we can narrow the list of expected abundant species to a few: hydrogen, helium, and oxygen/carbon/nitrogen compounds. At planetary temperatures and pressures, the most likely reservoirs for O, C, and N are H$_2$O, CO, CO$_2$, CH$_4$, and NH$_3$.  
+Planets form in disks of gas and dust surrounding young stars.  The disk has similar composition to the host star: predominantly hydrogen and helium, with trace amounts of heavier elements (the most abundant being oxygen, carbon, and nitrogen \citealt{anders89}).  Exactly how planets arise from this initial disk is a topic of considerable complexity \citep{FIXME}, but the end result is that gas and ice giants retain primordial atmospheres made of disk material, whereas lower mass planets have secondary atmospheres formed by outgassing or sublimation of ices \citep{FIXME}.  Given this picture of planet formation, we can narrow the list of expected abundant species to a few: hydrogen, helium, and oxygen/carbon/nitrogen compounds. At planetary temperatures and pressures, the most likely reservoirs for O, C, and N are H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$.  
 
 The most abundant species are not necessarily the easiest to see, however.  Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen is not a particularly strong absorber (its main spectral feature is Rayleigh scattering in the optical), and helium FIXME FIXME, as a noble gas, has no detectable features whatsoever. Therefore, we would expect planets' spectra to be dominated by features from volatiles.  In addition, there are a few trace species with very large absorption cross sections (e.g., sodium and titanium oxide) that are detectable as well.
 
@@ -310,6 +311,9 @@ The most abundant species are not necessarily the easiest to see, however.  Obse
 \subsection{Chemical Composition}
 
 \runinhead{Detections}
+Simply detecting features from atoms or molecules in an exoplanet atmosphere is a major feat. It was first accomplished by \cite{charbonneau02}, for sodium in the atmosphere of the hot Jupiter HD 209458b. 
+
+
 Much of exoplanet atmosphere characterization to date has focused on basic inventory: what atoms and molecules are present?  Several absorbers have been unambiguously identified so far, including H$_2$O, CO, Na, FIXME. 
 
 The most common is H$_2$O detections from \HST/WFC3.
@@ -327,18 +331,27 @@ There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the
 \subsection{Climate}
 Temperature pressure profile
 
-
-
 \runinhead{Winds}
 
 \subsection{Aerosols}
-aerosols -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets too. Evidence for aerosols shows up in both transmission and reflection spectra.
+Aerosols -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets as well. Transmission spectra are particularly sensitive to the presence of aerosols, due to the slant viewing geometry observed during transit \citep{fortney05}.  Most aerosols have uniform (so-called "gray") opacity over relatively wide wavelength regions, and mask transmission of stellar flux below a constant altitude.  Therefore one of the main effects on transmission spectra is to truncate absorption features (as illustrated in Figure FIXME). Over wider wavelength intervals ($1-5\,\mu$m), aerosols can produce 
+ 
+In addition, Rayleigh scattering also introduce a steep slope in the optical spectrum \citep{FIXME}.
 
-Transmission spectra are especially sensitive to the presence of clouds and hazes due to the slant viewing geometry during transit (FIXME: fig?) \citep{fortney05}. The optical path of photons is long, so even trace species have large optical depth relative to a face-on view. 
+The first hint of aerosols came from HD 209458b, which had a smaller than expected sodium feature relative to a clear atmosphere \citep{charbonneau02}. This observation foreshadowed a slew of spectra with truncated features \citep[e.g.][]{deming13, kreidberg14a, knutson14a, kreidberg15b}. Many spectra have also shown a large optical slope
 
-- weaker than expected features in transmission
-high albedos (shiny)
-scattering slope in optical transmission spectra
+There is no strong correlation between the presence of clouds and any other physical parameters (temperature, surface gravity) \citep{sing16}. 
+
+\runinhead{What is the composition of clouds and hazes?}
+All of the evidence presented so far has been agnostic on the question of composition.
+Strong constraints on aerosol properties come from the super-Earth GJ 1214b. This planet has the highest s
+
+Additional evidence for aerosols comes from optical wavelength transmission spectra.
+
+Most of \HST/STIS
+ground-based observations \citep{dragomir16}
+
+Reflective clouds have also been inferred from optical phase curves of hot Jupiters. Some planets show westward shifted peak brightnesses, which is best  
 
 \subsection{Super Earths?}
 
@@ -354,9 +367,9 @@ The second game-changer is \JWST. The primary technical limitations in atmospher
 %CRIRES +
 %noise floor
 
-\runinhead{Earth-Like Planets}
+\runinhead{Pushing to Earth-Like Planets}
+So far the smallest planet with detected features is HAT-P-11b, a Neptune-size object with an equilibrium temperature of FIXME \citep{fraine14}.
 The nearest transiting, Earth-like planet is predicted to be 12 parsecs away \citep{dressing16}.
-
 
 A recent exciting discovery is Proxima b, a likely terrestrial planet recieving 70\% Earth insolation \citep{anglada16}. 
 
