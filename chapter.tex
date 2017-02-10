@@ -132,8 +132,6 @@
 
 
 \abstract{Abstract.}
-%This document is intended as a template and guide for the preparation of chapters for the Handbook of Exoplanets, using latex. It complements the `Guidelines for Authors of the Exoplanet Handbook', which are distributed as a separate document. This template was adapted from Springer's template `author.tex' for contributed books, using the style svmult.cls (distributed together with this template). \\ Each chapter should be preceded by an abstract (10--15 lines long) that summarizes the content. The abstract will appear \textit{online} at \url{www.SpringerLink.com} and at ADS and be available with unrestricted access. This allows unregistered users to read the abstract as a teaser for the complete chapter. For the title you are encouraged to follow the tips for Search Engine Optimization given below.}
-
 
 \section{Introduction }
 Stars are both a help and a hindrance to characterizing exoplanet atmospheres.  Isolating the light from the planet alone is a formidable task (see Chapter FIXME), and great effort must be undertaken to block out stellar flux. Alternatively, one can make use of the star as a constant reference point. 
@@ -154,7 +152,7 @@ Theoretical models for the transmission spectrum require radiative transfer calc
 \begin{equation}
 H = \frac{K_bT_{eq}}{\mu g}
 \end{equation}
-where $K_b$ is the Boltzmann constant, $T_{eq}$ is the planet's \hbindex{equilibrium temperature}, $\mu$ is the mean molecular mass, and $g$ is the surface gravity (FIXME). 
+where $K_b$ is the Boltzmann constant, $T_{eq}$ is the planet's \hbindex{equilibrium temperature}, $\mu$ is the mean molecular mass, and $g$ is the surface gravity.
 
 The amplitude of spectral features in transmission is then:
 \begin{eqnarray}
@@ -163,9 +161,6 @@ The amplitude of spectral features in transmission is then:
 \end{eqnarray} 
 where $n$ is the number of scale heights crossed at wavelengths with high opacity (typically around two for cloud-free atmospheres, \cite{stevenson16}. The ideal candidates for transmission spectroscopy is a planet with high equilibrium temperature, a small host star, low surface gravity, and a low mean molecular mass atmosphere. Even for the best cases, the amplitude of spectral features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. 
 
-%It should be emphasized how miniscule these variations in transit depth are. Even for the best case scenario -- a hot, hydrogen-rich atmosphere with low surface gravity -- the amplitude of features is 
-
-%Transmission spectrum measurements therefore require extraordinary care and investment of telescope resources, as discussed in FIXME.
 
 \subsection{Occultation Spectroscopy}
 A close cousin of the transit spectroscopy method is \hbindex{occultation spectroscopy}, which measures thermal emission and reflection from the planet. Rather than observing the planet during transit, it is observed at secondary eclipse, when it passes behind the host star. The eclipse provides a baseline measurement of the stellar flux alone. When the planet rotates back into view, any increase in brightness can be attributed to the planet's thermal emission and reflected light.
@@ -187,7 +182,7 @@ At short wavelengths, reflected light from the planet may also be detectable. It
 \begin{equation}
 F_{reflect} = A_g(R_p/a)^2 \Phi(\alpha)
 \end{equation}
-where $a$ is the orbital separation and $\Phi(\alpha)$ is the phase function (the reflected light intensity at phase angle $\alpha$). The phase function depends on the scattering properties of the atmosphere, but analytic predictions are available for certain simplified models \citep[e.g.][]{madhu12}.  Reflected light is easiest to detect in the optical, where it dominates the thermal emission signal; however, the amplitude tends to be small \citep[typically less than 100 ppm][]{angerhausen15}.
+where $a$ is the orbital separation and $\Phi(\alpha)$ is the phase function (the reflected light intensity at phase angle $\alpha$). The phase function depends on the scattering properties of the atmosphere, but analytic predictions are available for certain simplified models \citep[e.g.][]{madhu12}.  Reflected light is easiest to detect in the optical, where it dominates the thermal emission signal; however, the amplitude tends to be small \citep[typically less than 100 ppm;][]{angerhausen15}.
 
 \runinhead{Phase Curves}
 Short-period planets that are tidally locked to their host stars pose a unique opportunity for thermal emission and reflected light measurements. The rotation period for these planets is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn. A \hbindex{phase curve} observation consists of continuous time series photometry or spectroscopy of a planet over its orbit, using the stellar flux at secondary eclipse as a baseline. These observations are powerful in that they probe atmospheric physics and chemistry over a wider geographic region than transits or eclipses alone; however, they are challenging from a technical standpoint because they require long stares at a single object. %In principle it is possible to apply this technique to longer period planets that are not tidally locked; however, in addition to the feasibility challenge the interpretation is also problematic. 
@@ -227,13 +222,12 @@ In addition to \HST, the other space-based observing facility is \Spitzer, an 85
 The two main ground-based observing techniques -- low-resolution spectroscopy with wide slits and high resolution observations -- both require specialized instruments. For the wide slit approach, there are only a few observatories that have multi-object spectrographs with a custom slit mask option. These include Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
 
 The high resolution technique requires R > FIXME to resolve individual spectral lines, as well as high S/N over wavelength regions with many lines. The state-of-the-art instrument for this type of observation is CRIRES on the VLT (FIXME), which is currently being upgraded.  Keck/NIRSPEC and HARPS also \citep{lockwood14, martins15}.
-%This technique requires a high resolution spectrograph to separate individual spectral lines ($R \sim 10^5$) and high SNR spectra (FIXME: how high?), so is only possible with a few current facilities. The most widely used instrument is VLT/CRIRES (FIXME), and there have also been detections with Keck/NIRSPEC and HARPS \citep{lockwood14, martins15}. 
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
 The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good p and discuss sources of error (both astrophysical and instrumental).
 
 \subsection{Observational Design}
-Designing a successful observation is in some ways more of an art than a science -- no currently available instruments were built with transiting planets in mind, and the planet signal is often orders of magnitude smaller than the typical precision of the instrument (FIXME ref).  But there are a few general principles that can increase the probability of success, which we summarize here:
+Designing a successful observation is in some ways more of an art than a science -- no currently available instruments were built with transiting planets in mind, and the planet signal is often orders of magnitude smaller than the typical precision of the instrument.  But there are a few general principles that can increase the probability of success, which we summarize here:
 
 \begin{itemize}
 \item{\emph{The more observations the better.}}
@@ -266,7 +260,7 @@ As for all measurements, correctly estimating the uncertainty on the planet spec
 
 In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters, correlated uncertainties, or multi-modal solutions. Sophisticated MCMC methods have been developed to address these issues, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
 
-Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise. Red noise is easily identified by eye in the residuals of the light curve fit (see Figure FIXME). To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{FIXME}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
+Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise, which is often present in ground-based light curves \citep{}. Red noise is easily identified by eye in the residuals of the light curve fit as time-dependent trends. To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{southworth08}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
 
 \subsection{Sources of Error}
 
@@ -276,14 +270,14 @@ Estimating uncertainties is more difficult in the presence of ``red", time-corre
 The precision of a light curve is often quantified by how close it is to the photon-limited noise floor. Space-based observations often reach the photon limit \citep{sing11, kreidberg14a, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}. FIXME say something about rms.
 
 \runinhead{Instrument Systematics}
-The ideal detector would record every incident photon.  Modern detectors have come a long way in achieving this goal, but they are not perfect.  In addition to the usual steps in data reduction (bias and dark correction, flatfielding), there are some considerations that are specific to sub-percent precision spectrophotometry needed for atmosphere characterization.
+The ideal detector would record every incident photon.  Modern detectors have come a long way in achieving this goal, but they are not perfect.  In addition to the usual steps in data reduction (bias and dark correction, flatfielding), there are some considerations that are specific to the precise spectrophotometry needed for atmosphere characterization.
 
 \begin{itemize}
 \item{\emph{Charge trapping}. Near-infrared detectors (e.g. \HST/WFC3) have impurities that can trap photoelectrons \citep{smith08}. As the traps fill up exponentially over time, the observed count rate increases by a factor of approximately $1 - R e^{-t/\tau}$, where $R$ and $\tau$ depend on the detector and illumination level.  This same mechanism is responsible for image persistence, the afterglow the appears as charge traps are released. The effect can be corrected with analytic models to photon-limited precision \citep{deming13, line16}. 
 }
 \item{\emph{Intrapixel effect.} Detector pixels do not have perfectly uniform spatial sensitivity, so the measured flux is correlated with the $X, Y$ position of the centroid of the image. This effect is the dominant systematic error for infrared measurements (e.g. \Spitzer/IRAC). Many techniques have been developed to model intrapixel variation, including \texttt{BLISS} mapping \citep{stevenson12}, pixel-level decorrelation \citep{deming15}, and ICA \citep{morello15}.}
 %\item{\emph{Undersampling}.}
-\item{\emph{Geometric effects.} Distortion, moving spectrum.}
+%\item{\emph{Geometric effects.} Distortion, moving spectrum.}
 \end{itemize}
 
 \runinhead{Astrophysical Systematics}
@@ -297,31 +291,38 @@ Systematic errors also arise from incorrect models for the stellar or planet flu
 \end{itemize}
 
 \section{Major Results from Atmosphere Studies}
-In this section we discuss observational highlights, with a focus on transmission and emission spectroscopy.  For more comprehensive reviews, see \citep{crossfield15} and \citep{deming17}. %Before diving into results, let us briefly set the stage with some expectations for what we might observe. 
+In this section we discuss observational highlights, with a focus on transmission and emission spectroscopy.  For more comprehensive reviews, see \cite{crossfield15} and \cite{deming17}. %Before diving into results, let us briefly set the stage with some expectations for what we might observe. 
 
 \subsection{Expectations}
-We know from the Solar System that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation.  Planets form in disks of gas and dust surrounding young stars.  The disk has similar composition to the host star: predominantly hydrogen and helium, with smaller amounts of metals (the most abundant being oxygen, carbon, and nitrogen \citealt{anders89}).  We would therefore expect atmospheres to be made up of these elements.  A further constraint is that the atmosphere must be composed of species that are in vapor form at planetary temperatures and pressures (so-called \hbindex{volatiles}).  Species that satisfy both criteria include H$_2$, He, H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$.  We note that in the nomenclature of planetary science, H$_2$ and He are referred to as \hbindex{gases}, and the other molecules are \hbindex{ices}.  
+We know from the Solar System that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation.  Planets form in disks of gas and dust surrounding young stars.  The disk has similar composition to the host star: predominantly hydrogen and helium, with smaller amounts of metals (the most abundant being oxygen, carbon, and nitrogen; \citealt{anders89}).  We would therefore expect atmospheres to be made up of these elements.  A further requirement is that the atmosphere be composed of species that are in vapor form at planetary temperatures and pressures (so-called \hbindex{volatiles}).  Molecules that satisfy both criteria include H$_2$, He, H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$.  We note that in the nomenclature of planetary science, H$_2$ and He are referred to as \hbindex{gases}, and the other molecules are \hbindex{ices} \citep{depater15}.
 
-The most abundant molecules are not necessarily the easiest to detect in a planet's spectrum. Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen and helium, though they are the dominant component by mass for giant planet atmospheres, have relatively few line transitions. By contrast, water and other ices have large absorption cross-sections thanks to millions of rotational and vibrational line transitions from the optical to the far-infrared \citep{tennyson12}.  Ices are thus expected to dominate planets' spectra.  In addition, there are a few trace species with very large absorption cross sections (alkali metals, titanium and vanadium oxides) that are also detectable \citep{seager00, fortney08}.
+The most abundant molecules are not necessarily the easiest to detect in a planet's spectrum. Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen and helium, though they are the dominant component by mass for giant planet atmospheres, are relatively weak absorbers. By contrast, water and other ices have large absorption cross sections thanks to millions of rotational and vibrational line transitions between the optical and the far-infrared \citep{tennyson12}.  Ices are thus expected to dominate planets' spectra.  In addition, there are a few trace species with very large cross sections (alkali metals, titanium and vanadium oxides) that may be seen \citep{seager00, fortney08}.
 
-\subsection{Chemical Composition}
+\subsection{Detections of Atoms and Molecules}
+A major step in atmosphere characterization is simply detecting absorbing species. This was first achieved for the hot Jupiter HD 209458b with the detection of the sodium resonance doublet at 589 nm \citep{charbonneau02}. Since then, both sodium and potassium have been detected in a number of other planets \citep[e.g.][]{sing11b, jensen11, nikolov14, fischer16}.
 
-\runinhead{Detections}
-Simply detecting features from atoms or molecules in an exoplanet atmosphere is a major feat. It was first accomplished by \cite{charbonneau02}, for sodium in the atmosphere of the hot Jupiter HD 209458b. 
+Spectral features from water are also routinely seen \citep[e.g.][]{deming13, huitson13, mccullough14, fraine14, kreidberg14b, kreidberg15b, line16, evans16, iyer16}. Most of these detections come from \HST/WFC3 transmission spectra in the near-IR (1.1 - 1.7 $\mu$m), where water is the dominant absorber. 
 
+There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide, and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O). It is possible to   have been detected from the ground
 
-Much of exoplanet atmosphere characterization to date has focused on basic inventory: what atoms and molecules are present?  Several absorbers have been unambiguously identified so far, including H$_2$O, CO, Na, FIXME. 
-
-The most common is H$_2$O detections from \HST/WFC3.
-
-There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide, and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O). It is possible to   
+Additional atomic species have been detected escaping planets' upper atmospheres; we discuss these observations in more detail below in \S FIXME. 
 
 \runinhead{Absolute Abundances and Metallicity}
+Once an atom or molecule has been detected, a next step is to measure its abundance. The overall metallicity of a planet's atmosphere is 
+
+However, is challenging with transmission spectra alone, because they suffer from a degeneracy between the absorber abundance and atmospheric pressure -- abundances can only be determined to within a few orders of magnitude, even when the absorber is detected at high confidence \citep{benneke12, griffith13, kreidberg15b}. 
+
+Emission spectra are more sensitive to absolute abundance because the shape and amplitude of spectral features depends on the temperature-pressure profile. \citep{kreidberg14b, line16, stevenson17}. 
+
+Cannot do with high-resolution observations.
 
 \runinhead{Abundance Ratios}
+In addition to absolute abundances, abundance \emph{ratios} are also a  
 
 \runinhead{Disequilibrium}
 
+\runinhead{What about Neptune-size and smaller planets?}
+Nearly all the detections listed above are for hot Jupiters. There are two hot Neptunes where: HAT-P-11b, where water absorption was detected by \cite{fraine15}, and GJ 436b, which has \citep{stevenson10, morley17, FIXME}. 
 
 \subsection{Atmospheric Escape}
 
@@ -333,11 +334,11 @@ Temperature pressure profile
 \subsection{Aerosols}
 \hbindex{Aerosols} -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets as well. Transmission spectra are particularly sensitive to the presence of aerosols, due to the slant viewing geometry observed during transit \citep{fortney05}.  Aerosols have three main effects on transmission spectra:  first, they truncate absorption features (as illustrated in Figure FIXME).  They can also introduce a slope in the spectrum over wavelength intervals of several microns \citep[e.g][]{sing16}.  The third effect is scattering off cloud and haze particles at optical wavelengths, which introduces a steep increase in transit depth towards the blue \citep[e.g][]{pont08}.
 
-The first hint of extrasolar aerosols came from HD 209458b, which had a smaller than expected sodium feature relative to a clear atmosphere \citep{charbonneau02}. This observation foreshadowed a slew of spectra with truncated features \citep[e.g.][]{deming13, crossfield13, kreidberg14a, knutson14a, kreidberg15b}. Many spectra have also shown the large optical slope indicative of scattering from haze \citep[e.g][]{sing11, sing13, robinson14, dragomir15}. Transit depth offsets between 1 and 5 $\mu$m are also seen in many hot Jupiters \citep{sing16}.
+The first hint of extrasolar aerosols came from HD 209458b, which had a smaller than expected sodium feature relative to a clear atmosphere \citep{charbonneau02}. This observation foreshadowed a slew of spectra with truncated features \citep[e.g.][]{deming13, crossfield13, kreidberg14a, knutson14a, kreidberg15b}. Many spectra have also shown the large optical slope indicative of scattering from small particles \citep[e.g][]{sing11, sing13, robinson14, dragomir15}. Transit depth offsets between 1 and 5 $\mu$m are also seen in many hot Jupiters \citep{sing16}.
 
-Despite this body of evidence, the makeup of the aerosols has proven elusive. There are a number of theoretical possibilities, including equilibrium condensates such as water, salt, sulfide, or silicate clouds (depending on temperature) and photochemical hazes, e.g. hydrocarbon soots formed from photolyzed methane \citep{burrows99, kempton12, morley13, wakeford17}. Current observations lack the wavelength coverage and precision needed to distinguish between these species.  
+Despite this body of evidence, the makeup of the aerosols has proven elusive. There are a number of theoretical possibilities, including equilibrium condensates such as water, salt, sulfide, or silicate clouds (depending on temperature) and photochemical hazes, e.g. hydrocarbon soots formed from photolyzed methane \citep{burrows99, kempton12, morley13, wakeford17}. Current transmission spectra lack the wavelength coverage and precision needed to distinguish between these species in exoplanets.  In brown dwarfs, a silicate feature at 9 $\mu$m has been tentatively detected using \Spitzer/IRS \citep{cushing06}. Future observations of exoplanets could reveal features from particular grains also, which would unambiguously determine their composition \citep{wakeford15}.
 
-However, there are several indirect constraints on aerosol properties.  For example, optical phase curves of hot Jupiters are best explained by reflective clouds on their western hemispheres, composed of silicate or manganese sulfide \citep{demory13, oreshenko16, parmentier16}. Further clues come from the amplitude of spectral features. For example, the spectrum of the super-Earth GJ 1214b is featureless at high precision \citep[30 ppm,][]{kreidberg14a}.  Truncating the features to this extent requires an optically thick aerosol layer at a pressure level of 0.1 millibar, which can be achieved either by thick, lofted clouds or very efficient haze formation \citep{morley15}.  
+Meanwhile, there are several indirect constraints on aerosol properties.  For example, optical phase curves of hot Jupiters are best explained by reflective clouds on their western hemispheres, composed of silicate or manganese sulfide \citep{demory13, oreshenko16, parmentier16}. Further clues come from the amplitude of spectral features. For example, the spectrum of the super-Earth GJ 1214b is featureless at high precision \citep[30 ppm,][]{kreidberg14a}.  Truncating the features to this extent requires an optically thick aerosol layer at a pressure level of 0.1 millibar, which can be achieved either by thick, lofted clouds or very efficient haze formation \citep{morley15}.  
 
 \subsection{Demographics}
 For hot Jupiters, there is no strong correlation between the presence of clouds and any other physical parameters (temperature, surface gravity) \citep{sing16}. 
@@ -366,7 +367,7 @@ A recent exciting discovery is Proxima b, a likely terrestrial planet recieving 
 \section{Bibliography}
 
 \begin{acknowledgement}
-FIXME
+I am grateful for comments and discussion with Caroline Morley, Jayne Birkby, Jacob Bean.
 \end{acknowledgement}
 
 \bibliographystyle{spbasicHBexo}  %for bibtex
