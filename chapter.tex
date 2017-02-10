@@ -213,7 +213,7 @@ The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used f
 
 WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features (FIXME ref).  As of 2017, WFC3 measurements are the gold standard in atmosphere characterization: they are photon-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
 
-The other \HST\ instrument frequently used for exoplanet observations is STIS, a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals (e.g., sodium, potassium, magnesium), as well as the Lyman-$\alpha$ transition of atomic hydrogen. 
+The other \HST\ instrument frequently used for exoplanet observations is STIS, a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. (FIXME : MgI?, Ca?)
 
 \runinhead{Spitzer Space Telescope}
 In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m.  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in observations of thermal phase curves \citep[e.g.][]{knutson07}. 
@@ -226,14 +226,14 @@ The high resolution technique requires R > FIXME to resolve individual spectral 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
 The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good p and discuss sources of error (both astrophysical and instrumental).
 
-\subsection{Observational Design}
-Designing a successful observation is in some ways more of an art than a science -- no currently available instruments were built with transiting planets in mind, and the planet signal is often orders of magnitude smaller than the typical precision of the instrument.  But there are a few general principles that can increase the probability of success, which we summarize here:
+%\subsection{Observational Design}
+%Designing a successful observation is in some ways more of an art than a science -- no currently available instruments were built with transiting planets in mind, and the planet signal is often orders of magnitude smaller than the typical precision of the instrument.  But there are a few general principles that can increase the probability of success, which we summarize here:
 
-\begin{itemize}
-\item{\emph{The more observations the better.}}
-\item{\emph{Observe enough baseline.} All combined planet/star observations rely on differential brightness measurements -- i.e., the flux measured during transit or eclipse \emph{relative} to the brightness out of transit/eclipse. Based on photon noise alone, the minimum amount of time spent observing baseline should equal the transit/eclipse duration. For the case of short durations, one hour before and after the transit  allow }
-\item{\emph{Avoid pushing the detector to its limit.} The best targets for atmosphere characterization orbit bright stars, and a common temptation is to lengthen exposure times to collect as many of those photons as possible. However, as the detector approaches saturation its behavior is harder to  }
-\end{itemize}
+%\begin{itemize}
+%\item{\emph{The more observations the better.}}
+%\item{\emph{Observe enough baseline.} All combined planet/star observations rely on differential brightness measurements -- i.e., the flux measured during transit or eclipse \emph{relative} to the brightness out of transit/eclipse. Based on photon noise alone, the minimum amount of time spent observing baseline should equal the transit/eclipse duration. For the case of short durations, one hour before and after the transit  allow }
+%\item{\emph{Avoid pushing the detector to its limit.} The best targets for atmosphere characterization orbit bright stars, and a common temptation is to lengthen exposure times to collect as many of those photons as possible. However, as the detector approaches saturation its behavior is harder to  }
+%\end{itemize}
 
 \subsection{Light Curve Fitting}
 The reduced data consist of a time series of brightness measurements (either a ``white" light curve summed up over the entire bandpass, or spectroscopic light curves created by binning the spectrum into channels).  The most general model for the data is:
@@ -299,35 +299,33 @@ We know from the Solar System that atmospheric composition can vary widely from 
 The most abundant molecules are not necessarily the easiest to detect in a planet's spectrum. Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen and helium, though they are the dominant component by mass for giant planet atmospheres, are relatively weak absorbers. By contrast, water and other ices have large absorption cross sections thanks to millions of rotational and vibrational line transitions between the optical and the far-infrared \citep{tennyson12}.  Ices are thus expected to dominate planets' spectra.  In addition, there are a few trace species with very large cross sections (alkali metals, titanium and vanadium oxides) that may be seen \citep{seager00, fortney08}.
 
 \subsection{Detections of Atoms and Molecules}
-A major step in atmosphere characterization is simply detecting absorbing species. This was first achieved for the hot Jupiter HD 209458b with the detection of the sodium resonance doublet at 589 nm \citep{charbonneau02}. Since then, both sodium and potassium have been detected in a number of other planets \citep[e.g.][]{sing11b, jensen11, nikolov14, fischer16}.
+A major step in atmosphere characterization is simply detecting absorbing species. This was first achieved for the hot Jupiter HD 209458b with the detection of the sodium resonance doublet at 589 nm \citep{charbonneau02}. Since then, both sodium and potassium have been detected in a number of other hot Jupiters \citep[e.g.][]{sing11b, jensen11, nikolov14, fischer16}.
 
-Spectral features from water are also routinely seen \citep[e.g.][]{deming13, huitson13, mccullough14, fraine14, kreidberg14b, kreidberg15b, line16, evans16, iyer16}. Most of these detections come from \HST/WFC3 transmission spectra in the near-IR (1.1 - 1.7 $\mu$m), where water is the dominant absorber. 
+Spectral features from water are also routinely seen \citep[e.g.][]{deming13, huitson13, mccullough14, fraine14, kreidberg14b, kreidberg15b, line16, evans16}. Most of these detections come from \HST/WFC3 spectra in the near-IR (1.1 - 1.7 $\mu$m), where water is the dominant absorber. Water has also been detected from the ground \citep{birkby13, stevenson16b}.  These results (though stunning from a technical standpoint) are unsurprising, as water is expected to be common for most atmospheric compositions \citep{moses13}.
 
-There is also evidence for CO and CO$_2$ from \Spitzer\ photometry. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide, and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O). It is possible to   have been detected from the ground
+Carbon-bearing molecules have been harder to detect, mainly due to the limitations of current observing facilities. CO has been detected a few times with high-resolution ground-based observations \citep{dekok13,brogi14}.  There is also some evidence for CO and CO$_2$ absorption from \Spitzer\ photometry \citep[e.g.][]{desert09}. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O), making it a challenge to definitively identify which absorber is present. Future detectors with broader spectroscopic wavelength coverage will solve this problem.
+%A handful of other absorbers , these have yet to be spectroscopically resolved. 
+%Maybe: FeH, TiO, NH3? (Madhu's student). Further scrutiny is needed! Model selection.
 
 Additional atomic species have been detected escaping planets' upper atmospheres; we discuss these observations in more detail below in \S FIXME. 
 
-\runinhead{Absolute Abundances and Metallicity}
-Once an atom or molecule has been detected, a next step is to measure its abundance. The overall metallicity of a planet's atmosphere is 
+\runinhead{Absolute Abundances}
+Once an atom or molecule has been detected, a next step is to measure its abundance. Abundance measurements are useful because they are diagnostic of planetary formation conditions, including the surface density of solids and the relative accretion rates of gas and ice \citep[e.g.][]{fortney13, mordasini16}.  However, abundances cannot be precisely determined using transmission spectra alone. Fits to the spectra suffer from a degeneracy between the mixing ratio of the absorber and atmospheric pressure. Even when an absorber is detected at high confidence, its abundance can only be determined to within a few orders of magnitude \citep{benneke12, griffith13, kreidberg15b}. 
 
-However, is challenging with transmission spectra alone, because they suffer from a degeneracy between the absorber abundance and atmospheric pressure -- abundances can only be determined to within a few orders of magnitude, even when the absorber is detected at high confidence \citep{benneke12, griffith13, kreidberg15b}. 
-
-Emission spectra are more sensitive to absolute abundance because the shape and amplitude of spectral features depends on the temperature-pressure profile. \citep{kreidberg14b, line16, stevenson17}. 
-
-Cannot do with high-resolution observations.
-
+Emission spectra are more sensitive to absolute abundance because the shape and amplitude of spectral features depend on the temperature-pressure profile. For example, the water abundance of the hot Jupiter WASP-43b was measured to better than a factor of five  ($250 - 1100$ ppm at $1\,\sigma$ confidence), based on phase-resolved emission spectra with \HST\ and \Spitzer\ \citep{stevenson17}. These measurements indicate that exoplanets follow the Solar System trend of decreasing abundance with increasing planet mass \citep{kreidberg14b, line16}.  
+%FIXME: say something about Madhu? high-resolution observations?
+ 
 \runinhead{Abundance Ratios}
-In addition to absolute abundances, abundance \emph{ratios} are also a  
+In addition to absolute abundances, abundance \emph{ratios} are also a powerful constraint on planet origins. The  
 
 \runinhead{Disequilibrium}
-
-\runinhead{What about Neptune-size and smaller planets?}
-Nearly all the detections listed above are for hot Jupiters. There are two hot Neptunes where: HAT-P-11b, where water absorption was detected by \cite{fraine15}, and GJ 436b, which has \citep{stevenson10, morley17, FIXME}. 
+GJ 436b.
 
 \subsection{Atmospheric Escape}
 
 \subsection{Climate}
 Temperature pressure profile
+decreasing temperature with altitude
 
 \runinhead{Winds}
 
@@ -336,15 +334,18 @@ Temperature pressure profile
 
 The first hint of extrasolar aerosols came from HD 209458b, which had a smaller than expected sodium feature relative to a clear atmosphere \citep{charbonneau02}. This observation foreshadowed a slew of spectra with truncated features \citep[e.g.][]{deming13, crossfield13, kreidberg14a, knutson14a, kreidberg15b}. Many spectra have also shown the large optical slope indicative of scattering from small particles \citep[e.g][]{sing11, sing13, robinson14, dragomir15}. Transit depth offsets between 1 and 5 $\mu$m are also seen in many hot Jupiters \citep{sing16}.
 
-Despite this body of evidence, the makeup of the aerosols has proven elusive. There are a number of theoretical possibilities, including equilibrium condensates such as water, salt, sulfide, or silicate clouds (depending on temperature) and photochemical hazes, e.g. hydrocarbon soots formed from photolyzed methane \citep{burrows99, kempton12, morley13, wakeford17}. Current transmission spectra lack the wavelength coverage and precision needed to distinguish between these species in exoplanets.  In brown dwarfs, a silicate feature at 9 $\mu$m has been tentatively detected using \Spitzer/IRS \citep{cushing06}. Future observations of exoplanets could reveal features from particular grains also, which would unambiguously determine their composition \citep{wakeford15}.
+Despite this body of evidence, the makeup of the aerosols has proven elusive. There are a number of theoretical possibilities, including equilibrium condensates such as water, salt, sulfide, or silicate clouds (depending on temperature) and photochemical hazes, e.g. hydrocarbon soots formed from photolyzed methane \citep{burrows99, kempton12, morley13, wakeford17}. Current transmission spectra lack the wavelength coverage and precision needed to distinguish between these species in exoplanets.  In brown dwarfs, a silicate feature at 9 $\mu$m has been tentatively detected using \Spitzer/IRS \citep{cushing06}. Future observations of exoplanets could also reveal features from particular grains, which would unambiguously determine their composition \citep{wakeford15}.
 
 Meanwhile, there are several indirect constraints on aerosol properties.  For example, optical phase curves of hot Jupiters are best explained by reflective clouds on their western hemispheres, composed of silicate or manganese sulfide \citep{demory13, oreshenko16, parmentier16}. Further clues come from the amplitude of spectral features. For example, the spectrum of the super-Earth GJ 1214b is featureless at high precision \citep[30 ppm,][]{kreidberg14a}.  Truncating the features to this extent requires an optically thick aerosol layer at a pressure level of 0.1 millibar, which can be achieved either by thick, lofted clouds or very efficient haze formation \citep{morley15}.  
 
 \subsection{Demographics}
-For hot Jupiters, there is no strong correlation between the presence of clouds and any other physical parameters (temperature, surface gravity) \citep{sing16}. 
+For hot Jupiters, there is no strong correlation between the presence of clouds and any other physical parameters (temperature, surface gravity) \citep{sing16}. Half of hot jups show water (Iyer 2016).
 C/O - all < 1
 super-Earths - flat spectra, either high MMW or clouds/haze or both
 inversions - decrease T/P except for hottest planets 
+
+\runinhead{What about Neptune-size and smaller planets?}
+Nearly all the detections listed above are for hot Jupiters. There are two hot Neptunes where: HAT-P-11b, where water absorption was detected by \cite{fraine15}, and GJ 436b, which has \citep{stevenson10, morley17, FIXME}. 
 
 \section{Future Prospects}
 We are on the threshold of a revolution in exoplanet atmosphere characterization thanks to several upcoming observing facilities. 
@@ -362,15 +363,16 @@ The second game-changer is \JWST. The primary technical limitations in atmospher
 So far the smallest planet with detected features is HAT-P-11b, a Neptune-size object with an equilibrium temperature of FIXME \citep{fraine14}.
 The nearest transiting, Earth-like planet is predicted to be 12 parsecs away \citep{dressing16}. FIXME
 
-A recent exciting discovery is Proxima b, a likely terrestrial planet recieving 70\% Earth insolation \citep{anglada16}. 
+A recent exciting discovery is Proxima b, a likely terrestrial planet receiving 70\% Earth insolation \citep{anglada16}. 
 
 \section{Bibliography}
 
 \begin{acknowledgement}
-I am grateful for comments and discussion with Caroline Morley, Jayne Birkby, Jacob Bean.
+Caroline Morley, Hannah Diamond-Lowe
 \end{acknowledgement}
 
 \bibliographystyle{spbasicHBexo}  %for bibtex
 \bibliography{chapter} %for bibtex-example
 
 \end{document}
+
