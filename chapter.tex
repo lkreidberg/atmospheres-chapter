@@ -292,6 +292,7 @@ Systematic errors also arise from incorrect models for the stellar or planet flu
 
 \section{Major Results from Atmosphere Studies}
 In this section we discuss observational highlights, with a focus on transmission and emission spectroscopy.  For more comprehensive reviews, see \cite{crossfield15} and \cite{deming17}. %Before diving into results, let us briefly set the stage with some expectations for what we might observe. 
+%FIXME: say we focus primarily on spectroscopy?
 
 \subsection{Expectations}
 We know from the Solar System that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation.  Planets form in disks of gas and dust surrounding young stars.  The disk has similar composition to the host star: predominantly hydrogen and helium, with smaller amounts of metals (the most abundant being oxygen, carbon, and nitrogen; \citealt{anders89}).  We would therefore expect atmospheres to be made up of these elements.  A further requirement is that the atmosphere be composed of species that are in vapor form at planetary temperatures and pressures (so-called \hbindex{volatiles}).  Molecules that satisfy both criteria include H$_2$, He, H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$.  We note that in the nomenclature of planetary science, H$_2$ and He are referred to as \hbindex{gases}, and the other molecules are \hbindex{ices} \citep{depater15}.
@@ -314,9 +315,10 @@ Once an atom or molecule has been detected, a next step is to measure its abunda
 
 Emission spectra are more sensitive to absolute abundance because the shape and amplitude of spectral features depend on the temperature-pressure profile. For example, the water abundance of the hot Jupiter WASP-43b was measured to better than a factor of five  ($250 - 1100$ ppm at $1\,\sigma$ confidence), based on phase-resolved emission spectra with \HST\ and \Spitzer\ \citep{stevenson17}. These measurements indicate that exoplanets follow the Solar System trend of decreasing abundance with increasing planet mass \citep{kreidberg14b, line16}.  
 %FIXME: say something about Madhu? high-resolution observations?
+%Say how this precision stacks up with solar system
  
 \runinhead{Abundance Ratios}
-In addition to absolute abundances, abundance \emph{ratios} also constrain planet origins \citep{mordasini16}. These ratios are sensitive to the planet's formation location: as the disk temperature drops with radial distance from the star, molecules reach their freezing points, beginning with H$_2$O and followed by CO and CO$_2$ \citep{oberg11}. These frost lines lead to variation in abundance ratios for gas versus solid material. 
+In addition to absolute abundances, abundance \emph{ratios} also constrain planet origins \citep{FIXME}. These ratios are sensitive to the planet's formation location: as the disk temperature drops with radial distance from the star, molecules reach their freezing points, beginning with H$_2$O and followed by CO and CO$_2$ \citep{oberg11}. These frost lines lead to variation in abundance ratios for gas versus solid material. 
 
 The most common measure of a planet's abundance pattern is its carbon-to-oxygen ratio (C/O), which can be inferred from its atmospheric chemistry \citep{madhusudhan12}. For example, if C/O $>$ 1, water is expected to be depleted, whereas methane is enhanced.  Despite early evidence for a carbon-rich atmospheric composition on WASP-12b \citep{madhusudhan11}, further scrutiny of hot Jupiters has revealed $C/O < 1$ in all cases \citep{line14, kreidberg15b, benneke15}.  More precise estimates of C/O and other ratios will be possible with future instruments that have spectroscopic coverage of additional molecules. 
 
@@ -325,14 +327,23 @@ GJ 436b.
 
 \subsection{Atmospheric Escape}
 
-\subsection{Climate}
-Temperature pressure profile
+\subsection{Climate and Energy Budget}
+With thermal emission measurements, it is possible to characterize a planet's climate. 
+
+One  hemisphere average is the brightness temperature planet-to-star flux ratio 
+
+\hbindex{temperature-pressure profile}
 decreasing temperature with altitude
+hot spot offset - winds
+thermal inversions: Knutson; Diamond-Lowe, Schwarz
+
+Feng 2016
+Stevenson 2014
 
 \runinhead{Winds}
 
 \subsection{Aerosols}
-\hbindex{Aerosols} -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets as well. Transmission spectra are particularly sensitive to the presence of aerosols, due to the slant viewing geometry observed during transit \citep{fortney05}.  Aerosols have three main effects on transmission spectra:  first, they truncate absorption features (as illustrated in Figure FIXME).  They can also introduce a slope in the spectrum over wavelength intervals of several microns \citep[e.g][]{sing16}.  The third effect is scattering off cloud and haze particles at optical wavelengths, which introduces a steep increase in transit depth towards the blue \citep[e.g][]{pont08}.
+\hbindex{Aerosols} -- an umbrella term for clouds and hazes -- are ubiquitous in the Solar System and are proving to be common in exoplanets as well. Transmission spectra are particularly sensitive to the presence of aerosols, due to the slant viewing geometry observed during transit \citep{fortney05}.  Aerosols have three main effects on transmission spectra:  first, they truncate absorption features (as illustrated in Figure FIXME).  They can also introduce a slope in the spectrum over wavelength intervals of several microns \citep[e.g][]{sing16}.  The third effect is scattering off cloud and haze particles at optical wavelengths, which introduces a steep increase in transit depth towards the blue \citep[e.g.][]{pont08}.
 
 The first hint of extrasolar aerosols came from HD 209458b, which had a smaller than expected sodium feature relative to a clear atmosphere \citep{charbonneau02}. This observation foreshadowed a slew of spectra with truncated features \citep[e.g.][]{deming13, crossfield13, kreidberg14a, knutson14a, kreidberg15b}. Many spectra have also shown the large optical slope indicative of scattering from small particles \citep[e.g][]{sing11, sing13, robinson14, dragomir15}. Transit depth offsets between 1 and 5 $\mu$m are also seen in many hot Jupiters \citep{sing16}.
 
