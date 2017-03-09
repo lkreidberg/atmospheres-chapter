@@ -133,18 +133,33 @@
 
 \abstract{Abstract.}
 
-\section{Introduction }
-Stars are both a help and a hindrance to characterizing exoplanet atmospheres.  With the direct imaging approach described in Chapter FIXME, great effort must be undertaken to mask the star, which can outshine the planet by more than a million to one. 
+\section{The Promise of Exoplanet Atmospheres}
+Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability. To illustrate, consider the example of the Solar System terrestrial planets Earth, Venus, and Mars. All are plausible candidates to host life, and yet only one 
 
-Alternatively, one can analyze the combined light of the planet \emph{and} the star together. For this method, the star serves as a constant baseline flux source. As the planet moves through its orbit, it absorbs, re-emits, and reflects stellar light. These planetary signals can be measured differentially relative to the baseline stellar flux over time.  This strategy has been used to infer the presence , In this chapter, we overview observing techniques, observing facilities, major results.
+For gas giant planets that have retained their primordial, hydrogen-rich atmospheres. For terrestrial planets. Mars, Venus, and Earth -- all would be promising worlds to host life from 
+
+
+Making good on this opportunity is challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star. The stellar light is often Taking advantage of Characterizing exoplanet atmospheres is a 
+
+
+One approach is to analyze the combined light of the planet \emph{and} the star together. For this method, the star serves as a constant baseline flux source. As the planet moves through its orbit, it absorbs, re-emits, and reflects stellar light. These planetary signals can be measured differentially relative to the baseline stellar flux over time.  This strategy has been used to infer the presence , In this chapter, we overview observing techniques, observing facilities, major results.
 
 
 \section{Observing Techniques} 
 
 \subsection{Transit Spectroscopy}
-The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host. The resulting time series of brightness measurements is known as the transit light curve. During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the host star (as illustrated in Figure FIXME). We refer to this fraction as the \hbindex{transit depth}, $\delta = (R_p/R_s)^2$. 
+The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host star, as illustrated in Figure\,\ref{fig:geom}.  The measurement of total (star plus planet) brightness over time is known as the transit light curve.  During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the star. We refer to this fractional drop in flux as the \hbindex{transit depth}. 
 
-The key idea behind transmission spectroscopy is that the apparent size of the planet is not actually a single value: rather, it depends on the wavelength of light used for the observation.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.  To measure these variations, the light curve is binned in wavelength into spectrophotometric channels, and the light curve from each channel is fit separately with a transit model (see section FIXME).  The measured transit depths as a function of wavelength constitute the \hbindex{transmission spectrum}, so named because it arises from the transmission of stellar flux through the planet's atmosphere.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.4]{Figures/transit_geom.pdf}
+\caption{Illustration of transit and eclipse geometry.}
+\label{fig:geom}       
+\end{centering}
+\end{figure}
+
+The key idea behind transmission spectroscopy is that the planet's transit depth is \emph{wavelength-dependent}.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.  To measure these variations, the light curve is binned in wavelength into spectrophotometric channels, and the light curve from each channel is fit separately with a transit model (see FIXME).  The measured transit depths as a function of wavelength constitute the \hbindex{transmission spectrum}, so named because it arises from the transmission of stellar flux through the planet's atmosphere.
  
 Theoretical models for the transmission spectrum require radiative transfer calculation for light on the slant path through the atmosphere \citep{seager00}, a computationally intensive task. However, we can make a rough prediction of the size of features in the transmission spectrum based on the atmospheric \hbindex{scale height} $H$. The scale height is the change in altitude over which the pressure drops by a factor of $e$. Assuming hydrostatic equilibrium, 
 
@@ -223,6 +238,7 @@ The two main ground-based observing techniques -- low-resolution spectroscopy wi
 The high resolution technique requires R > FIXME to resolve individual spectral lines, as well as high S/N over wavelength regions with many lines. The state-of-the-art instrument for this type of observation is CRIRES on the VLT (FIXME), which is currently being upgraded.  Keck/NIRSPEC and HARPS also \citep{lockwood14, martins15}.
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
+\label{sec:fits}
 The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good p and discuss sources of error (both astrophysical and instrumental).
 
 %\subsection{Observational Design}
