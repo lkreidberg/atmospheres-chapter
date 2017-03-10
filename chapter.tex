@@ -134,33 +134,38 @@
 \abstract{Abstract.}
 
 \section{The Promise of Exoplanet Atmospheres}
-Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability. To illustrate, consider the example of the Solar System terrestrial planets Earth, Venus, and Mars. All are plausible candidates to host life, and yet only one 
+Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability.  Making good on this opportunity is challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star, and the star outshines the planet by a factor of at least a thousand to one. 
 
-For gas giant planets that have retained their primordial, hydrogen-rich atmospheres. For terrestrial planets. Mars, Venus, and Earth -- all would be promising worlds to host life from 
-
-
-Making good on this opportunity is challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star. The stellar light is often Taking advantage of Characterizing exoplanet atmospheres is a 
+The focus of this chapter is atmosphere characterization through analysis of the combined light from the planet and the star. This creative approach makes use of the star as a as a constant baseline flux source. As the planet moves through its orbit, it absorbs, re-emits, and reflects stellar light. These planetary signal shows up differentially relative to the baseline stellar flux over time, allowing the planet signal to be teased out from the much brighter star.
 
 
-One approach is to analyze the combined light of the planet \emph{and} the star together. For this method, the star serves as a constant baseline flux source. As the planet moves through its orbit, it absorbs, re-emits, and reflects stellar light. These planetary signals can be measured differentially relative to the baseline stellar flux over time.  This strategy has been used to infer the presence , In this chapter, we overview observing techniques, observing facilities, major results.
+In this chapter, we overview observing techniques, observing facilities, major results. 
 
 
 \section{Observing Techniques} 
 
 \subsection{Transit Spectroscopy}
-The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host star, as illustrated in Figure\,\ref{fig:geom}.  The measurement of total (star plus planet) brightness over time is known as the transit light curve.  During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the star. We refer to this fractional drop in flux as the \hbindex{transit depth}. 
+The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host star, as illustrated in Figure\,\ref{fig:geom}.  The measurement of total (star plus planet) brightness over time is known as the transit light curve.  During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the star. We refer to this fractional drop in flux as the \hbindex{transit depth}, $\delta$. 
 
 
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=.4]{Figures/transit_geom.pdf}
-\caption{Illustration of transit and eclipse geometry.}
+\caption{Illustration of transit and eclipse geometry. Over the course of the planet's orbit, it periodically passes in front of the star (a transit event) and behind (a secondary eclipse). A few key distances are labeled: the planet and stellar radii, $R_p$ and $R_s$, the atmospheric scale height $H$, and the separation of centers in the plane of the sky, $d$.}
 \label{fig:geom}       
 \end{centering}
 \end{figure}
 
 The key idea behind transmission spectroscopy is that the planet's transit depth is \emph{wavelength-dependent}.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.  To measure these variations, the light curve is binned in wavelength into spectrophotometric channels, and the light curve from each channel is fit separately with a transit model (see FIXME).  The measured transit depths as a function of wavelength constitute the \hbindex{transmission spectrum}, so named because it arises from the transmission of stellar flux through the planet's atmosphere.
  
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.8]{Figures/w12_lc.pdf}
+\caption{Transit light curve measured with the Hubble Space Telescope for the hot Jupiter WASP-12b \citep{kreidberg14b}. The systematics-corrected data (points) are shown in the top panel compared to the best fit transit model (line). The data are color coded by the observation date. Gaps in coverage are due to Earth occultation. The middle panel shows the residuals from the best fit, and the bottom panel show a histogram of the residuals compared to the expected photon noise.}
+\label{fig:lc}       
+\end{centering}
+\end{figure}
+
 Theoretical models for the transmission spectrum require radiative transfer calculation for light on the slant path through the atmosphere \citep{seager00}, a computationally intensive task. However, we can make a rough prediction of the size of features in the transmission spectrum based on the atmospheric \hbindex{scale height} $H$. The scale height is the change in altitude over which the pressure drops by a factor of $e$. Assuming hydrostatic equilibrium, 
 
 \begin{equation}
@@ -179,6 +184,7 @@ where $n$ is the number of scale heights crossed at wavelengths with high opacit
 \subsection{Occultation Spectroscopy}
 A close cousin of the transit spectroscopy method is \hbindex{occultation spectroscopy}, which measures thermal emission and reflection from the planet. Rather than observing the planet during transit, it is observed at secondary eclipse, when it passes behind the host star. The eclipse provides a baseline measurement of the stellar flux alone. When the planet rotates back into view, any increase in brightness can be attributed to the planet's thermal emission and reflected light.
 
+\runinhead{Thermal Emission}
 For the short-period planets that have been studied so far, the dominant source of thermal emission is re-radiation of incident stellar flux (rather than latent heat of formation, as seen for directly imaged planets). Thus the typical size of the emission signal can be predicted from the planet's equilibrium temperature:
 
 \begin{equation}
@@ -187,10 +193,12 @@ For the short-period planets that have been studied so far, the dominant source 
 \end{equation}
 where $F_p/F_s$ is the planet-to-star flux ratio, $B(\lambda, T)$ is the blackbody spectral radiance at temperature $T$, and $R_p/R_s$ is the planet-to-star radius ratio. Since the planet is cooler than the star, the flux ratio is larger at longer wavelengths. For example, the planet-to-star flux for the hot Jupiter HD 209458b is just 50 parts per million at 1 $\mu$m, but increases to over 1000 ppm at 4.5 $\mu$m \citep{line16}.
 
-Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is of order unity.  As opacity increases, so does the altitude of the photosphere.  Therefore, since temperature changes with altitude, the observed atmosphere may be above or below $T_{eq}$, depending on the wavelength of the measurement and the altitude it probes. 
+Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is of order unity. At more opaque wavelengths, the photosphere is at higher altitude, where the temperature may be cooler than $T_\mathrm{eq}$. The emission spectrum is therefore sensitive to both atmosphere's opacity (from which we infer chemical composition), \emph{and} its thermal structure. 
+
 
 %A useful way to describe the temperature of the photosphere is the \hbindex{brightness temperature}: the temperature a blackbody needed to replicate the observed spectral intensity at a given wavelength.
 
+\runinhead{Reflected Light}
 At short wavelengths, reflected light from the planet may also be detectable. It is convenient to quantify the amount of reflected light in terms of a ``perfect" mirror: a flat, reflecting disk with the same cross-sectional area as the planet. The ratio of reflected light from the fully illuminated planet, relative to reflection by a perfect mirror, is the geometric albedo $A_g$. The total reflected light signal is
 
 \begin{equation}
@@ -199,14 +207,14 @@ F_{reflect} = A_g(R_p/a)^2 \Phi(\alpha)
 where $a$ is the orbital separation and $\Phi(\alpha)$ is the phase function (the reflected light intensity at phase angle $\alpha$). The phase function depends on the scattering properties of the atmosphere, but analytic predictions are available for certain simplified models \citep[e.g.][]{madhu12}.  Reflected light is easiest to detect in the optical, where it dominates the thermal emission signal; however, the amplitude tends to be small \citep[typically less than 100 ppm;][]{angerhausen15}.
 
 \runinhead{Phase Curves}
-Short-period planets that are tidally locked to their host stars pose a unique opportunity for thermal emission and reflected light measurements. The rotation period for these planets is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn. A \hbindex{phase curve} observation consists of continuous time series photometry or spectroscopy of a planet over its orbit, using the stellar flux at secondary eclipse as a baseline. These observations are powerful in that they probe atmospheric physics and chemistry over a wider geographic region than transits or eclipses alone; however, they are challenging from a technical standpoint because they require long stares at a single object. %In principle it is possible to apply this technique to longer period planets that are not tidally locked; however, in addition to the feasibility challenge the interpretation is also problematic. 
+In addition to characterizing thermal emission and reflected light from secondary eclipses, it is also possible to observe a full-orbit \hbindex{phase curve}. These observations consists of continuous time series photometry or spectroscopy of a planet over its entire orbital period, using the secondary eclipse as a baseline measurement of the stellar flux alone.  The best targets for phase curves are short-period planets that are tidally locked to their host stars. For these planets, the rotation period is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn.  Phase curve observations are powerful because they probe atmospheric physics and chemistry over a wider geographic region than transits or eclipses. %However, they are challenging from a technical standpoint because they require long stares at a single object. %In principle it is possible to apply this technique to longer period planets that are not tidally locked; however, in addition to the feasibility challenge the interpretation is also problematic. 
 
 \runinhead{Eclipse Mapping}
-All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which relies on precise observations of secondary eclipse ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail \citep{rauscher07}. In particular, for planets with a nonzero impact parameter, the eclipse mapping technique is sensitive to changes in brightness with latitude (as higher latitudes are first to enter and exit eclipse). 
+All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which requires precise observations of the secondary eclipse light curve during ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail \citep{rauscher07}.  This is the only combined light technique that is sensitive to the planet's brightness as a function of \emph{latitude} (because higher latitudes are first to enter and exit eclipse).
 % This approach is based on the fact that planets are not uniformly bright. In the case of a hot gas giant, the hottest part of the atmosphere may be offset from the substellar point due to atmospheric circulation. For a terrestrial planet, continents and oceans with varying reflectivity may be present. 
 
 \subsection{Ground-Based}
-The observing techniques described above are best suited to space telescopes: Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing time-correlated red noise in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
+The observing techniques described above are best suited to space telescopes: Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing systematic trends in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
 
 \runinhead{Photometry and Multi-Object Spectrographs}
 One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  %The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
@@ -217,7 +225,7 @@ The same principle applies to spectroscopic observations, but requires a more sp
 Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. 
 
 \section{Observing Facilities}
-Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent \citep[e.g.][]{evans16}. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of January 2017).
+Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of 2017).
 
 \subsection{Space-Based}
 Observing exoplanets from space is advantageous in several ways. First, space telescopes are free from atmospheric turbulence that adds systematic noise to light curves (see Section FIXME for more on red noise). In addition, wavelength regions that are blocked by the Earth's atmosphere become accessible (e.g., ultra-violet and water absorption bands).  Space-based detectors can also be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.
@@ -225,9 +233,9 @@ Observing exoplanets from space is advantageous in several ways. First, space te
 \runinhead{Hubble Space Telescope}
 The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the Wide Field Camera 3 (WFC3) and the Space Telescope Imaging Spectrograph (STIS). 
 
-WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features (FIXME ref).  As of 2017, WFC3 measurements are the gold standard in atmosphere characterization: they are photon-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
+WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features.  As of 2017, WFC3 measurements are the gold standard in atmosphere characterization: they are photon-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
 
-The other \HST\ instrument frequently used for exoplanet observations is STIS, a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. (FIXME : MgI?, Ca?)
+The other \HST\ instrument frequently used for exoplanet observations is STIS, a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. (FIXME : MgI?, Ca?). FIXME: say some more here.
 
 \runinhead{Spitzer Space Telescope}
 In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m.  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in observations of thermal phase curves \citep[e.g.][]{knutson07}. 
@@ -235,11 +243,11 @@ In addition to \HST, the other space-based observing facility is \Spitzer, an 85
 \runinhead{Ground-based}
 The two main ground-based observing techniques -- low-resolution spectroscopy with wide slits and high resolution observations -- both require specialized instruments. For the wide slit approach, there are only a few observatories that have multi-object spectrographs with a custom slit mask option. These include Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
 
-The high resolution technique requires R > FIXME to resolve individual spectral lines, as well as high S/N over wavelength regions with many lines. The state-of-the-art instrument for this type of observation is CRIRES on the VLT (FIXME), which is currently being upgraded.  Keck/NIRSPEC and HARPS also \citep{lockwood14, martins15}.
+The high resolution technique requires resolution $R\sim100000$ to detect individual spectral lines, as well as high S/N over wavelength regions with many lines. The state-of-the-art instrument for this type of observation is CRIRES on the VLT (FIXME), which is currently being upgraded.  Keck/NIRSPEC and HARPS also \citep{lockwood14, martins15}.
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
 \label{sec:fits}
-The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good p and discuss sources of error (both astrophysical and instrumental).
+The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good practices and discuss sources of error (both astrophysical and instrumental).
 
 %\subsection{Observational Design}
 %Designing a successful observation is in some ways more of an art than a science -- no currently available instruments were built with transiting planets in mind, and the planet signal is often orders of magnitude smaller than the typical precision of the instrument.  But there are a few general principles that can increase the probability of success, which we summarize here:
@@ -258,7 +266,7 @@ F(t) = S(t) \times T(t) \times E(t) \times \phi(t)
 \end{equation}
 where $S(t)$ is the systematics model (for signals that are not astrophysical; e.g., a linear trend with time), $T(t)$ is the transit model, $E(t)$ is the eclipse, and $\phi(t)$ is the phase variation from reflected and emitted light. In cases where only a transit or eclipse is observed, the phase variation can usually be neglected.
 
-Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}.  FIXME say more about limb darkening.
+FIXME: rewrite this paragraph. Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}.  FIXME say more about limb darkening.
 
 %The physical parameters for the orbit are the period $P$, time of inferior conjunction $t_0$, orbital separation $a$, inclination $i$, eccentricity $e$.  The orbital solution can be obtained via Kepler's law \citep{murray99}.
 The eclipse model is a more straightforward calculation: 
