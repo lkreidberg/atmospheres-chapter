@@ -241,10 +241,12 @@ In addition to \HST, the other space-based observing facility is \Spitzer, an 85
 The two main ground-based observing techniques -- low-resolution spectroscopy with wide slits and high resolution observations -- both require specialized instruments. For the wide slit approach, there are only a few observatories that have multi-object spectrographs with a custom slit mask option. Several that have been used for exoplanet observations are VLT/FORS2, Magellan/IMACS, Keck/MOSFIRE, MMT/MMIRS, Gemini/GMOS, and Magellan/LDSS3-C \citep{bean10, jordan13, crossfield13, bean13, stevenson14c, stevenson16b}.
 
 The high resolution technique also requires specific capabilities: resolution $R\sim100000$ to detect individual spectral lines, as well as high S/N over wavelength regions with many lines. Most detections using this technique have come from VLT/CRIRES \citep[e.g.][]{snellen10}.  Keck/NIRSPEC and HARPS have also been used \citep{lockwood14, martins15}.  
-\subsection{Reliability and Precision}
-It is important to consider the reliability of results from different instruments for dete 
-%As of 2017, WFC3 spectra are the gold standard in atmosphere characterization: they are photon noise-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
-The comparison star technique can yield light curves that are within a factor of a few times the photon noise limit, but the transmission spectra have not been as robust as for space-based data, perhaps due to challenges in accurately estimating uncertainties in the presence of correlated noise \citep[e.g.][]{}.  FIXME
+\subsection{Reliability}
+We pause here for a brief note on reliability. Atmosphere characterization pushes the available instruments to a level of precision they were not designed for, and several high-profile early results were later disputed \citep[e.g.][]{tinetti07, swain08, gibson11}.
+
+As observing and analysis techniques have matured, space-based data have emerged as the gold standard.  They are photon noise-limited, repeatable, and reproducible by a range of groups \citep[e.g.][]{deming13, kreidberg14a, ingalls16}. The best achieved precision to date is 15 ppm on the emission spectrum of HD 209458b at a resolution $R\sim 30$ \citep{line16}, based on five secondary eclipse observations.
+
+Ground-based observations have not been as thoroughly vetted as space-based data.  The comparison star technique can yield light curves that are within a factor of a few times the photon noise limit, but it is a challenge to estimate uncertainties correctly in the presence of residual correlated noise \citep[e.g.][]{jordan13, beatty16}.  Further study is needed to asssess the repeatability of ground-based measurements. 
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
 The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good practices and discuss sources of error (both astrophysical and instrumental).
