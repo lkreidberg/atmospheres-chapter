@@ -136,7 +136,7 @@
 \section{The Promise of Exoplanet Atmospheres}
 Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability.  Making good on this opportunity is challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star, and the star outshines the planet by a factor of at least a thousand to one. 
 
-The subject of this chapter is atmosphere characterization through analysis of the combined light from the planet and the star. This approach is best suited to transiting planets, which periodically pass in front of and behind their host stars. During a transit, a small fraction of the stellar light filters through the planet's atmosphere on its path to us. When the planet is eclipsed, its thermal emission and reflection are blocked.  With meticulous observations, these effects can be measured relative to the constant baseline flux from the star. The resulting inferences of planetary atmospheric properties are remarkbly detailed, given that they were based solely on point sources of light hundreds of parsecs distant.
+The subject of this chapter is atmosphere characterization through analysis of the combined light from the planet and the star. This approach is best suited to transiting planets, which periodically pass in front of and behind their host stars. During a transit, a small fraction of the stellar light filters through the planet's atmosphere on its path to us. When the planet is eclipsed, its thermal emission and reflection are blocked.  With meticulous observations, these effects can be measured relative to the constant baseline flux from the star. The resulting inferences of planetary atmospheric properties are remarkably detailed, given that they were based solely on point sources of light hundreds of parsecs distant.
 
 In this chapter, we review combined light observing techniques, discuss current observational facilities and best practices, and highlight major science results.
 
@@ -154,7 +154,7 @@ The most widely used combined-light technique is transmission spectroscopy. For 
 \end{centering}
 \end{figure}
 
-The key idea behind transmission spectroscopy is that the planet's transit depth is \emph{wavelength-dependent}.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.  To measure these variations, the light curve is binned in wavelength into spectrophotometric channels, and the light curve from each channel is fit separately with a transit model (see FIXME).  The measured transit depths as a function of wavelength constitute the \hbindex{transmission spectrum}, so named because it arises from the transmission of stellar flux through the planet's atmosphere.
+The key idea behind transmission spectroscopy is that the planet's transit depth is \emph{wavelength-dependent}.  At wavelengths where the atmosphere is relatively more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.  To measure these variations, the light curve is binned in wavelength into spectrophotometric channels, and the light curve from each channel is fit separately with a transit model.  The measured transit depths as a function of wavelength constitute the \hbindex{transmission spectrum}, so named because it arises from the transmission of stellar flux through the planet's atmosphere.
  
 \begin{figure}
 \begin{centering}
@@ -176,7 +176,7 @@ The amplitude of spectral features in transmission is then:
 \delta_\lambda &=& \frac{(R_p + nH)^2}{R_s^2} - \frac{R_p^2}{R_s^2}\\
  & \approx & 2R_pH/R_s^2
 \end{eqnarray} 
-where $n$ is the number of scale heights crossed at wavelengths with high opacity (typically around two for cloud-free atmospheres, \cite{stevenson16}. The ideal candidates for transmission spectroscopy is a planet with high equilibrium temperature, a small host star, low surface gravity, and a low mean molecular mass atmosphere. Even for the best cases, the amplitude of spectral features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. 
+where $n$ is the number of scale heights crossed at wavelengths with high opacity (typically around two for cloud-free atmospheres; \cite{stevenson16}. The ideal candidates for transmission spectroscopy is a planet with high equilibrium temperature, a small host star, low surface gravity, and a low mean molecular mass atmosphere. Even for the best cases, the amplitude of spectral features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. 
 
 
 \subsection{Occultation Spectroscopy}
@@ -217,7 +217,7 @@ The observing techniques described above are best suited to space telescopes: Ea
 \runinhead{Photometry and Multi-Object Spectrographs}
 One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  %The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
 
-The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid these slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. This method produces close to space-telescope quality precision \citep[e.g.][]{}.  
+The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid time-dependent slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. %This method produces close to space-telescope quality precision \citep[e.g.][]{}.  
 
 \runinhead{High Resolution Spectrographs}
 Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. 
@@ -226,25 +226,25 @@ Another creative ground-based technique uses high resolution spectroscopy to det
 Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of 2017).
 
 \subsection{Space-Based}
-Observing exoplanets from space is advantageous in several ways. First, space telescopes are free from atmospheric turbulence that adds systematic noise to light curves (see Section FIXME for more on red noise). In addition, wavelength regions that are blocked by the Earth's atmosphere become accessible (e.g., ultra-violet and water absorption bands).  Space-based detectors can also be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.
+Observing exoplanets from space is advantageous in several ways. First, space telescopes are free from atmospheric turbulence that adds systematic noise to light curves. In addition, wavelengths where the Earth's atmosphere is strongly absorbing become accessible (e.g., ultra-violet and water absorption bands).  Space-based detectors can also be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.
 
 \runinhead{Hubble Space Telescope}
-The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the Wide Field Camera 3 (WFC3) and the Space Telescope Imaging Spectrograph (STIS). 
+The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the \hbindex{Wide Field Camera 3} (WFC3) and the \hbindex{Space Telescope Imaging Spectrograph} (STIS).  WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features.  STIS has complementary capabilities: it is a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. 
 
-WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features.  As of 2017, WFC3 measurements are the gold standard in atmosphere characterization: they are photon-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
+%As of 2017, WFC3 spectra are the gold standard in atmosphere characterization: they are photon noise-limited, highly repeatable, and precise \citep[e.g.][]{deming13, kreidberg14a}. The best achieved precision to date is 15 ppm on the eclipse depths for HD 209458b at a resolution $R\sim 30$ \citep{line16}. FIXME NICMOS?
 
-The other \HST\ instrument frequently used for exoplanet observations is STIS, a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. (FIXME : MgI?, Ca?). FIXME: say some more here.
 
 \runinhead{Spitzer Space Telescope}
-In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m.  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in observations of thermal phase curves \citep[e.g.][]{knutson07}. 
+In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m.  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in long-duration observations of thermal phase curves \citep[e.g.][]{knutson07}. 
 
-\runinhead{Ground-based}
+\subsection{Ground-based}
 The two main ground-based observing techniques -- low-resolution spectroscopy with wide slits and high resolution observations -- both require specialized instruments. For the wide slit approach, there are only a few observatories that have multi-object spectrographs with a custom slit mask option. These include Magellan/LDSS3c, Gemini/GMOS, Keck/, FIXME.  
 
-The high resolution technique requires resolution $R\sim100000$ to detect individual spectral lines, as well as high S/N over wavelength regions with many lines. The state-of-the-art instrument for this type of observation is CRIRES on the VLT (FIXME), which is currently being upgraded.  Keck/NIRSPEC and HARPS also \citep{lockwood14, martins15}.
+The high resolution technique requires resolution $R\sim100000$ to detect individual spectral lines, as well as high S/N over wavelength regions with many lines. Most detections using this technique have come from VLT/CRIRES so far (e.g., ). Near-infrared, high-resolution spectrographs are also promising. FIXME
+
+Most observations VLT (FIXME), which is currently being upgraded.  Keck/NIRSPEC and HARPS also \citep{lockwood14, martins15}.
 
 \section{Best Practices for Achieving Precise and Accurate Measurements}
-\label{sec:fits}
 The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good practices and discuss sources of error (both astrophysical and instrumental).
 
 %\subsection{Observational Design}
@@ -256,7 +256,7 @@ The basic format for observing transiting planets is time series spectroscopy or
 %\item{\emph{Avoid pushing the detector to its limit.} The best targets for atmosphere characterization orbit bright stars, and a common temptation is to lengthen exposure times to collect as many of those photons as possible. However, as the detector approaches saturation its behavior is harder to  }
 %\end{itemize}
 
-\subsection{Light Curve Fitting}
+\subsection{Light Curve Fitting} 
 The reduced data consist of a time series of brightness measurements (either a ``white" light curve summed up over the entire bandpass, or spectroscopic light curves created by binning the spectrum into channels).  The most general model for the data is:
 
 \begin{equation}
@@ -400,7 +400,7 @@ A recent exciting discovery is Proxima b, a likely terrestrial planet receiving 
 \section{Bibliography}
 
 \begin{acknowledgement}
-Caroline Morley, Hannah Diamond-Lowe
+Caroline Morley, Hannah Diamond-Lowe, Tyler Robinson
 \end{acknowledgement}
 
 \bibliographystyle{spbasicHBexo}  %for bibtex
