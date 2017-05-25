@@ -159,7 +159,7 @@ The key idea behind transmission spectroscopy is that the planet's transit depth
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=.8]{Figures/w12_lc.pdf}
-\caption{Transit light curve measured with the Hubble Space Telescope for the hot Jupiter WASP-12b \citep{kreidberg14b}. The systematics-corrected data (points) are shown in the top panel compared to the best fit transit model (line). The data are color coded by the observation date. Gaps in coverage are due to Earth occultation. The middle panel shows the residuals from the best fit, and the bottom panel show a histogram of the residuals compared to the expected photon noise.}
+\caption{Transit light curve measured with the Hubble Space Telescope for the hot Jupiter WASP-12b \citep{kreidberg15b}. The systematics-corrected data (points) are shown in the top panel compared to the best fit transit model (line). The data are color coded by the observation date. Gaps in coverage are due to Earth occultation. The middle panel shows the residuals from the best fit, and the bottom panel show a histogram of the residuals compared to the expected photon noise.}
 \label{fig:lc}       
 \end{centering}
 \end{figure}
@@ -176,7 +176,17 @@ The amplitude of spectral features in transmission is then:
 \delta_\lambda &=& \frac{(R_p + nH)^2}{R_s^2} - \frac{R_p^2}{R_s^2}\\
  & \approx & 2R_pH/R_s^2
 \end{eqnarray} 
-where $n$ is the number of scale heights crossed at wavelengths with high opacity (typically around two for cloud-free atmospheres; \cite{stevenson16}. The ideal candidates for transmission spectroscopy is a planet with high equilibrium temperature, a small host star, low surface gravity, and a low mean molecular mass atmosphere. Even for the best cases, the amplitude of spectral features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. 
+where $n$ is the number of scale heights crossed at wavelengths with high opacity (typically around two for cloud-free atmospheres; \cite{stevenson16}. The ideal candidates for transmission spectroscopy is a planet with high equilibrium temperature, a small host star, low surface gravity, and a low mean molecular mass atmosphere. Even for these ideal cases, however, the amplitude of spectral features is just $\delta_\lambda \sim0.1\%$ \citep[e.g. WASP 121-b;][]{evans16}. For Earth-like planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. 
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.8]{Figures/w43.pdf}
+\caption{Thermal emission and transission spectra for the hot Jupiter WASP-43b \citep{kreidberg14b}. Water absorption FIXME: permissions.} 
+\label{fig:spectra}       
+\end{centering}
+\end{figure}
+
+Theoretical models for the transmission spectrum require radiative transfer calculation for light on the slant path through the atmosphere \citep{seager00}, a computationally intensive task. However, we can make a rough prediction of the size of features in the transmission spectrum based on the atmospheric \hbindex{scale height} $H$. The scale height is the change in altitude over which the pressure drops by a factor of $e$. Assuming hydrostatic equilibrium, 
 
 
 \subsection{Occultation Spectroscopy}
@@ -191,7 +201,7 @@ For the short-period planets that have been studied so far, the dominant source 
 \end{equation}
 where $F_p/F_s$ is the planet-to-star flux ratio, $B(\lambda, T)$ is the blackbody spectral radiance at temperature $T$, and $R_p/R_s$ is the planet-to-star radius ratio. Since the planet is cooler than the star, the flux ratio is larger at longer wavelengths. For example, the planet-to-star flux for the hot Jupiter HD 209458b is just 50 parts per million at 1 $\mu$m, but increases to over 1000 ppm at 4.5 $\mu$m \citep{line16}.
 
-Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is of order unity. At more opaque wavelengths, the photosphere is at higher altitude, where the temperature may be cooler than $T_\mathrm{eq}$. The emission spectrum is therefore sensitive to both atmosphere's opacity (from which we infer chemical composition), \emph{and} its thermal structure. 
+Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is of order unity. At more opaque wavelengths, the photosphere is at higher altitude, where the temperature may be cooler than $T_\mathrm{eq}$. The emission spectrum is therefore sensitive to both atmosphere's opacity \emph{and} its thermal structure. 
 
 
 %A useful way to describe the temperature of the photosphere is the \hbindex{brightness temperature}: the temperature a blackbody needed to replicate the observed spectral intensity at a given wavelength.
@@ -211,72 +221,72 @@ In addition to characterizing thermal emission and reflected light from secondar
 All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which requires precise observations of the secondary eclipse light curve during ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail \citep{rauscher07}.  This is the only combined light technique that is sensitive to the planet's brightness as a function of \emph{latitude} (because higher latitudes are first to enter and exit eclipse).
 % This approach is based on the fact that planets are not uniformly bright. In the case of a hot gas giant, the hottest part of the atmosphere may be offset from the substellar point due to atmospheric circulation. For a terrestrial planet, continents and oceans with varying reflectivity may be present. 
 
-\subsection{Ground-Based}
-The observing techniques described above are best suited to space telescopes: Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing systematic trends in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
+%\subsection{Ground-Based}
+%The observing techniques described above are best suited to space telescopes: Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing systematic trends in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
 
-\runinhead{Photometry and Multi-Object Spectrographs}
-One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  %The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
+%\runinhead{Photometry and Multi-Object Spectrographs}
+%One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  %The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
 
-The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid time-dependent slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. 
-
-
-\runinhead{High Resolution Spectrographs}
-Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. 
-
-\section{Observing Facilities}
-Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of 2017).
-
-\subsection{Space-Based}
-Observing exoplanets from space is advantageous in several ways. First, space telescopes are free from atmospheric turbulence that adds systematic noise to light curves. In addition, wavelengths where the Earth's atmosphere is strongly absorbing become accessible (e.g., ultra-violet and water absorption bands).  Space-based detectors can also be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.
-
-\runinhead{Hubble Space Telescope}
-The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the \hbindex{Wide Field Camera 3} (WFC3) and the \hbindex{Space Telescope Imaging Spectrograph} (STIS).  WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features.  STIS has complementary capabilities: it is a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. 
+%The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid time-dependent slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. 
 
 
+%\runinhead{High Resolution Spectrographs}
+%Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. 
 
-\runinhead{Spitzer Space Telescope}
-In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m with the \hbindex{Infrared Array Camera} (IRAC).  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in long-duration observations of thermal phase curves \citep[e.g.][]{knutson07}. 
+%\section{Observing Facilities}
+%Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of 2017).
 
-\subsection{Ground-based}
-The two main ground-based observing techniques -- low-resolution spectroscopy with wide slits and high resolution observations -- both require specialized instruments. For the wide slit approach, there are only a few observatories that have multi-object spectrographs with a custom slit mask option. Several that have been used for exoplanet observations are VLT/FORS2, Magellan/IMACS, Keck/MOSFIRE, MMT/MMIRS, Gemini/GMOS, and Magellan/LDSS3-C \citep{bean10, jordan13, crossfield13, bean13, stevenson14c, stevenson16b}.
+%\subsection{Space-Based}
+%Observing exoplanets from space is advantageous in several ways. First, space telescopes are free from atmospheric turbulence that adds systematic noise to light curves. In addition, wavelengths where the Earth's atmosphere is strongly absorbing become accessible (e.g., ultra-violet and water absorption bands).  Space-based detectors can also be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.
 
-The high resolution technique also requires specific capabilities: resolution $R\sim100000$ to detect individual spectral lines, as well as high S/N over wavelength regions with many lines. Most detections using this technique have come from VLT/CRIRES \citep[e.g.][]{snellen10}.  Keck/NIRSPEC and HARPS have also been used \citep{lockwood14, martins15}.  
-\subsection{Reliability}
-We pause here for a brief note on reliability. Atmosphere characterization pushes the available instruments to a level of precision they were not designed for, and several high-profile early results were later disputed \citep[e.g.][]{tinetti07, swain08, gibson11}.
+%\runinhead{Hubble Space Telescope}
+%The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the \hbindex{Wide Field Camera 3} (WFC3) and the \hbindex{Space Telescope Imaging Spectrograph} (STIS).  WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features.  STIS has complementary capabilities: it is a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. 
 
-As observing and analysis techniques have matured, space-based data have emerged as the gold standard.  They are photon noise-limited, repeatable, and reproducible by a range of groups \citep[e.g.][]{deming13, kreidberg14a, ingalls16}. The best achieved precision to date is 15 ppm on the emission spectrum of HD 209458b at a resolution $R\sim 30$ \citep{line16}, based on five secondary eclipse observations.
 
-Ground-based observations have not been as thoroughly vetted as space-based data.  The comparison star technique can yield light curves that are within a factor of a few times the photon noise limit, but it is a challenge to estimate uncertainties correctly in the presence of residual correlated noise \citep[e.g.][]{jordan13, beatty16}.  Further study is needed to asssess the repeatability of ground-based measurements. 
 
-\section{Best Practices for Achieving Precise and Accurate Measurements}
-The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good practices and discuss sources of error (both astrophysical and instrumental).
+%\runinhead{Spitzer Space Telescope}
+%In addition to \HST, the other space-based observing facility is \Spitzer, an 85 cm telescope launched in 2003. \Spitzer\ provided infrared spectroscopy from 3 - 160 $\mu$m until 2009, when it ran out of coolant. Now operating in its Warm Mission, \Spitzer\ is currently capable of broadband photometry at 3.6 and 4.5 $\mu$m with the \hbindex{Infrared Array Camera} (IRAC).  \Spitzer's unique strength is its long wavelength coverage, where planet-to-star flux ratios are higher. It is therefore often used for thermal emission measurements. \Spitzer\ also provides continuous observing capability thanks to its heliocentric orbit, and has led the way in long-duration observations of thermal phase curves \citep[e.g.][]{knutson07}. 
 
-\subsection{Light Curve Fitting} 
-The reduced data consist of a time series of brightness measurements (either a ``white" light curve summed up over the entire bandpass, or spectroscopic light curves created by binning the spectrum into channels).  The most general model for the data is:
+%\subsection{Ground-based}
+%The two main ground-based observing techniques -- low-resolution spectroscopy with wide slits and high resolution observations -- both require specialized instruments. For the wide slit approach, there are only a few observatories that have multi-object spectrographs with a custom slit mask option. Several that have been used for exoplanet observations are VLT/FORS2, Magellan/IMACS, Keck/MOSFIRE, MMT/MMIRS, Gemini/GMOS, and Magellan/LDSS3-C \citep{bean10, jordan13, crossfield13, bean13, stevenson14c, stevenson16b}.
 
-\begin{equation}
-F(t) = S(t) \times T(t) \times E(t) \times \phi(t)
-\end{equation}
-where $S(t)$ is the systematics model (for signals that are not astrophysical; e.g., a linear trend with time), $T(t)$ is the transit model, $E(t)$ is the eclipse, and $\phi(t)$ is the phase variation from reflected and emitted light. In cases where only a transit or eclipse is observed, the phase variation can usually be neglected.
+%The high resolution technique also requires specific capabilities: resolution $R\sim100000$ to detect individual spectral lines, as well as high S/N over wavelength regions with many lines. Most detections using this technique have come from VLT/CRIRES \citep[e.g.][]{snellen10}.  Keck/NIRSPEC and HARPS have also been used \citep{lockwood14, martins15}.  
+%\subsection{Reliability}
+%We pause here for a brief note on reliability. Atmosphere characterization pushes the available instruments to a level of precision they were not designed for, and several high-profile early results were later disputed \citep[e.g.][]{tinetti07, swain08, gibson11}.
 
-FIXME: rewrite this paragraph. Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}.  FIXME say more about limb darkening.
+%As observing and analysis techniques have matured, space-based data have emerged as the gold standard.  They are photon noise-limited, repeatable, and reproducible by a range of groups \citep[e.g.][]{deming13, kreidberg14a, ingalls16}. The best achieved precision to date is 15 ppm on the emission spectrum of HD 209458b at a resolution $R\sim 30$ \citep{line16}, based on five secondary eclipse observations.
+
+%Ground-based observations have not been as thoroughly vetted as space-based data.  The comparison star technique can yield light curves that are within a factor of a few times the photon noise limit, but it is a challenge to estimate uncertainties correctly in the presence of residual correlated noise \citep[e.g.][]{jordan13, beatty16}.  Further study is needed to asssess the repeatability of ground-based measurements. 
+
+%\section{Best Practices for Achieving Precise and Accurate Measurements}
+%The basic format for observing transiting planets is time series spectroscopy or photometry, with the goal of detecting small deviations in brightness over time due to the planet's orbital motion.  In this section we summarize a few good practices and discuss sources of error (both astrophysical and instrumental).
+
+%\subsection{Light Curve Fitting} 
+%The reduced data consist of a time series of brightness measurements (either a ``white" light curve summed up over the entire bandpass, or spectroscopic light curves created by binning the spectrum into channels).  The most general model for the data is:
+
+%\begin{equation}
+%F(t) = S(t) \times T(t) \times E(t) \times \phi(t)
+%\end{equation}
+%where $S(t)$ is the systematics model (for signals that are not astrophysical; e.g., a linear trend with time), $T(t)$ is the transit model, $E(t)$ is the eclipse, and $\phi(t)$ is the phase variation from reflected and emitted light. In cases where only a transit or eclipse is observed, the phase variation can usually be neglected.
+
+%FIXME: rewrite this paragraph. Transit and eclipse models both depend on the planet's orbital position as a function of time. This is the classic two-body problem, solved in any dynamics textbook \citep[e.g.][]{murray99}. In addition to the orbital solution, the transit model also requires the planet-to-star radius ratio $R_p/R_s$ and the stellar brightness profile. Due to limb darkening, the stellar disk is brighter at the center than at the edge, so the fraction of flux blocked by the planet depends on its exact position.  \cite{mandel02} and \cite{gimenez06} calculated analytic solutions for the transit light curve for a range of stellar brightness profiles,  which are implemented in a number of publicly available software packages including \texttt{JKTEBOP}, \texttt{TAP}, \texttt{ExoFast}, \texttt{PyTransit}, and \texttt{batman} \citep{southworth04, gazak12, eastman13, parviainen15, kreidberg15a}.  FIXME say more about limb darkening.
 
 %The physical parameters for the orbit are the period $P$, time of inferior conjunction $t_0$, orbital separation $a$, inclination $i$, eccentricity $e$.  The orbital solution can be obtained via Kepler's law \citep{murray99}.
-The eclipse model is a more straightforward calculation: 
-\begin{equation}
-E(t) = 1 + F_p/F_s (1 - \alpha(t)) 
-\end{equation}
-where $F_p/F_s$ is the planet-to-star flux ratio and $\alpha(t)$ is the fraction of the planet disk eclipsed by the star (easily calculated from the overlapping area of two circles). This model assumes the brightness of the planet is constant, and neglects planetary limb darkening or other variation in temperature/reflectivity. In practice, these variations are only detectable for the highest precision light curves \citep{FIXME}. 
+%The eclipse model is a more straightforward calculation: 
+%\begin{equation}
+%E(t) = 1 + F_p/F_s (1 - \alpha(t)) 
+%\end{equation}
+%where $F_p/F_s$ is the planet-to-star flux ratio and $\alpha(t)$ is the fraction of the planet disk eclipsed by the star (easily calculated from the overlapping area of two circles). This model assumes the brightness of the planet is constant, and neglects planetary limb darkening or other variation in temperature/reflectivity. In practice, these variations are only detectable for the highest precision light curves \citep{FIXME}. 
 
-The planet's phase variation is typically fit using a sinusoid with period equal to the planet's orbital period, with the option of adding higher harmonics \citep[e.g.][]{knutson12, stevenson16}. Alternatively, one can fit an ``orange slice" model that assumes constant planet brightness over slices in longitude \citep{knutson07, cowan08}. 
+%The planet's phase variation is typically fit using a sinusoid with period equal to the planet's orbital period, with the option of adding higher harmonics \citep[e.g.][]{knutson12, stevenson16}. Alternatively, one can fit an ``orange slice" model that assumes constant planet brightness over slices in longitude \citep{knutson07, cowan08}. 
 %A third option is to create a physically motivated temperature map and calculate the \citep{zhang16}. 
 
-\subsection{Estimating Parameter Uncertainties}
-As for all measurements, correctly estimating the uncertainty on the planet spectrum is as important as the detection itself.  The best approach for determining the uncertainties depends primarily on whether the noise is correlated in time.  
+%\subsection{Estimating Parameter Uncertainties}
+%As for all measurements, correctly estimating the uncertainty on the planet spectrum is as important as the detection itself.  The best approach for determining the uncertainties depends primarily on whether the noise is correlated in time.  
 
-In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters, correlated uncertainties, or multi-modal solutions. Sophisticated MCMC methods have been developed to address these issues, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
+%In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters, correlated uncertainties, or multi-modal solutions. Sophisticated MCMC methods have been developed to address these issues, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
 
-Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise, which is often present in ground-based light curves \citep{}. Red noise is easily identified by eye in the residuals of the light curve fit as time-dependent trends. To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{southworth08}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
+%Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise, which is often present in ground-based light curves \citep{}. Red noise is easily identified by eye in the residuals of the light curve fit as time-dependent trends. To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{southworth08}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
 
 \subsection{Sources of Error}
 
@@ -307,24 +317,33 @@ Systematic errors also arise from incorrect models for the stellar or planet flu
 \end{itemize}
 
 \section{Major Results from Atmosphere Studies}
-In this section we discuss observational highlights, with a focus on transmission and emission spectroscopy.  For more comprehensive reviews, see \cite{crossfield15} and \cite{deming17}. %Before diving into results, let us briefly set the stage with some expectations for what we might observe. 
+In this section we discuss observational highlights, with a focus on space-based transmission and emission spectroscopy.  For recent comprehensive reviews, see \cite{crossfield15} and \cite{deming17}. %Before diving into results, let us briefly set the stage with some expectations for what we might observe. 
 %FIXME: say we focus primarily on spectroscopy?
 
 \subsection{Atmospheric Composition}
-We know from the Solar System that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation.  Planets form in disks of gas and dust surrounding young stars.  The disk has similar composition to the host star: predominantly hydrogen and helium, with smaller amounts of metals (the most abundant being oxygen, carbon, and nitrogen; \citealt{anders89}).  We would therefore expect atmospheres to be made up of these elements.  A further requirement is that the atmosphere be composed of species that are in vapor form at planetary temperatures and pressures (so-called \hbindex{volatiles}).  Molecules that satisfy both criteria include H$_2$, He, H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$.  We note that in the nomenclature of planetary science, H$_2$ and He are referred to as \hbindex{gases}, and the other molecules are \hbindex{ices} \citep{depater15}.
+\runinhead{Expectations}
+We know from the Solar System that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation,  which come from disks of gas and dust surrounding young stars.  The protoplanetary disk has similar composition to the host star: predominantly hydrogen and helium, with smaller amounts of metals (the most abundant being oxygen, carbon, and nitrogen; \citealt{anders89}).  Planetary atmospheres can be made up directly from this material (so-called primary atmospheres, swept up during the accretion phase);  alternatively, secondary atmospheres may form on terrestrial planets by volcanic outgassing or delivery of volatiles by comets.  
 
-The most abundant molecules are not necessarily the easiest to detect in a planet's spectrum, however. Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen and helium, though they are the dominant component by mass for giant planet atmospheres, are relatively weak absorbers. By contrast, water and other ices have large absorption cross sections thanks to millions of rotational and vibrational line transitions between the optical and the far-infrared \citep{tennyson12}.  Ices are thus expected to dominate planets' spectra.  In addition, there are a few trace species with very large cross sections (alkali metals, titanium and vanadium oxides) that may be seen \citep{seager00, fortney08}.
+At typical temperatures and pressures in planetary atmospheres, the dominant constituent elements (H, C, N, and O) are expected to combine into H$_2$, H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$.  In addition to these species, there are few trace atoms and molecules that may be detectable in a planet's spectrum thanks to their large absorption cross sections: namely, the alkali metals (sodium and potassium) and titanium and vanadium oxides (which may present at high temperatures; FIXME). In Figure FIXME, we show the predicted opacity of dominant absorbing species for an Earth-analog and a hot Jupiter. At any given wavelength, the absorber with the largest opacity will dominate the planet's spectrum.
+
+%We note that in the nomenclature of planetary science, H$_2$ and He are referred to as \hbindex{gases}, and the other molecules are \hbindex{ices} \citep{depater15}.  
+%The most abundant molecules are not necessarily the easiest to detect in a planet's spectrum, however. Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen and helium, though they are the dominant component by mass for giant planet atmospheres, are relatively weak absorbers. By contrast, water and other ices have large absorption cross sections thanks to millions of rotational and vibrational line transitions between the optical and the far-infrared \citep{tennyson12}.  Ices are thus expected to dominate planets' spectra.  In addition, there are a few trace species with very large cross sections (alkali metals, titanium and vanadium oxides) that may be seen \citep{seager00, fortney08}.
 
 \runinhead{Detections}
-A major step in atmosphere characterization is simply detecting absorbing species. This was first achieved for the hot Jupiter HD 209458b with the detection of the sodium resonance doublet at 589 nm \citep{charbonneau02}. Since then, both sodium and potassium have been detected in a number of other hot Jupiters \citep[e.g.][]{sing11b, jensen11, nikolov14, fischer16}.
+Many of the predictions listed above have been borne out.  The first detection of an absorbing species was the sodium resonance doublet at 589 nm in the hot Jupiter HD 209458b \citep{charbonneau02}. Since then, both sodium and potassium have been detected in a number of other hot Jupiters \citep[e.g.][]{sing11b, jensen11, nikolov14, fischer16}.
 
-Spectral features from water are also routinely seen \citep[e.g.][]{deming13, huitson13, mccullough14, fraine14, kreidberg14b, kreidberg15b, line16, evans16}. Most of these detections come from \HST/WFC3 spectra in the near-IR (1.1 - 1.7 $\mu$m), where water is the dominant absorber. Water has also been detected from the ground \citep{birkby13, stevenson16b}.  These results (though stunning from a technical standpoint) are unsurprising, as water is expected to be common for most atmospheric compositions \citep{moses13}.
+Hydrogen has also been detected, both in molecular and atomic form. \cite{lecavelier08} observed the signature of Rayleigh scattering from hydrogen in HD 209458b's optical transmission spectrum.  Lyman-$\alpha$ observations with HST/STIS have also revealed escaping atomic hydrogen around hot planets \citep[e.g.][]{vidal-madjar03, ehrenreich15}. 
 
-Carbon-bearing molecules have been harder to detect, mainly due to the limitations of current observing facilities. CO has been detected a few times with high-resolution ground-based observations \citep{dekok13,brogi14}.  There is also some evidence for CO and CO$_2$ absorption from \Spitzer\ photometry \citep[e.g.][]{desert09}. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O), making it a challenge to definitively identify which absorber is present. Future detectors with broader spectroscopic wavelength coverage will solve this problem.
-%A handful of other absorbers , these have yet to be spectroscopically resolved. 
-%Maybe: FeH, TiO, NH3? (Madhu's student). Further scrutiny is needed! Model selection.
+The most commonly observed molecular absorbing species is water, which has been seen in dozens of planets \citep[e.g.][]{deming13, huitson13, mccullough14, fraine14, kreidberg14b, kreidberg15b, line16, evans16}. Most of these results come from \HST/WFC3 spectra in the near-IR (1.1 - 1.7 $\mu$m), where water is the dominant absorber. Water has also been detected from the ground \citep{birkby13, stevenson16b}.  Figure FIXME shows an example of water features in the transmission and emission spectra of WASP-43b \citep{kreidberg14b}. 
 
-Additional atomic species have been detected escaping planets' upper atmospheres; these observations are discussed in detail in chapter FIXME. 
+Carbon-bearing molecules have proven harder to detect, mainly due to the limitations of current observing facilities. CO has been detected a few times with high-resolution ground-based data \citep{dekok13,brogi14}.  There is also evidence for CO and CO$_2$ absorption in \Spitzer\ photometry \citep[e.g.][]{desert09}. However, the \Spitzer\ bandpasses are about $1\,\mu$m wide and cover spectral features from multiple different absorbing species (CO, CO$_2$, H$_2$O), making it a challenge to definitively identify which absorber is present. 
+
+There have been tentative detections of several other species, including TiO, FeH, HCN/NH$_3$ \citep[e.g.,][]{tsiaras16, evans16, macdonald17}. Future observations with broader spectral coverage and higher precision will verify  
+
+For more on atmospheric escape, see. 
+Additional species have been detected escaping planets' upper atmospheres; these observations are discussed in detail in chapter FIXME. 
+
+Most of these detections have been for hot Jupiters, which have the largest. There have been a handful of detections for smaller, cooler planets. Water absorption was detected in the transmission spectra of two exo-Neptunes with equilibium temperatures below FIXME K \citep{fraine15, wakeford17}. To date, terrestrial planets are  
 
 \runinhead{Absolute Abundances}
 Once an atom or molecule has been detected, a next step is to measure its abundance. Abundance measurements are useful because they are diagnostic of planetary formation conditions, such as the surface density of solids and the relative accretion rates of gas and ice \citep[e.g.][]{fortney13, mordasini16}.  However, abundances cannot be precisely determined using transmission spectra alone. Fits to the spectra suffer from a degeneracy between the mixing ratio of the absorber and atmospheric pressure. Even when an absorber is detected at high confidence, its abundance can only be determined to within a few orders of magnitude \citep{benneke12, griffith13, kreidberg15b}. 
@@ -333,6 +352,14 @@ Emission spectra are more sensitive to absolute abundance because the shape and 
 %FIXME: say something about Madhu? high-resolution observations?
 %Say how this precision stacks up with solar system
  
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.8]{Figures/wakeford.jpg}
+\caption{Mass metallicity.}
+\label{fig:massZ}       
+\end{centering}
+\end{figure}
+
 \runinhead{Abundance Ratios}
 In addition to absolute abundances, abundance \emph{ratios} also constrain planet origins \citep{FIXME}. These ratios are sensitive to the planet's formation location: as the disk temperature drops with radial distance from the star, molecules reach their freezing points, beginning with H$_2$O and followed by CO$_2$ and CO \citep{oberg11}. These frost lines lead to variation in abundance ratios for gas versus solid material which can be imprinted on the composition of forming planets \citep{madhusudhan14, alidib16, mordasini16}.
 
