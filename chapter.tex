@@ -145,11 +145,10 @@ In this chapter, we review combined light observing techniques, discuss current 
 \subsection{Transit Spectroscopy}
 The most widely used combined-light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host star, as illustrated in Figure\,\ref{fig:geom}.  The measurement of total (star plus planet) brightness over time is known as the transit light curve.  During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the star. We refer to this fractional drop in flux as the \hbindex{transit depth}, $\delta$. 
 
-
 \begin{figure}
 \begin{centering}
 \includegraphics[scale=.4]{Figures/transit_geom.pdf}
-\caption{Illustration of transit and eclipse geometry. Over the course of the planet's orbit, it periodically passes in front of the star (a transit event) and behind (a secondary eclipse). A few key distances are labeled: the planet and stellar radii, $R_p$ and $R_s$, the atmospheric scale height $H$, and the separation of centers in the plane of the sky, $d$.}
+\caption{Illustration of transit and eclipse geometry. Over the course of the planet's orbit, it periodically passes in front of the star (a transit event) and behind (a secondary eclipse). A few key distances are labeled: the planet and stellar radii, $R_p$ and $R_s$, the atmospheric scale height $H$, and the separation of centers in the plane of the sky, $d$. Figure adapted from FIXME.}
 \label{fig:geom}       
 \end{centering}
 \end{figure}
@@ -203,7 +202,6 @@ where $F_p/F_s$ is the planet-to-star flux ratio, $B(\lambda, T)$ is the blackbo
 
 Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is of order unity. At more opaque wavelengths, the photosphere is at higher altitude, where the temperature may be cooler than $T_\mathrm{eq}$. The emission spectrum is therefore sensitive to both atmosphere's opacity \emph{and} its thermal structure. 
 
-
 %A useful way to describe the temperature of the photosphere is the \hbindex{brightness temperature}: the temperature a blackbody needed to replicate the observed spectral intensity at a given wavelength.
 
 \runinhead{Reflected Light}
@@ -221,27 +219,9 @@ In addition to characterizing thermal emission and reflected light from secondar
 All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the \hbindex{eclipse mapping} method, which requires precise observations of the secondary eclipse light curve during ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail \citep{rauscher07}.  This is the only combined light technique that is sensitive to the planet's brightness as a function of \emph{latitude} (because higher latitudes are first to enter and exit eclipse).
 % This approach is based on the fact that planets are not uniformly bright. In the case of a hot gas giant, the hottest part of the atmosphere may be offset from the substellar point due to atmospheric circulation. For a terrestrial planet, continents and oceans with varying reflectivity may be present. 
 
-%\subsection{Ground-Based}
-%The observing techniques described above are best suited to space telescopes: Earth's atmosphere is an impediment to measuring precise light curves because its transparency changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing systematic trends in the light curve that may be orders of magnitude larger than the signal from the planet. Despite this challenge, there are several inventive strategies that have made it possible to characterize exoplanet atmospheres from the ground. 
-
-%\runinhead{Photometry and Multi-Object Spectrographs}
-%One approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  %The same principle applies to spectroscopic observations, but requires a wide slit ($>10''$) to avoid loss of light due to time variable seeing \citep{bean10}. Custom-made slit masks are available for several multi-object spectrographs, including Magellan/LDSS3c, Gemini/GMOS, Keck/MOSFIRE?, FIXME.
-
-%The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid time-dependent slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. 
-
-
-%\runinhead{High Resolution Spectrographs}
-%Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. 
-
-%\section{Observing Facilities}
-%Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes) as well as a stable observing environment (ideally in space).  In this section, we summarize the observing facilities that are best suited to this task (current as of 2017).
-
-%\subsection{Space-Based}
-%Observing exoplanets from space is advantageous in several ways. First, space telescopes are free from atmospheric turbulence that adds systematic noise to light curves. In addition, wavelengths where the Earth's atmosphere is strongly absorbing become accessible (e.g., ultra-violet and water absorption bands).  Space-based detectors can also be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.
 
 %\runinhead{Hubble Space Telescope}
 %The 2.7 m \emph{Hubble Space Telescope} (\HST) has two instruments widely used for atmosphere studies: the \hbindex{Wide Field Camera 3} (WFC3) and the \hbindex{Space Telescope Imaging Spectrograph} (STIS).  WFC3 is \HST's newest detector (installed in 2009) and succeeds NICMOS (the Near Infrared Camera and Multi-Object Spectrometer). It provides near-infrared, low-resolution spectroscopy from $0.8 - 1.7$ $\mu$m, where water molecules have strong absorption features.  STIS has complementary capabilities: it is a UV/optical instrument sensitive to the wavelength range $0.1 - 1 \, \mu$m. This range covers absorption lines from atomic alkali metals, as well as the Lyman-$\alpha$ transition of atomic hydrogen. 
-
 
 
 %\runinhead{Spitzer Space Telescope}
@@ -288,26 +268,29 @@ All of the occultation spectroscopy techniques described above rely on a hemisph
 
 %Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise, which is often present in ground-based light curves \citep{}. Red noise is easily identified by eye in the residuals of the light curve fit as time-dependent trends. To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{southworth08}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
 
-\subsection{Sources of Error}
+\section{Practical Considerations}
+Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes), a stable observing environment, and detailed knowledge of the planet's host star.  In this section, we summarize current observing facilities and best practices for measuring precise light curves.
 
-\runinhead{Photon Noise}
-\hbindex{Photon noise} is the fundamental limit on the precision of a light curve. A star emits $N \pm \sqrt{N}$ photons per unit time. The $\sqrt{N}$ noise arises because each atom in the star emits a photon with some small probability, so the total number emitted per time interval follows a Poisson distribution. The relative error ($\sqrt{N}/N$) decreases as $N$ increases, so bright stars yield more precise light curves.  The best target systems for atmosphere characterization typically have H mag $< 10$ for infrared observations (or V $< 10$ for optical).  
+\subsection{Observing Facilities}
+The Hubble and Spitzer Space Telescopes are the preeminent facilities for exoplanet atmosphere studies.  Space-based observations have several advantages: they are free from atmospheric turbulence that adds systematic noise to light curves, they can access wavelengths where the Earth's atmosphere is strongly absorbing (e.g., ultra-violet and water absorption bands), and detectors can be cooled to low temperatures, enabling longer wavelength observations than are possible from the ground.  
 
-The precision of a light curve is often quantified by how close it is to the photon-limited noise floor. Space-based observations often reach the photon limit \citep{sing11, kreidberg14a, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}. FIXME say something about rms.
+As of 2017, the workhorse instruments for atmosphere characterization are the Space Telescope Imaging Spectrograph (STIS) and the Wide Field Camera 3 (WFC3) on board Hubble, and Spitzer's Infrared Array Camera (IRAC).  Figure FIXME illustrates the observing capabilities of these instruments, as well as the instrument suite for the James Webb Space Telescope (JWST; scheduled for launch in 2018).
 
-\runinhead{Instrument Systematics}
-The ideal detector would record every incident photon.  Modern detectors have come a long way in achieving this goal, but they are not perfect.  In addition to the usual steps in data reduction (bias and dark correction, flatfielding), there are some considerations that are specific to the precise spectrophotometry needed for atmosphere characterization.
+\subsection{Noise Sources}
+\runinhead{Random}
+\hbindex{Photon noise} is the fundamental limit on the precision of a light curve. A star emits $N \pm \sqrt{N}$ photons per unit time. The $\sqrt{N}$ noise arises because each atom in the star emits a photon with some small probability, so the total number emitted per time interval follows a Poisson distribution. The relative error ($\sqrt{N}/N$) decreases as $N$ increases, so bright stars yield more precise light curves.  The best target systems for atmosphere characterization typically have H mag $< 10$ for infrared observations.  The precision of a light curve is often quantified by how close it is to the photon-limited noise floor. Space-based observations often reach the photon limit \citep{sing11, kreidberg14a, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}. %The most precise photon-limited spectrum measured to date are from five eclipse observations of the hot Jupiter HD 209458b (H magnitude = 6.4) 
+
+\runinhead{Systematics}
+Detectors are a major source of systematic noise in precise time series photometry. Two systematic effects that are orders of magnitude larger than the signal expected from the planet are: 
 
 \begin{itemize}
 \item{\emph{Charge trapping}. Near-infrared detectors (e.g. \HST/WFC3) have impurities that can trap photoelectrons \citep{smith08}. As the traps fill up exponentially over time, the observed count rate increases by a factor of approximately $1 - R e^{-t/\tau}$, where $R$ and $\tau$ depend on the detector and illumination level.  This same mechanism is responsible for image persistence, the afterglow the appears as charge traps are released. The effect can be corrected with analytic models to photon-limited precision \citep{deming13, line16}. 
 }
 \item{\emph{Intrapixel effect.} Detector pixels do not have perfectly uniform spatial sensitivity, so the measured flux is correlated with the $X, Y$ position of the centroid of the image. This effect is the dominant systematic error for infrared measurements (e.g. \Spitzer/IRAC). Many techniques have been developed to model intrapixel variation, including \texttt{BLISS} mapping \citep{stevenson12}, pixel-level decorrelation \citep{deming15}, and ICA \citep{morello15}.}
-%\item{\emph{Undersampling}.}
-%\item{\emph{Geometric effects.} Distortion, moving spectrum.}
 \end{itemize}
 
 \runinhead{Astrophysical Systematics}
-Systematic errors also arise from incorrect models for the stellar or planet flux. 
+Systematic errors also arise from incorrect models for the stellar or planet flux. These include: 
 
 \begin{itemize}
 \item{\emph{Background stars.} Roughly half of stars have one or more bound companions \citep{raghavan10}. If the companion flux is blended with that of the host star, it dilutes the planet signal. Transit and eclipse depths must be multiplied by a correction factor $1 + \beta(\lambda)$ where $\beta$ is the ratio of the background star to host star flux. High contrast imaging is needed to detect close companions, and should be obtained for systems that are targets for atmosphere characterization.}
@@ -315,6 +298,17 @@ Systematic errors also arise from incorrect models for the stellar or planet flu
 \item{\emph{Stellar activity.} Variations in star spot coverage are also a source of bias in transit depth measurements. To correct transit depths taken at different epochs, one can obtain photometric monitoring of the host star to estimate changes in $s$ and correct the depths with the above scale factor.} 
 \item{\emph{Nightside emission from the planet.} For the hottest planets, thermal emission from the nightside may contribute significant flux during the transit. The nightside temperature depends on the planet's heat redistribution and cloud coverage, so can only be measured directly from phase curve observations. To correct for nightside flux, the transit depths should be multiplied be a factor FIXME \citep{kipping10}.} 
 \end{itemize}
+
+\subsection{Ground-Based Observations}
+Exoplanet atmosphere characterization can be achieved from the ground, but it is challenging because
+the transparency of Earth's atmosphere changes with time.  As a target moves through the sky, line-of-sight properties such as the airmass, precipitable water vapor, and cloud coverage will vary, introducing systematic trends in the light curve that may be orders of magnitude larger than the signal from the planet. 
+
+To correct for these effects, one approach is to use comparison stars to correct for systematic trends in the target light curve. For photometry, this is a straightforward process: in addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit close-to-identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  
+
+The same principle applies to spectroscopic observations, but requires a more specialized approach.  Spectrographs usually image the target through a slit prior to dispersing the light, in order to block out contamination from the sky background and any nearby stars. However, the slits are typically narrower than the seeing disk of the target star, and some fraction of flux -- highly dependent on the seeing -- is outside the slit.  To avoid time-dependent slit losses, one can use a multi-object spectrograph with a custom-made mask that has wide slits ($>10''$), a technique developed by \cite{bean10}. 
+
+Another creative ground-based technique uses high resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion, and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  See Chapter FIXME for more on high resolution observations. 
+
 
 \section{Major Results from Atmosphere Studies}
 In this section we discuss observational highlights, with a focus on space-based transmission and emission spectroscopy.  For recent comprehensive reviews, see \cite{crossfield15} and \cite{deming17}. %Before diving into results, let us briefly set the stage with some expectations for what we might observe. 
@@ -350,7 +344,7 @@ The more precise the abundance measurement, the better it can constrain planet f
 
 To break this degeneracy, one approach is to observe the planet's thermal emission.  Emission spectra are more sensitive to absolute abundance because the shape and amplitude of spectral features depend on the temperature-pressure profile. For example, \cite{stevenson17} measured the water abundance for the hot Jupiter WASP-43b to better than a factor of five  ($0.3 - 1.7\times$ solar at $1\,\sigma$ confidence). Another technique to improve precision requires observe multiple absorption bands for the same molecule in transmission \citep{benneke12}.  \cite{wakeford17} detected two water features in the transmission spectrum of the warm Neptune HAT-P-26b and retrieved a water abundance of $0.8 - 26\times$ solar at 1\,$\sigma$ \citep{wakeford17}.
 
-These abundance measurements show intriguing tension with the Solar System trend, where atmospheric metallicity increases with decreasing planet mass. This trend is a natural outcome of planet population synthesis models, which show that lower mass planets are relatively more polluted by infalling planetesimals \citep{fortney13, mordasini16}. As shown in Figure FIXME, the metallicity of WASP-43b agrees with the Solar System pattern, but HAT-P-26b is less enriched than Uranus and Neptune. These results hint at the diversity of atmospheric compositions that exist beyond the Solar System, and provide a proof of concept that precise abundance measurements are possible for exoplanets.
+These abundance measurements show intriguing tension with the Solar System trend, where atmospheric metallicity increases with decreasing planet mass. This trend is a natural outcome of planet population synthesis models, which show that lower mass planets are relatively more polluted by infalling planetesimals \citep{fortney13, mordasini16}. As shown in Figure FIXME, the metallicity of WASP-43b agrees with the Solar System pattern, but HAT-P-26b is less enriched than Uranus and Neptune. These results hint at the diversity of atmospheric compositions that exist beyond the Solar System, and provide a proof of concept that precise abundance measurements are possible for exoplanets. 
  
 \begin{figure}
 \begin{centering}
