@@ -134,11 +134,11 @@
 \abstract{Abstract.}
 
 %\section{The Promise of Exoplanet Atmospheres}
-%Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability.  Making good on this opportunity is challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star, and the star outshines the planet by a factor of at least a thousand to one. 
+Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability.  Making good on this opportunity is challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star, and the star outshines the planet by a factor of at least a thousand to one. 
 
 The subject of this chapter is atmosphere characterization through analysis of the combined light from the planet and the star. This approach is best suited to transiting planets, which periodically pass in front of and behind their host stars. During a transit, a small fraction of the stellar light filters through the planet's atmosphere on its path to us. When the planet is eclipsed, its thermal emission and reflection are blocked.  With meticulous observations, these effects can be measured relative to the constant baseline flux from the star. The resulting inferences of planetary atmospheric properties can be remarkably detailed, given that they were based solely on point sources of light hundreds of parsecs distant.
 
-In this chapter, we review combined light observing techniques, discuss current observational facilities and best practices, and highlight major science results.
+In this chapter, we review combined light observing techniques, discuss current observational facilities and best practices for precise spectroscopy, and highlight major science results.
 
 \section{Observing Techniques} 
 
@@ -347,7 +347,7 @@ The most commonly observed molecular species is water, which has been seen in ov
 
 Carbon-bearing molecules have proven harder to detect, mainly due to the wavelength range accessible by current observing facilities. Hot Jupiters are expected to have strong CO features in the near-infrared (see Figure\,\ref{fig:opacity}), and CO has been detected a few times with the high-resolution ground-based spectroscopy technique \citep{dekok13,brogi14}.  Space-based evidence for CO has been more ambiguous: the \Spitzer\ photometric bandpasses are about $1\,\mu$m wide and cover spectral features from multiple different absorbing species (see Figure \ref{fig:instruments}), making it a challenge to definitively identify which absorber is present \citep[e.g.][]{desert09, stevenson10, madhusudhan11, morley17}.  
 
-There are some noteworthy molecules that have not yet been seen. One is ammonia, which abundant in the atmospheres of the Solar System gas giants. The absence of ammonia in exoplanet transmission spectra is not a big surprise: it dissociates at high temperatures, and will more likely be seen in cooler targets.  Another missing player is titanium oxide, which has a large optical absorption cross-section and may play an important role in the thermal structure of hot Jupiters \citep{fortney08}. Despite many searches, there has not yet been decisive evidence for TiO \citep[e.g.,]{sing13, evans16}, so it that it rains out or gets cold trapped deep in the atmosphere \citep{parmentier13}.
+There are some noteworthy molecules that have not yet been seen. One is ammonia, which abundant in the atmospheres of the Solar System gas giants. The absence of ammonia in exoplanet transmission spectra is not a big surprise: it is unstable at high temperatures, and will more likely be seen in cooler targets.  Another missing player is titanium oxide, which has a large optical absorption cross-section and may play an important role in the thermal structure of hot Jupiters \citep{fortney08}. Despite many searches, there has not yet been decisive evidence for TiO \citep[e.g.,]{sing13, evans16}, so it that it rains out or gets cold trapped deep in the atmosphere \citep{parmentier13}.
 %There have been tentative detections of several other molecules, including TiO, FeH, and HCN/NH$_3$ \citep[e.g.,][]{tsiaras16, evans16, macdonald17}. Ammonia and methane, which are dominant absorbers in the Solar System gaseous planets, are expected to be less abundant for the high temperature 
  Future observations with broader spectral coverage and higher precision are needed to verify the presence of these absorbers.
 
@@ -371,20 +371,37 @@ These measurements provide an intriguing point of comparison with the Solar Syst
 \runinhead{Abundance Ratios}
 The composition of the protoplanetary disk is not uniform everywhere. As the disk temperature drops with radial distance from the star, molecules reach their freezing points, beginning with H$_2$O and followed by CO$_2$ and CO, leading to variation in abundance ratios for gas versus solid material. These gradients in chemistry can be imprinted on the composition of forming planets \citep[e.g.][]{oberg11, madhusudhan14, alidib16}. Because planets are enriched in metals by planetesimal accretion, the abundance pattern is expected to trace that of the solids rather than the gas \citep{mordasini16, espinoza17}.
 
-The carbon-to-oxygen ratio (C/O) has been proposed as a natural framework for characterizing atmospheric abundance patterns, since these are major building blocks for planet formation \citep{madhusudhan12}.  Equilibrium chemical abundances change dramatically when carbon is more abundant than oxygen, so carbon-rich compositions (C/O > 1) should be easily identifiable \citep{moses13}.  There was early evidence for a carbon-rich atmospheric composition for WASP-12b based on its thermal emission spectrum \citep{madhusudhan11}, but further scrutiny of this planet and other hot Jupiters has revealed $\mathrm{C/O} < 1$ in all cases \citep{line14, kreidberg15b, benneke15, barstow17}. 
-
+The carbon-to-oxygen ratio (C/O) has been proposed as a natural framework for characterizing atmospheric abundance patterns, since these are major building blocks for planet formation \citep{madhusudhan12}.  Equilibrium chemical abundances change dramatically when carbon is more abundant than oxygen, so carbon-rich compositions (C/O > 1) should be easily identifiable \citep{moses13}.  There was early evidence for a carbon-rich atmospheric composition for WASP-12b based on its thermal emission spectrum \citep{madhusudhan11}, but further scrutiny of this planet and other hot Jupiters has revealed $\mathrm{C/O} < 1$ in all cases \citep{line14, kreidberg15b, benneke15, barstow17}. More precise constraints await JWST, which is expected to constrain C/O for hot Jupiters to a precision of 0.2 dex \citep{greene15}.
 
 \subsection{Climate}
-With thermal emission measurements, it is possible to characterize a planet's climate in detail.  To date, these observations have focused on hot Jupiters with large planet-to-star flux ratios. The most common measurement is of dayside brightness temperature, which has been inferred from secondary eclipse observations for over 50 planets \citep{schwartz15}. Measured dayside temperatures range from roughly 1000 to 3000 K \citep{stevenson14b, kammer15, morley17}.  Cooler planets will be more accessible with future instruments that are sensitive to longer wavelength photons.
+With thermal emission measurements, it is possible to characterize a planet's climate in detail.  To date, these observations have focused on hot Jupiters with large planet-to-star flux ratios. The most common measurement is of dayside brightness temperature, which has been inferred from secondary eclipse observations for over 50 planets \citep{schwartz15}. Measured dayside temperatures range from roughly 1000 to 3000 K \citep{stevenson14b, kammer15, morley17}.  
 
 \runinhead{Thermal Inversions}
-One can also determine the atmosphere's \hbindex{temperature-pressure profile} using emission spectroscopy. At wavelengths where the atmosphere has higher opacity, the emitted light comes from higher altitudes. The spectrum is therefore sensitive to thermal structure.  Early \Spitzer\ observations of HD 209458b suggested the atmosphere had an inverted thermal profile, where temperature increased with height \citep{knutson08}. Such \hbindex{thermal inversions} can result from upper atmosphere heating by a strong optical or UV absorber (for example, Earth's stratosphere is due to ozone absorption).  Further observations of HD 209458b showed that it does not in fact have a thermal inversion \citep{diamond-lowe14, schwarz15}. However, there is new evidence for weak thermal inversions (isothermal profiles) in the atmospheres of other planets \citep{stevenson14, haynes15}.
- 
+In addition to brightness temperatures, one can also determine the atmosphere's \hbindex{temperature-pressure profile} using emission spectroscopy. At wavelengths where the atmosphere has higher opacity, the emitted light comes from higher altitudes. Early \Spitzer\ observations of HD 209458b suggested the atmosphere had an inverted thermal profile, where temperature increased with height \citep{knutson08}. Such \hbindex{thermal inversions} can result from upper atmosphere heating by a strong optical or UV absorber (for example, Earth's stratosphere is due to ozone absorption).  TiO and VO are potential culprits for thermal inversions. These species have large optical absorption cross-sections, and could be present in the gas phase for the hottest planets \citep{fortney08}.
+
+However, further study of HD 209458b showed that it does not in fact have a thermal inversion \citep{diamond-lowe14, schwarz15, line16}. Other 
+ but there is new evidence for weak inversions (isothermal profiles) in the atmospheres of other planets \citep{stevenson14, haynes15}. These candidates for thermal inversions have very hot dayside temperatures ($> 2500$ K), and may be hot enough for gaseous
+
+absorption features - WASP-43b, HD 209458b
+
+Hd 209 inverted
+TiO/VO culprit?
+two classes - inverted, non-inverted
+stellar activity
+
 
 \runinhead{Global Heat Circulation}
-Thermal phase curves provide additional insight into global recirculation.
-The first spectroscopic phase curve was obtained for the hot Jupiter WASP-43b.  
-hot spot offset - winds
+Thermal phase curves provide additional insight into global recirculation, as discussed in detail in the chapter by Parmentier and Crossfield. 
+ 
+The first phase curve measurement was for the tidally locked hot Jupiter HD 189733b by \cite{knutson07}. They found a difference in temperature of $250$ K from the dayside to the nightside, and an offset in peak brightness to the east of the substellar point. These results agree well with expectations from 3D global circulation models (GCMs), which predict efficient heat redistribution for slower rotation periods, and eastward equatorial jets caused by the interaction of Rossby waves with the planet's rotation \citep{showman09}.
+
+Bond albedo
+poor heat redistribution
+
+
+The first spectroscopic phase curve was measured for the hot Jupiter WASP-43b with HST/WFC3 \citep{stevenson14}
+
+There is one small planet with a measured thermal phase curve: the super-Earth 55 Cancri e. This i
 
 
 \subsection{Aerosols}
