@@ -98,4 +98,3 @@ references:
 
 C/O
 Climate - inversions, heat redistribution
-ECHO/ARIEL
