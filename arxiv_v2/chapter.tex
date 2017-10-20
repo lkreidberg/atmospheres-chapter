@@ -1,0 +1,1059 @@
+%%%%%%%%%%%%%%%%%%%% author.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% template for chapters to the Handbook of Exoplanets
+% modified by H. Deeg from the 'template.tex' provided by Springer for the svmult.cls class
+% 20Mar 2016
+%
+%%%%%%%%%%%%%%%% Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[graybox,natbib,nosecnum]{svmult}
+\bibpunct{(}{)}{;}{a}{}{,} % suppress commas between author-names and year
+
+\pdfoutput=1   %forces use of pdflatex. Disable if you prefer to use .eps or .ps figures.
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage[normalem]{ulem}	% for strike-through of text with \sout{}  
+\usepackage{hyperref}  %for hyperlinks
+
+\usepackage{soul}   % for high-lighting of text
+% see the list of further useful packages
+% in the Reference Guide
+
+% expansions of  journal abbreviations from bibtex entries by ADS
+% adapted to Springer Basic style (no periods in abbreviations)
+\newcommand*\aap{A\&A}
+\let\astap=\aap
+\newcommand*\aapr{A\&A Rev}
+\newcommand*\aaps{A\&AS}
+\newcommand*\actaa{Acta Astron}
+\newcommand*\aj{AJ}
+\newcommand*\ao{Appl Opt}
+\let\applopt\ao
+\newcommand*\apj{ApJ}
+\newcommand*\apjl{ApJ}
+\let\apjlett\apjl
+\newcommand*\apjs{ApJS}
+\let\apjsupp\apjs
+\newcommand*\aplett{Astrophys Lett}
+\newcommand*\apspr{Astrophys Space Phys Res}
+\newcommand*\apss{Ap\&SS}
+\newcommand*\araa{ARA\&A}
+\newcommand*\azh{AZh}
+\newcommand*\baas{BAAS}
+\newcommand*\bac{Bull astr Inst Czechosl}
+\newcommand*\bain{Bull Astron Inst Netherlands}
+\newcommand*\caa{Chinese Astron Astrophys}
+\newcommand*\cjaa{Chinese J Astron Astrophys}
+\newcommand*\fcp{Fund Cosmic Phys}
+\newcommand*\gca{Geochim Cosmochim Acta}
+\newcommand*\grl{Geophys Res Lett}
+\newcommand*\iaucirc{IAU Circ}
+\newcommand*\icarus{Icarus}
+\newcommand*\jcap{J Cosmology Astropart Phys}
+\newcommand*\jcp{J Chem Phys}
+\newcommand*\jgr{J Geophys Res}
+\newcommand*\jqsrt{J Quant Spectr Rad Transf}
+\newcommand*\jrasc{JRASC}
+\newcommand*\memras{MmRAS}
+\newcommand*\memsai{Mem Soc Astron Italiana}
+\newcommand*\mnras{MNRAS}
+\newcommand*\na{New A}
+\newcommand*\nar{New A Rev}
+\newcommand*\nat{Nature}
+\newcommand*\nphysa{Nucl Phys A}
+\newcommand*\pasa{PASA}
+\newcommand*\pasj{PASJ}
+\newcommand*\pasp{PASP}
+\newcommand*\physrep{Phys Rep}
+\newcommand*\physscr{Phys Scr}
+\newcommand*\planss{Planet Space Sci}
+\newcommand*\pra{Phys Rev A}
+\newcommand*\prb{Phys Rev B}
+\newcommand*\prc{Phys Rev C}
+\newcommand*\prd{Phys Rev D}
+\newcommand*\pre{Phys Rev E}
+\newcommand*\prl{Phys Rev Lett}
+\newcommand*\procspie{Proc SPIE}
+\newcommand*\qjras{QJRAS}
+\newcommand*\rmxaa{Rev Mexicana Astron Astrofis}
+\newcommand*\skytel{S\&T}
+\newcommand*\solphys{Sol Phys}
+\newcommand*\sovast{Soviet Ast}
+\newcommand*\ssr{Space Sci Rev}
+\newcommand*\zap{ZAp}
+
+
+\newcommand{\hbindex}[1]{\hl{#1}\index{#1}}  %highlights index entries
+
+\newcommand{\project}[1]{\textsl{#1}}
+\newcommand{\JWST}{\project{JWST}}
+\newcommand{\HST}{\project{HST}}
+\newcommand{\TESS}{\project{TESS}}
+\newcommand{\Spitzer}{\project{Spitzer}}
+\newcommand{\Kepler}{\project{Kepler}}
+
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title*{Exoplanet Atmosphere Measurements from Transmission Spectroscopy and other Planet-Star Combined Light Observations}
+\titlerunning{Atmosphere Measurements from Combined Light Observations} 
+% Use \titlerunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\author{Laura Kreidberg}
+% Use \authorrunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\institute{Laura Kreidberg \at Harvard Society of Fellows, 78 Mount Auburn Street, Cambridge, MA, 02138, \email{laura.kreidberg@cfa.harvard.edu}}
+%
+% Use the package "url.sty" to avoid
+% problems with special characters
+% used in your e-mail or web address
+%
+\maketitle
+
+
+\abstract{It is possible to learn a great deal about exoplanet atmospheres even when we cannot spatially resolve the planets from their host stars. In this chapter, we overview the basic techniques used to characterize transiting exoplanets -- transmission spectroscopy, emission and reflection spectroscopy, and full-orbit phase curve observations. We discuss practical considerations, including current and future observing facilities and best practices for measuring precise spectra. We also highlight major observational results on the chemistry, climate, and cloud properties of exoplanets.}
+
+\section{The Host Star: Friend or Foe?}
+Exoplanet atmospheres are a treasure trove of information. By measuring the chemical composition and thermal structure of an atmosphere, it is possible to constrain the planet's formation and evolutionary history, current climate, and even habitability.  Making good on this opportunity is extremely challenging on a technical level, however. In most cases, it is not possible to spatially resolve the planet from its host star, and the star outshines the planet by a factor of at least a thousand to one.  
+
+A number of creative strategies have been developed to circumvent these challenges and make use of the star as a constant reference point.  These approaches are mainly applicable to transiting planets, which periodically pass in front of and behind their host stars. During a transit, a small fraction of the stellar light filters through the planet's atmosphere on its path to us. When the planet is eclipsed, its thermal emission and reflection are blocked.  With meticulous observations, these effects can be measured relative to the constant baseline flux from the star. The resulting inferences of planetary atmospheric properties can be remarkably detailed, given that they were based solely on point sources of light hundreds of parsecs distant.  This chapter is a review of combined light observing techniques, best practices, and science highlights. %discuss current observational facilities and best practices for precise spectroscopy, and highlight major science results.
+
+%The subject of this chapter is atmosphere characterization through analysis of the combined light from the planet and the star, with a number of creative approaches that use the star as a constant reference point and measure variation introduced by the changing viewing angle of the planet through its orbit.
+
+\section{Observing Techniques} 
+
+\subsection{Transit Spectroscopy}
+The most widely used combined light technique is transmission spectroscopy. For this method, the planet is observed in transit as it passes in front of its host star, as illustrated in Figure\,\ref{fig:geom}.  The measurement of total brightness (star plus planet) over time is known as the transit light curve.  During the transit, the planet blocks a small fraction of the stellar flux equal to the sky-projected area of the planet relative to the area of the star. We refer to this fractional drop in flux as the transit depth, $\delta$. See Figure\,\ref{fig:lc} for an example of a transit light curve.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.4]{fig1_transit_geom.pdf}
+\caption{Illustration of transit and eclipse geometry. Over the course of the planet's orbit, it periodically passes in front of the star (a transit event) and behind (a secondary eclipse). A few key distances are labeled: the planet and stellar radii, $R_p$ and $R_s$, the atmospheric scale height $H$, and the separation of centers in the plane of the sky, $d$. Figure adapted from \citealt{robinson17} and used with permission from the AAS.}
+\label{fig:geom}       
+\end{centering}
+\end{figure}
+
+The key idea behind transmission spectroscopy is that the planet's transit depth is \emph{wavelength dependent}.  At wavelengths where the atmosphere is more opaque due to absorption by atoms or molecules, the planet blocks slightly more stellar flux.  To measure these variations, the light curve is binned in wavelength into spectrophotometric channels, and the light curve from each channel is fit separately with a transit model.  The measured transit depths as a function of wavelength constitute the transmission spectrum, so named because the variation arises from the transmission of stellar flux through the planet's atmosphere. Figure\,\ref{fig:spectra} shows the near-infrared transmission spectrum of the hot Jupiter WASP-43b, which has a strong water absorption feature centered at 1.4 $\mu$m. 
+ 
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.8]{fig2_w12_lc.pdf}
+\caption{Transit light curve measured with the Hubble Space Telescope for the hot Jupiter WASP-12b from \citealt{kreidberg15b} (Reproduced by permission of the AAS). The top panel shows the data (points), corrected for instrument systematics and color-coded by observation date, compared to the best fit transit model (line). Gaps in coverage are due to Earth occultation. The middle panel shows the residuals from the best fit, and the bottom panel shows a histogram of the residuals compared to the expected photon noise. The light curves are consistent from visit to visit, and the residuals are within 5\% of the photon noise limit, enabling robust estimates of the transit depth and its uncertainty.}
+\label{fig:lc}       
+\end{centering}
+\end{figure}
+
+Theoretical models for the transmission spectrum require radiative transfer calculation for light on the slant path through the planet's atmosphere \citep{seager00}, a computationally intensive task. However, we can make a rough prediction of the size of features in the transmission spectrum based on the atmospheric scale height $H$. The scale height is the change in altitude over which the pressure drops by a factor of $e$. Assuming hydrostatic equilibrium and using the ideal gas law,
+
+\begin{equation}
+H = \frac{K_bT_{eq}}{\mu g}
+\end{equation}
+where $K_b$ is the Boltzmann constant, $T_{eq}$ is the planet's equilibrium temperature, $\mu$ is the mean molecular mass, and $g$ is the surface gravity.
+
+The amplitude of spectral features in transmission is then:
+\begin{eqnarray}
+\delta_\lambda &=& \frac{(R_p + nH)^2}{R_s^2} - \frac{R_p^2}{R_s^2}\\
+ & \approx & 2nR_pH/R_s^2
+\end{eqnarray} 
+where $n$ is the number of scale heights crossed at wavelengths with high opacity (typically around two for cloud-free atmospheres at low spectral resolution; \citealt{stevenson16}). It follows that ideal candidates for transmission spectroscopy have high equilibrium temperatures, small host stars, low surface gravity, and low mean molecular mass composition (hydrogen dominated). But even for these ideal cases, the amplitude of spectral features is just $\delta_\lambda \sim0.1\%$. For Earthlike planets, the expected amplitude is two to three orders of magnitude smaller, depending on host star size. 
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.8]{fig3_w43.pdf}
+\caption{Thermal emission spectrum (top) and transmission spectrum (bottom) for the hot Jupiter WASP-43b, compared to best fit models (From \citealt{kreidberg15b}; reproduced with permission from the AAS). The data are from the Hubble Space Telescope WFC3 instrument (1.1 - 1.7 $\mu$m) and Spitzer/IRAC (3.6 and 4.5 $\mu$m). The blue line corresponds to the best fit model, and dark and light blue shading correspond to the 1- and 2-$\sigma$ confidence intervals from an atmospheric retrieval. The retrieval analysis explores the parameter space of temperature profiles and chemical compositions that match the data. In this case, water absorption -- the broad feature at 1.4 $\mu$m -- is detected at high confidence in both spectra ($>5\,\sigma$). This feature is made up of $\sim10^4$ rotational and vibrational line transitions, that are averaged to form the broad band absorption feature seen here at low spectral resolution. The retrieval constrains the water abundance to be between $0.4$ and $3.5\times$ solar at $1\,\sigma$ confidence.} 
+\label{fig:spectra}       
+\end{centering}
+\end{figure}
+
+
+\subsection{Occultation Spectroscopy}
+A corollary of the transit spectroscopy method is occultation spectroscopy, which measures thermal emission and reflection from the planet. Rather than observing the planet during transit, it is observed at secondary eclipse, when it passes behind the host star. The eclipse provides a baseline measurement of the stellar flux alone. When the planet orbits back into view, any increase in brightness can be attributed to the planet's thermal emission and reflected light. Secondary eclipses are discussed in detail in the chapter ``Characterization of exoplanets: Secondary eclipses" by Alonso.
+
+\runinhead{Thermal Emission}
+For the short-period planets that have been studied so far, the dominant source of thermal emission is reradiation of incident stellar flux (rather than latent heat of formation, as seen for directly imaged planets). Thus the typical size of the emission signal can be predicted from the planet's equilibrium temperature:
+
+\begin{equation}
+\label{eqn:fpfs}
+\frac{F_p}{F_s} = \frac{B(\lambda, T_{eq})}{B(\lambda, T_s)}\left(\frac{R_p}{R_s}\right)^2
+\end{equation}
+where $F_p/F_s$ is the planet-to-star flux ratio, $B(\lambda, T)$ is the blackbody spectral radiance at temperature $T$, and $R_p/R_s$ is the planet-to-star radius ratio. Since the planet is cooler than the star, the flux ratio is larger at longer wavelengths. For example, the planet-to-star flux for the hot Jupiter HD 209458b is just 50 parts per million at 1 $\mu$m, but increases to over 1000 ppm at 4.5 $\mu$m \citep{line16}.
+
+Equation \ref{eqn:fpfs} is a good first order approximation of the planet signal, but as with transmission spectroscopy, more complex features arise in the spectrum due to the atmosphere's changing opacity with wavelength. The emitted light comes from the photosphere of the planet, where the optical depth is of order unity. At more opaque wavelengths, the photosphere is at higher altitude, where the temperature may differ from $T_\mathrm{eq}$. We illustrate this effect in Figure\,\ref{fig:spectra} with the emission spectrum of WASP-43b, which has a strong water absorption feature. In the water band at centered at 1.4 $\mu$m, we see a higher, cooler layer of the planet's atmosphere, where the planet's flux is lower.
+
+The size and shape of spectral features depend on the exact temperature-pressure profile of the atmosphere -- for example, if the temperature increases with altitude (known as a thermal inversion or stratosphere) spectral features can be seen in emission rather than absorption. Thermal emission spectroscopy is therefore a useful probe of temperature structure in addition to atmospheric composition.
+
+%A useful way to describe the temperature of the photosphere is the \hbindex{brightness temperature}: the temperature a blackbody needed to replicate the observed spectral intensity at a given wavelength.
+
+\runinhead{Reflected Light}
+At short wavelengths, reflected light from the planet may also be detectable. It is convenient to quantify the amount of reflected light in terms of a ``perfect" Lambertian surface: a flat, perfectly diffusing disk with the same cross-sectional area as the planet. The ratio of reflected light from the fully illuminated planet, relative to reflection by a perfect mirror, is the geometric albedo $A_g$. The total reflected light signal is
+
+\begin{equation}
+F_{reflect} = A_g(R_p/a)^2 \Phi(\alpha)
+\end{equation}
+where $a$ is the orbital separation and $\Phi(\alpha)$ is the phase function (the reflected light intensity at phase angle $\alpha$). The phase function depends on the scattering properties of the atmosphere, but analytic predictions are available for certain simplified models \citep[e.g.][]{madhu12}.  Reflected light is easiest to detect in the optical, where it dominates the thermal emission signal; however, the amplitude tends to be small \citep[typically less than 100 ppm;][]{angerhausen15}.
+
+\runinhead{Phase Curves}
+In addition to characterizing thermal emission and reflected light from secondary eclipses, it is also possible to observe a full-orbit phase curve \citep{seager00b, knutson07}. These observations consists of continuous time series photometry or spectroscopy of a planet over its entire orbital period, using the secondary eclipse as a baseline measurement of the stellar flux alone.  The targets for phase curve observations so far have been short-period planets that are tidally locked to their host stars. For these planets, the rotation period is known (equal to their orbital period), so over the course of one complete orbit all longitudes are visible in turn.  Phase curves are powerful because they probe atmospheric physics and chemistry over a wider geographic region than transits or eclipses. The theory and observations of phase curves are discussed further in the chapter ``Characterization of exoplanets: Observations and modeling of orbital phase curves" by Parmentier and Crossfield. 
+
+
+\runinhead{Eclipse Mapping}
+All of the occultation spectroscopy techniques described above rely on a hemisphere average of the planet's reflected or emitted light. To glean additional spatial information, one can use the eclipse mapping method, which requires precise observations of the secondary eclipse light curve during ingress and egress.  During these intervals, the hemisphere of the planet is partially eclipsed by the star, allowing the observer to pinpoint the brightness of a smaller region and thus map the brightness distribution in detail \citep{rauscher07, dewit12}.  This is the only combined light technique that is sensitive to the planet's brightness as a function of \emph{latitude} (because higher latitudes are first to enter and exit eclipse). For additional discussion of mapping techniques, see the chapter ``Mapping of exoplanets" by Cowan and Fujii.
+
+
+%\subsection{Estimating Parameter Uncertainties}
+%As for all measurements, correctly estimating the uncertainty on the planet spectrum is as important as the detection itself.  The best approach for determining the uncertainties depends primarily on whether the noise is correlated in time.  
+
+%In the case of uncorrelated noise (referred to as ``white" or ``Gaussian" noise), the uncertainties can be estimated with the Markov chain Monte Carlo (MCMC) technique, a Bayesian method that calculates the posterior probability distribution for the model parameters (see \citealt{sivia96} for a general overview of Bayesian methods and \citealt{ford05} for a specific application of MCMC to exoplanets). These fits can be computationally challenging, especially if there are many parameters, correlated uncertainties, or multi-modal solutions. Sophisticated MCMC methods have been developed to address these issues, including differential evolution MCMC \citep{braak06}, or affine-invariant sampling \citep{goodman10}, implemented in the Python package \texttt{emcee} \citep{foremanmackey13}.
+
+%Estimating uncertainties is more difficult in the presence of ``red", time-correlated noise, which is often present in ground-based light curves \citep{}. Red noise is easily identified by eye in the residuals of the light curve fit as time-dependent trends. To quantitatively test for it, one can bin the data points in time. If the noise is white, the residuals are expected to decrease proportionally to the square root of the number of data points per bin. If the binned residuals are larger than expected, red noise is present and needs to be accounted for in the model fit.  A number of strategies have been developed to model red noise, including ``residual permutation bootstrap" (also known as ``prayer bead")  \citep{southworth08}, wavelet-based methods \citep{carter09}, and Gaussian processes \citep{rasmussen05}. Depending on the amplitude of the red noise, it can increase parameter uncertainties by factors of several, so it must be treated carefully.
+
+\section{Practical Considerations}
+Detecting the tiny signals from exoplanet atmospheres is a formidable challenge. Even for the most favorable systems, the amplitude of spectral features is of order a tenth of a percent. Pushing to this level of precision requires many photons (and thus large telescopes), a stable observing environment, and detailed knowledge of the planet's host star.  In this section, we summarize the state-of-the-art in observing facilities, briefly review ground-based observing techniques, and discuss possible sources of error.
+
+\subsection{Observing Facilities}
+The Hubble and Spitzer Space Telescopes are the preeminent facilities for exoplanet atmosphere studies.  Space-based observations have several advantages: they are free from atmospheric turbulence that adds systematic noise to light curves, they can access wavelengths where the Earth's atmosphere is strongly absorbing (e.g., ultraviolet and water absorption bands), and they have lower thermal background noise in the infrared, facilitating long-wavelength observations. 
+
+As of 2017, the workhorse instruments for atmosphere characterization are the Space Telescope Imaging Spectrograph (STIS) and the Wide Field Camera 3 (WFC3) on board Hubble, and Spitzer's Infrared Array Camera (IRAC).  These instruments provide spectroscopy from the UV to the near-infrared (ending at 1.7 $\mu$m) and broadband photometry at 3.6 and 4.5 $\mu$m. The suite of instruments built for the James Webb Space Telescope (JWST; scheduled for launch in 2019) will provide significantly expanded spectroscopic coverage, from $0.6$ to $12\,\mu$m.  Figure\,\ref{fig:instruments} illustrates the observing capabilities of these current and planned instruments. 
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=\textwidth, trim={0.5cm 0cm 0cm 0.1cm},clip]{fig4_instruments.pdf}
+\caption{Summary of current (circa 2017) and planned observing capabilities from space. The color bar in the center indicates the wavelength scale in microns. Current instrumentation covers the UV/optical (HST/STIS), near-infrared (HST/WFC3) and infrared (Spitzer/IRAC photometry). The four instruments on board JWST (NIRISS, NIRCAM, NIRSPEC, and MIRI) will provide spectroscopy from 0.6 to 12 $\mu$m. The typical resolution is $\lambda/\Delta \lambda \sim100 - 1000$. Not shown are HST and JWST photometric filters or higher-resolution dispersive elements.}
+\label{fig:instruments}       
+\end{centering}
+\end{figure}
+
+
+\subsection{Ground-Based Observations}
+Exoplanet atmosphere characterization is possible from the ground, but it is challenging because
+the transparency of Earth's atmosphere changes with time.  As a target moves through the sky, line-of-sight properties such as the air mass, precipitable water vapor, and cloud coverage will vary, introducing systematic trends in the light curve that may be orders of magnitude larger than the signal from the planet. 
+
+To correct for these effects, one approach is to use comparison stars to correct for systematic trends in the target light curve. In addition to the target, several nearby stars are observed in the same field of view. The path of their flux traverses similar parts of the Earth's atmosphere, so their light curves exhibit nearly identical systematic trends as the target. The target light curve can then be divided by the sum of the comparison star light curves to remove systematics.  For spectroscopic observations, the target and comparison stars must be observed with a custom-made mask with wide slits ($>10''$) to avoid time-dependent slit losses due to variable seeing, a technique developed by \cite{bean10}.
+
+Another creative ground-based technique uses high-resolution spectroscopy to detect the planet's atmosphere.  The idea is that the planet spectrum is Doppler shifted due to its orbital motion and thus separated in wavelength from both the stellar spectrum and telluric lines from the Earth's atmosphere. The planet spectrum can be cross-correlated with a template to reveal the atmospheric composition and orbital velocity \citep[e.g.][]{snellen10}.  This technique is discussed in detail in the chapter ``Spectroscopic direct detection of exoplanets" by Birkby. 
+
+\subsection{Noise Sources}
+\runinhead{Photon noise} 
+Stars emit $N \pm \sqrt{N}$ photons per unit time. The $\sqrt{N}$ noise, so-called photon noise, arises because each atom in the star emits a photon with some small probability per unit time, so the count rate follows a Poisson distribution. Photon noise is the fundamental limit on the precision of a light curve -- the only way to improve the precision on a planet's spectrum is to stack many observations together. Bright stars have lower photon noise than faint stars (the relative error $\sqrt{N}/N$ decreases as $N$ increases), so the best target systems for atmosphere characterization typically have H mag $< 10$.  Space-based observations often reach the photon limit \citep{sing11, deming13, ingalls16}, whereas ground-based observations are typically a factor of a few above it \citep[e.g.][]{bean13}. 
+
+\runinhead{Instrument Systematics}
+Instrument-based systematics are a major source of error in precise time series photometry and can be orders of magnitude larger than the planet signal. Three common systematic effects are: 
+
+\begin{itemize}
+\item{\emph{Charge trapping}. Near-infrared detectors (e.g. \HST/WFC3) have impurities that can trap photoelectrons \citep{smith08}. As the traps fill up, the number of recorded photoelectrons increases exponentially, with a time constant that depends on the detector illumination history and current count rate \citep{zhou17}.  This same mechanism is responsible for image persistence, the afterglow that appears as charge traps are released. The effect can be corrected with analytic models to photon-limited precision \citep{deming13, line16}. 
+}
+\item{\emph{Intrapixel effect.} Detector pixels do not have perfectly uniform spatial sensitivity, so the measured flux is correlated with the $X, Y$ position of the centroid of the image. This effect is the dominant systematic error for infrared measurements (e.g. \Spitzer/IRAC). Many techniques have been developed to model intrapixel variation, including \texttt{BLISS} mapping \citep{stevenson12}, pixel-level decorrelation \citep{deming15}, and ICA \citep{morello15}.}
+\item{\emph{Variable illumination.} The position of the spectrum on the detector can shift slightly over the course of an observation, either due to pointing drift or changes in telescope focus. These shifts cause light to fall on pixels that may have different sensitivity, and the flatfield correction is generally not known well enough to remove the induced variation. This effect can sometimes be corrected with a polynomial fit \citep[e.g. for HST/STIS observations;][]{sing11}, but in other cases can produce a large noise floor of order $\sim0.1\%$ \citep[as for the old HST instrument NICMOS;][]{gibson11}.}
+\end{itemize}
+
+\runinhead{Astrophysical Systematics}
+Systematic errors also arise from incorrect or incomplete models for the stellar or planet flux. These include: 
+
+\begin{itemize}
+\item{\emph{Background stars.} Roughly half of stars have one or more bound companions \citep{raghavan10}. If the companion flux is blended with that of the host star, it dilutes the planet signal. Transit and eclipse depths must be multiplied by a correction factor $1 + \beta(\lambda)$ where $\beta$ is the ratio of the background star to host star flux. High contrast imaging is needed to detect close companions, and should be obtained for systems that are targets for atmosphere characterization.}
+\item{\emph{Unocculted star spots.} To first order, the temperature difference between the stellar photosphere and the spotted region introduces a slope in the planet spectrum. If the spots are cool enough for molecules to form (e.g. water), they can even produce spurious spectral features, as there is no way to distinguish between absorption due to molecules in the spot and absorption by the planet atmosphere. The effect from spots can be corrected by multiplying the planet spectrum by a factor $(1-s\times[1-F_{\lambda,\mathrm{spot}}/F_{\lambda,\mathrm{phot}}])^{-1}$, where $s$ is the spot covering fraction and $F_\lambda$ is spectral radiance for the spot or the photosphere \citep{mccullough14}. The spot properties can be estimated based on the amplitude of long-term photometric variability in the stellar lightcurve or from spot crossing during transit \citep[e.g.][]{pont08}.} 
+\item{\emph{Stellar activity.} Variations in star spot coverage are also a source of bias in transit depth measurements. To correct transit depths taken at different epochs, one can obtain photometric monitoring of the host star to estimate changes in $s$ and correct the depths with the above scale factor.} 
+\item{\emph{Nightside emission from the planet.} For the hottest planets, thermal emission from the nightside may contribute significant flux during the transit. The nightside temperature depends on the planet's heat redistribution and cloud coverage, so can only be measured directly from phase curve observations. To correct for nightside flux, the transit depths should be multiplied be a factor $(1 + F_p/F_s)^{-1}$, where $F_p$ is the planet nightside flux and $F_s$ is the stellar flux \citep{kipping10}.} 
+\end{itemize}
+
+\runinhead{Notes on Reliability}
+We have noted here that there are many potential challenges for precise atmosphere characterization, and indeed, several early results were later disputed \citep[e.g.][]{tinetti07, swain08, gibson11}. More recently, however, observing techniques and data analysis have advanced to the point that space-based measurements are generally photon noise-limited, repeatable, and reproducible by multiple teams \citep[e.g.][]{deming13, kreidberg14a, ingalls16}. The best achieved precision to date is 15 ppm on the emission spectrum of HD 209458b at a resolution $R\sim 30$ \citep{line16}, based on five secondary eclipse observations. These results bode well for the precision achievable with JWST, which will have newer detectors and better pointing stability. 
+
+Ground-based observations have not been as thoroughly vetted as space-based data.  The comparison star technique can yield light curves that are within a factor of a few times the photon noise limit, but it can be difficult to estimate uncertainties correctly in the presence of residual correlated noise \citep[e.g.][]{jordan13, beatty16}.  Pushing the performance of ground-based telescopes will be important in coming years, as they will be the only facilities capable of observing wavelengths shorter than $0.6\,\mu$m after Hubble is no longer operating. 
+
+\section{Major Results from Atmosphere Studies}
+In this section we discuss observational highlights, with a focus on space-based transmission and emission spectroscopy.  For recent comprehensive reviews, see \cite{crossfield15} and \cite{deming17}. 
+
+\subsection{Atmospheric Composition}
+\runinhead{Expectations}
+We know from the solar system that atmospheric composition can vary widely from planet to planet. Even so, we can still make educated guesses about possible compositions based on the building blocks of planet formation,  which come from disks of gas and dust surrounding young stars.  The protoplanetary disk has similar composition to the host star: predominantly hydrogen and helium, with smaller amounts of metals (the most abundant being oxygen, carbon, and nitrogen; \citealt{anders89}).  %Planetary atmospheres can be made up directly from this material (so-called primary atmospheres, swept up during the accretion phase);  alternatively, secondary atmospheres may form on terrestrial planets by volcanic outgassing or delivery of volatiles by comets.  
+
+These main constituent elements are expected to combine into H$_2$, H$_2$O, CO, CO$_2$, CH$_4$, NH$_3$, O$_2$, and N$_2$, depending on the temperature, pressure, and composition of the planet's atmosphere \citep{moses13}.  Many of these species are easily detectable due to their strong absorption features, as illustrated in Figure\,\ref{fig:opacity}.  This figure shows the predicted opacity of dominant absorbers for a solar composition atmosphere at 1500 K (representative of a typical hot Jupiter).  In addition, there are several species that are less abundant but still detectable thanks to their large absorption cross sections: namely, the alkali metals (sodium and potassium) and titanium and vanadium oxides (TiO and VO). 
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=\textwidth]{fig5_opacity.pdf}
+\caption{Opacities for a solar composition atmosphere in chemical equilibrium at 1500 K and 0.3 bar. Sodium and potassium are the dominant absorbing species at optical wavelengths, whereas water and carbon monoxide are dominant in the near-infrared. At lower atmospheric temperatures (not shown), methane and ammonia become more abundant.  Even though H and He dominate the atmospheric composition, they only have collision-induced continuum opacity at infrared wavelengths, and the spectrum is instead dominated by the molecular and atomic species shown here.  Figure made with the Opacity Wizard tool, courtesy of Caroline Morley (https://github.com/astrocaroline/opacity-wizard).}
+\label{fig:opacity}       
+\end{centering}
+\end{figure}
+
+%We note that in the nomenclature of planetary science, H$_2$ and He are referred to as \hbindex{gases}, and the other molecules are \hbindex{ices} \citep{depater15}.  
+%The most abundant molecules are not necessarily the easiest to detect in a planet's spectrum, however. Observability depends on both abundance \emph{and} absorption cross-section. Hydrogen and helium, though they are the dominant component by mass for giant planet atmospheres, are relatively weak absorbers. By contrast, water and other ices have large absorption cross sections thanks to millions of rotational and vibrational line transitions between the optical and the far-infrared \citep{tennyson12}.  Ices are thus expected to dominate planets' spectra.  In addition, there are a few trace species with very large cross sections (alkali metals, titanium and vanadium oxides) that may be seen \citep{seager00, fortney08}.
+
+\runinhead{Detections}
+Many of the predictions listed above have been borne out.  The first detection of an absorbing species was the sodium resonance doublet at 589 nm in the hot Jupiter HD 209458b \citep{charbonneau02}. Since then, both sodium and potassium have been detected in a number of other hot Jupiters \citep[e.g.][]{sing11b, nikolov14}. 
+
+Hydrogen has also been detected.  Lyman-$\alpha$ observations with HST/STIS revealed large exospheres of escaping atomic hydrogen around hot planets \citep[e.g.][]{vidal-madjar03, ehrenreich15}.  These exospheres also contain ionized metals \citep[e.g., OI, CII;][]{vidal-madjar04}. For more on atmospheric escape, see the chapter by Lecavelier and Bourrier, ``Characterizing Evaporating Atmospheres of Giant Exoplanets." In addition to atomic hydrogen, the presence of molecular H$_2$ was inferred from the Rayleigh scattering signature in the spectrum of HD 209458b \citep{lecavelier08}. However, condensates can also cause Rayleigh scattering, so it is not certain that H$_2$ is the culprit. 
+%\cite{lecavelier08} observed the signature of Rayleigh scattering from hydrogen in HD 209458b's optical transmission spectrum.  
+
+The most commonly observed molecular species is water, which has been seen in over a dozen planets \citep[e.g.][]{deming13, huitson13, birkby13, mccullough14, fraine14, kreidberg14b, kreidberg15b, line16, evans16, stevenson16b}. Most of these results come from HST/WFC3 spectra in the near-IR (1.1 - 1.7 $\mu$m). WFC3 observations have provided the most successful detections of molecular features, thanks to the combination of the instrument's state-of-the-art measurement precision and water's strong absorption features in the near-infrared.  To illustrate, Figure\,\ref{fig:spectra} shows an example of water features in WFC3 transmission and emission spectra for WASP-43b \citep{kreidberg14b}.  
+
+%These results are some of the first direct observations of water in gas giant planets, including Jupiter and Saturn, which are so cold that water has condensed out of their upper atmospheres \citep{showman98, guillot14}.
+
+Carbon-bearing molecules have proven harder to detect, mainly due to the wavelength range accessible by current observing facilities. Hot Jupiters are expected to have strong CO features in the near-infrared (see Figure\,\ref{fig:opacity}), but the \Spitzer\ photometric bandpasses are about $1\,\mu$m wide and cover spectral features from multiple different absorbing species (see Figure \ref{fig:instruments}). Several results from Spitzer suggest absorption from carbon-bearing species, but it is challenging to unambiguously identify which absorber is present \citep[e.g.][]{desert09, stevenson10, madhusudhan11, morley17}.  The only definitive detections of CO are from high-resolution ground-based spectroscopy \citep{dekok13,brogi14}.  
+
+There are some noteworthy molecules that have not yet been seen. These include ammonia and methane, which are abundant in the atmospheres of the solar system gas giants. Their absence in exoplanet transmission spectra is not a big surprise: these molecules are unstable at high temperatures, and will more likely be seen in cooler targets than those observed so far.  Despite many searches, there is no definitive evidence for TiO/VO either \citep[e.g.,][]{sing13, evans16}. These molecules are expected in hot planets \citep{fortney08}, but they may rain out or get cold trapped deep in the atmosphere \citep{parmentier13}.
+%Another missing player is titanium oxide, which has a large optical absorption cross-section and may play an important role in the thermal structure of hot Jupiters \citep{fortney08}. 
+%There have been tentative detections of several other molecules, including TiO, FeH, and HCN/NH$_3$ \citep[e.g.,][]{tsiaras16, evans16, macdonald17}. Ammonia and methane, which are dominant absorbers in the solar system gaseous planets, are expected to be less abundant for the high temperature 
+% Future observations with broader spectral coverage and higher precision are needed to verify the presence of these absorbers.
+
+We note that nearly all of the results listed here are for hot Jupiters, but there have been a few detections for smaller, cooler planets. Water features were inferred in the transmission spectra of two exo-Neptunes with equilibrium temperatures below 1100 K \citep{fraine14, wakeford17}. The thermal emission spectrum of the warm Neptune GJ 436b also shows a strong absorption feature in the Spitzer 4.5 $\mu$m filter, which could be due to CO/CO$_2$ \citep{morley17}.  These observations have only been possible for a handful of the most observationally feasible small planets, but many more systems will become accessible with JWST thanks to its larger collecting area. 
+
+\runinhead{Absolute Abundances}
+Once an atom or molecule has been detected, a next step is to retrieve its abundance (as described in the chapter ``Atmospheric Retrieval for Exoplanet Atmospheres" by Madhusudhan). Abundance measurements are useful because they are diagnostic of planetary formation conditions, such as the surface density of solids and the relative accretion rates of gas and ice \citep[e.g.][]{fortney13, mordasini16}. Abundances are typically quantified in terms of their enrichment over the solar value (i.e., the expected abundance for a solar composition gas at the temperature of the planet's atmosphere).  The more precise the measurement, the better it can constrain the planet's formation history. However, precise determinations are challenging, even if molecular absorption is detected at high confidence.  Based on transmission spectra alone, there are order of magnitude degeneracies between chemical mixing ratios and atmospheric pressure \citep{benneke12, griffith13}.  
+
+To break this degeneracy, one approach is to observe the planet's thermal emission.  Emission spectra are more sensitive to absolute abundance because the shape and amplitude of spectral features depend on the temperature-pressure profile. For example, \cite{stevenson17} measured the water abundance for the hot Jupiter WASP-43b to better than a factor of five  ($0.3 - 1.7\times$ solar at $1\,\sigma$ confidence). Another technique to improve precision requires observe multiple absorption bands for the same molecule in transmission \citep{benneke12}.  \cite{wakeford17} detected two water features in the transmission spectrum of the warm Neptune HAT-P-26b and retrieved a water abundance of $0.8 - 26\times$ solar at 1\,$\sigma$ \citep{wakeford17}. Even though these estimates are much less precise than what has been achieved for the solar system (see Figure \,\ref{fig:massZ}), there is a much larger and more diverse sample of exoplanets available to study.  A dedicated atmosphere characterization mission could measure abundances for hundreds of planets, and provide a complementary test of planet formation models in addition to detailed study of solar system planets \citep{chapman17}. 
+
+
+The existing exoplanet metallicity constraints are already an intriguing point of comparison. In the solar system, there is a pattern of increasing atmospheric metallicity with decreasing planet mass  -- from a factor of a few enhanced over solar for Jupiter to $\sim100\times$ solar for Uranus. This trend is a natural outcome of planet population synthesis models, which show that lower mass planets are relatively more polluted by infalling planetesimals \citep{fortney13, mordasini16}. Using water abundance as a tracer of metallicity, we see that WASP-43b agrees well with the solar system pattern, but HAT-P-26b is marginally less enriched than expected (as shown in Figure\,\ref{fig:massZ}).  These results hint at a diversity of atmospheric compositions, and provide a proof of concept that precise abundance measurements are possible for exoplanets. It is also exciting that these measurements are for water, specifically. The water abundances for the solar system gas giants are poorly constrained, because water is condensed deep in their atmospheres \citep{showman98, mousis14}. By contrast, water is well-mixed and in the gas phase for hot exoplanets, providing an opportunity to directly study this critical building block for planet formation.
+
+ 
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=.8]{fig6_wakeford.jpg}
+\caption{Atmospheric metallicity versus planet mass for the solar system planets and exoplanets (from \citealt{wakeford17}; reprinted with permission from AAAS.). The solar system shows a pattern of decreasing metallicity with increasing planet mass, which is fit well by a power law (black dashed line with gray shaded 1-$\sigma$ uncertainties). Exoplanets roughly hold to this pattern, but may exhibit more scatter (orange line with shading). While exoplanet atmospheric metallicities have larger uncertainties than for the solar system planets, it is possible to measure abundances for hundreds to thousands of them, enabling statistical constraints on the metal enrichment pattern.} 
+\label{fig:massZ}       
+\end{centering}
+\end{figure}
+
+\runinhead{Abundance Ratios}
+The composition of the protoplanetary disk is not uniform everywhere. As the disk temperature drops with radial distance from the star, molecules reach their freezing points, beginning with H$_2$O and followed by CO$_2$ and CO, leading to variation in abundance ratios for gas versus solid material. These gradients in chemistry can be imprinted on the composition of forming planets \citep[e.g.][]{oberg11, madhusudhan14, alidib16}. Because planets are enriched in metals by planetesimal accretion, the abundance pattern is expected to trace that of the solids rather than the gas \citep{mordasini16, espinoza17}.
+
+The carbon-to-oxygen ratio (C/O) has been proposed as a natural framework for characterizing atmospheric abundance patterns, since these are major building blocks for planet formation \citep{madhusudhan12}.  Equilibrium chemical abundances change dramatically when carbon is more abundant than oxygen, so carbon-rich compositions (C/O $> 1$) should be easily identifiable \citep{moses13}.  There was early evidence for a carbon-rich atmospheric composition for WASP-12b based on its thermal emission spectrum \citep{madhusudhan11}, but further scrutiny of this planet and other hot Jupiters has revealed $\mathrm{C/O} < 1$ in all cases \citep{line14, kreidberg15b, benneke15, barstow17}. More precise constraints await JWST, which is expected to constrain C/O for hot Jupiters to a precision of 0.2 dex \citep{greene16}.
+
+\subsection{Climate}
+With thermal emission measurements, it is possible to characterize a planet's climate in detail.  To date, these observations have focused on hot Jupiters with large planet-to-star flux ratios. The most common measurement is of dayside brightness temperature, which has been inferred from secondary eclipse observations for over 50 planets \citep{schwartz15}. Measured dayside temperatures range from roughly 1000 to 3000 K \citep{stevenson14b, kammer15, morley17}.  In addition to brightness temperatures, one can also determine the atmosphere's temperature-pressure profile using emission spectroscopy. At wavelengths where the atmosphere has higher opacity, the emitted light comes from higher altitudes. 
+
+\runinhead{Thermal Inversions}
+\cite{fortney08} predicted that hot Jupiter atmospheres are divided into two classes: those with thermal inversions (temperature increasing with height) and those with non-inverted profiles. The dividing factor is whether gaseous TiO/VO is present in the atmosphere. These molecules are very strong optical absorbers and can significantly heat the upper atmosphere even when present in trace amounts. But they are only expected to be present in the hottest atmospheres (flux $>10^9\,\mathrm{erg}\,\mathrm{s}^{-1}\,\mathrm{cm}^{-2}$); at cooler temperatures, they will condense and rain out of the atmosphere.
+
+Early \Spitzer\ observations of the hot Jupiter HD 209458b, which falls on the dividing line between the two classes, suggested the atmosphere has a thermal inversion \citep{knutson08}. 
+%Such \hbindex{thermal inversions} can result from upper atmosphere heating by a strong optical or UV absorber (for example, Earth's stratosphere is due to ozone absorption).  TiO and VO are potential culprits for thermal inversions. These species have large optical absorption cross-sections, and could be present in the gas phase for the hottest planets \citep{fortney08}.
+However, new data showed that this was not the case, and that the temperature profile is actually decreasing with height \citep{diamond-lowe14, schwarz15, line16}.  More recently, there has been evidence for weak inversions (isothermal profiles) in the atmospheres of other planets \citep{stevenson14, haynes15}. All of these planets have extremely hot dayside temperatures ($> 2500$ K), suggesting that temperature does play a role in determining thermal structure. %It is possible that the \cite{fortney08} classification is valid, but the dividing temperature for TiO/VO rain-out is higher than originally predicted.
+
+\runinhead{Global Heat Circulation}
+Thermal phase curves provide many additional insights into global climate. This topic is discussed in detail in the chapter by Parmentier and Crossfield, so we will touch on just a few of the highlights. 
+\begin{itemize}
+\item{The first phase curve measurement, for the tidally locked hot Jupiter HD 189733b with Spitzer by \cite{knutson07}. They measured a small difference in temperature of $250$ K from the dayside to the nightside, and an offset in peak brightness to the east of the substellar point. These results agree well with expectations from 3D global circulation models (GCMs), which predict efficient heat redistribution for slower rotation periods, and eastward equatorial jets caused by the interaction of Rossby waves with the planet's rotation \citep{showman09}.}
+\item{The first spectroscopic phase curve, for the hot Jupiter WASP-43b with HST/WFC3 \citep{stevenson14}. The spectra are sensitive to a range of pressure levels in the atmosphere, enabling a determination of the planet's thermal structure as a function of longitude \emph{and} altitude. The planet has a low Bond albedo (0.2), a large day-night temperature contrast (suggesting there are clouds on the nightside), and a hot spot that is shifted further east at higher pressures, indicative of more efficient heat transport deeper in the atmosphere.}
+\item{A Spitzer phase curve for the super-Earth (2\,$R_\oplus$) 55 Cancri e \citep{demory16}.  This is the first phase curve measured for a small planet.  The measurement revealed a dayside temperature of 2700 K, with a 1300 K drop in temperature to the nightside. There is a large hot spot offset (40 degrees east of the substellar point).  The results are consistent with either molten rock on the dayside, or an optically thick atmosphere with minimal heat redistribution.}
+\end{itemize}
+
+\subsection{Condensates}
+Condensates -- an umbrella term that includes clouds and hazes -- are ubiquitous in the solar system planet atmospheres and are proving to be common in exoplanets as well. Roughly half of hot Jupiters have evidence for condensates in their spectra \citep{sing16}. Transmission spectra are particularly sensitive to the presence of condensates, due to the slant viewing geometry observed during transit \citep{fortney05}.  Condensates have three main effects on transmission spectra.  First, they block transmission of stellar flux, effectively truncating spectral features below the cloud-deck height.  They can also introduce a slope in the spectrum over wavelength intervals of several microns \citep[e.g][]{sing16}.  The third effect is scattering off cloud and haze particles at optical wavelengths, which introduces a steep increase in transit depth toward the blue \citep[e.g.][]{pont08}.
+
+The first hint of extrasolar condensates came from HD 209458b, which had a smaller than expected sodium feature relative to a clear atmosphere \citep{charbonneau02}. This observation foreshadowed a slew of spectra with truncated features \citep[e.g.][]{deming13, crossfield13, kreidberg14a, knutson14a, kreidberg15b}. Many spectra have also shown the large optical slope indicative of scattering from small particles \citep[e.g][]{lecavelier08b, sing11, sing13, robinson14, dragomir15}. Transit depth offsets between 1 and 5 $\mu$m are also seen in many hot Jupiters \citep{sing16}.
+
+Despite this body of evidence, the makeup of the condensates has proven elusive. There are a number of theoretical possibilities, including equilibrium condensates such as water, salt, sulfide, or silicate clouds (depending on temperature) and photochemical hazes, e.g. hydrocarbon soots formed from photolyzed methane \citep{burrows99, kempton12, morley13, wakeford17}. Current transmission spectra lack the wavelength coverage and precision needed to distinguish between these species in exoplanets.  In brown dwarfs, a silicate feature at 9 $\mu$m has been tentatively detected using \Spitzer/IRS \citep{cushing06}. Future observations of exoplanets could also reveal features from specific grains, which would unambiguously determine their composition \citep{wakeford15}.
+
+Meanwhile, there are several indirect constraints on condensate properties.  For example, optical phase curves of hot Jupiters are best explained by reflective clouds on their western hemispheres, composed of silicate or manganese sulfide \citep{demory13, oreshenko16, parmentier16}. Further clues come from the amplitude of spectral features. For example, the spectrum of the super-Earth GJ 1214b is featureless at high precision \citep[30 ppm,][]{kreidberg14a}.  Truncating the features to this extent requires an optically thick condensate layer at a pressure level of 0.1 millibar, which can be achieved either by thick, lofted clouds or very efficient haze formation \citep{morley15}. 
+
+There is some evidence that condensates are more prevalent at lower temperatures \citep{stevenson16, heng16}. However, the microphysics of condensate formation are complex and depend sensitively on the thermal structure and circulation of the atmosphere \citep{turco79}. More atmosphere studies are needed to determine whether the presence of condensates can be predicted from temperature or other basic properties.
+
+\section{Future Prospects}
+We are on the threshold of a revolution in exoplanet atmosphere characterization thanks to several upcoming observing facilities.  The first of these is the Transiting Exoplanet Survey Satellite (\TESS), a planet finding mission scheduled to launch in 2018 \citep{ricker14}.  The goal of \TESS\ is to search 200,000 of the brightest stars in the sky for transiting planets, with an expected yield of nearly 2000 discoveries \citep{sullivan15}. In contrast to the majority of transiting planets discovered to date by \Kepler, the \TESS\ planets will have bright enough host stars for precise atmosphere characterization. The sample will also include smaller and cooler planets than are typically discovered by ground-based surveys of bright stars. 
+
+The second game changer is \JWST. The primary technical limitations in atmosphere characterization thus far have been aperture size and wavelength coverage, and \JWST\ offers major improvements on both fronts. It has roughly ten times the collecting area of \HST\, and provides spectroscopy from the optical to the infrared ($0.6 - 28\,\mu$m). The improvement in precision will make it possible to push down to sub-Neptune and smaller planets, and to study giant planets with unprecedented S/N. The expanded wavelength coverage will also enable the first spectroscopic detections of many molecules which have been elusive so far (including methane, carbon dioxide, and ammonia). Finally, \JWST's infrared detector MIRI will be sensitive to thermal emission from cooler objects, including potentially habitable worlds.
+
+\runinhead{Pushing to Earth-Size Planets}
+Atmosphere characterization for terrestrial planets is a challenge, but it is easiest for planets transiting nearby small stars.  Fortunately, such planets are common: roughly a quarter of M-dwarfs host a terrestrial planet in the habitable zone \citep{dressing15}. A number of these have been detected already, included three of the seven planets around the ultra-cool dwarf star TRAPPIST-1 and LHS 1140b \citep{gillon17, dittmann17}. Assuming these planets have high mean molecular weight atmospheric compositions like that of the Earth, the expected amplitude of spectral features in their atmospheres is of order 10 ppm -- a goal within reach of an intensive JWST observing campaign with repeated transit and eclipse observations for some of the planets \citep{morley17b}.  JWST is scheduled to launch in late 2018, so may soon provide us with the first ever constraints on terrestrial planet atmospheres beyond the solar system. 
+
+
+\begin{acknowledgement}
+The author acknowledges support from the Harvard Society of Fellows and the Harvard Astronomy Department Institute for Theory and Computation. She is grateful for helpful comments and figures from Caroline Morley, Hannah Diamond-Lowe, Tyler Robinson, and Sara Seager.
+\end{acknowledgement}
+
+\section{Bibliography}
+\bibliographystyle{spbasicHBexo}  %for bibtex
+
+\begin{thebibliography}{110}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{{Ali-Dib}(2016)}]{alidib16}
+{Ali-Dib} M (2016) {Disentangling Hot Jupiters formation location from their
+  chemical composition}. ArXiv e-prints
+
+\bibitem[{{Anders} and {Grevesse}(1989)}]{anders89}
+{Anders} E {Grevesse} N (1989) {Abundances of the elements - Meteoritic and
+  solar}. \gca 53:197--214
+
+\bibitem[{{Angerhausen} et~al.(2015){Angerhausen}, {DeLarme}, and
+  {Morse}}]{angerhausen15}
+{Angerhausen} D, {DeLarme} E {Morse} JA (2015) {A Comprehensive Study of Kepler
+  Phase Curves and Secondary Eclipses: Temperatures and Albedos of Confirmed
+  Kepler Giant Planets}. \pasp 127:1113
+
+\bibitem[{{Barstow} et~al.(2017){Barstow}, {Aigrain}, {Irwin}, and
+  {Sing}}]{barstow17}
+{Barstow} JK, {Aigrain} S, {Irwin} PGJ {Sing} DK (2017) {A Consistent Retrieval
+  Analysis of 10 Hot Jupiters Observed in Transmission}. \apj 834:50
+
+\bibitem[{{Bean} et~al.(2010){Bean}, {Miller-Ricci Kempton}, and
+  {Homeier}}]{bean10}
+{Bean} JL, {Miller-Ricci Kempton} E {Homeier} D (2010) {A ground-based
+  transmission spectrum of the super-Earth exoplanet GJ 1214b}. \nat
+  468:669--672
+
+\bibitem[{{Bean} et~al.(2013){Bean}, {D{\'e}sert}, {Seifahrt}, {Madhusudhan},
+  {Chilingarian}, {Homeier}, and {Szentgyorgyi}}]{bean13}
+{Bean} JL, {D{\'e}sert} JM, {Seifahrt} A et~al. (2013) {Ground-based Transit
+  Spectroscopy of the Hot-Jupiter WASP-19b in the Near-infrared}. \apj 771:108
+
+\bibitem[{{Beatty} et~al.(2016){Beatty}, {Madhusudhan}, {Pogge}, {Chung},
+  {Bierlya}, {Gaudi}, and {Latham}}]{beatty16}
+{Beatty} TG, {Madhusudhan} N, {Pogge} R et~al. (2016) {The Broadband and
+  Spectrally-Resolved H-band Eclipse of KELT-1b and the Role of Surface Gravity
+  in Stratospheric Inversions in Hot Jupiters}. ArXiv e-prints
+
+\bibitem[{{Benneke}(2015)}]{benneke15}
+{Benneke} B (2015) {Strict Upper Limits on the Carbon-to-Oxygen Ratios of Eight
+  Hot Jupiters from Self-Consistent Atmospheric Retrieval}. ArXiv e-prints
+
+\bibitem[{{Benneke} and {Seager}(2012)}]{benneke12}
+{Benneke} B {Seager} S (2012) {Atmospheric Retrieval for Super-Earths: Uniquely
+  Constraining the Atmospheric Composition with Transmission Spectroscopy}.
+  \apj 753:100
+
+\bibitem[{{Birkby} et~al.(2013){Birkby}, {de Kok}, {Brogi}, {de Mooij},
+  {Schwarz}, {Albrecht}, and {Snellen}}]{birkby13}
+{Birkby} JL, {de Kok} RJ, {Brogi} M et~al. (2013) {Detection of water
+  absorption in the day side atmosphere of HD 189733 b using ground-based
+  high-resolution spectroscopy at 3.2 {$\mu$}m}. \mnras 436:L35--L39
+
+\bibitem[{{Brogi} et~al.(2014){Brogi}, {de Kok}, {Birkby}, {Schwarz}, and
+  {Snellen}}]{brogi14}
+{Brogi} M, {de Kok} RJ, {Birkby} JL, {Schwarz} H {Snellen} IAG (2014) {Carbon
+  monoxide and water vapor in the atmosphere of the non-transiting exoplanet HD
+  179949 b}. \aap 565:A124
+
+\bibitem[{{Burrows} and {Sharp}(1999)}]{burrows99}
+{Burrows} A {Sharp} CM (1999) {Chemical Equilibrium Abundances in Brown Dwarf
+  and Extrasolar Giant Planet Atmospheres}. \apj 512:843--863
+
+\bibitem[{{Chapman} et~al.(2017){Chapman}, {Zellem}, {Line}, {Bryden},
+  {Willacy}, {Iyer}, {Vasisht}, {Bean}, {Cowan}, {Fortney}, {Griffith},
+  {Kataria}, {Kempton}, {Kreidberg}, {Moses}, {Stevenson}, and
+  {Swain}}]{chapman17}
+{Chapman} JW, {Zellem} RT, {Line} MR et~al. (2017) {Quantifying the Impact of
+  Spectral Coverage on the Retrieval of Molecular Abundances from Exoplanet
+  Transmission Spectra}. ArXiv e-prints
+
+\bibitem[{{Charbonneau} et~al.(2002){Charbonneau}, {Brown}, {Noyes}, and
+  {Gilliland}}]{charbonneau02}
+{Charbonneau} D, {Brown} TM, {Noyes} RW {Gilliland} RL (2002) {Detection of an
+  Extrasolar Planet Atmosphere}. \apj 568:377--384
+
+\bibitem[{{Crossfield}(2015)}]{crossfield15}
+{Crossfield} IJM (2015) {Observations of Exoplanet Atmospheres}. \pasp 127:941
+
+\bibitem[{{Crossfield} et~al.(2013){Crossfield}, {Barman}, {Hansen}, and
+  {Howard}}]{crossfield13}
+{Crossfield} IJM, {Barman} T, {Hansen} BMS {Howard} AW (2013) {Warm ice giant
+  GJ 3470b. I. A flat transmission spectrum indicates a hazy, low-methane,
+  and/or metal-rich atmosphere}. \aap 559:A33
+
+\bibitem[{{Cushing} et~al.(2006){Cushing}, {Roellig}, {Marley}, {Saumon},
+  {Leggett}, {Kirkpatrick}, {Wilson}, {Sloan}, {Mainzer}, {Van Cleve}, and
+  {Houck}}]{cushing06}
+{Cushing} MC, {Roellig} TL, {Marley} MS et~al. (2006) {A Spitzer Infrared
+  Spectrograph Spectral Sequence of M, L, and T Dwarfs}. \apj 648:614--628
+
+\bibitem[{{de Kok} et~al.(2013){de Kok}, {Brogi}, {Snellen}, {Birkby},
+  {Albrecht}, and {de Mooij}}]{dekok13}
+{de Kok} RJ, {Brogi} M, {Snellen} IAG et~al. (2013) {Detection of carbon
+  monoxide in the high-resolution day-side spectrum of the exoplanet HD
+  189733b}. \aap 554:A82
+
+\bibitem[{{de Wit} et~al.(2012){de Wit}, {Gillon}, {Demory}, and
+  {Seager}}]{dewit12}
+{de Wit} J, {Gillon} M, {Demory} BO {Seager} S (2012) {Towards consistent
+  mapping of distant worlds: secondary-eclipse scanning of the exoplanet HD
+  189733b}. \aap 548:A128
+
+\bibitem[{{Deming} and {Seager}(2017)}]{deming17}
+{Deming} D {Seager} S (2017) {Illusion and Reality in the Atmospheres of
+  Exoplanets}. ArXiv e-prints
+
+\bibitem[{{Deming} et~al.(2013){Deming}, {Wilkins}, {McCullough}, {Burrows},
+  {Fortney}, {Agol}, {Dobbs-Dixon}, {Madhusudhan}, {Crouzet}, {Desert},
+  {Gilliland}, {Haynes}, {Knutson}, {Line}, {Magic}, {Mandell}, {Ranjan},
+  {Charbonneau}, {Clampin}, {Seager}, and {Showman}}]{deming13}
+{Deming} D, {Wilkins} A, {McCullough} P et~al. (2013) {Infrared Transmission
+  Spectroscopy of the Exoplanets HD 209458b and XO-1b Using the Wide Field
+  Camera-3 on the Hubble Space Telescope}. \apj 774:95
+
+\bibitem[{{Deming} et~al.(2015){Deming}, {Knutson}, {Kammer}, {Fulton},
+  {Ingalls}, {Carey}, {Burrows}, {Fortney}, {Todorov}, {Agol}, {Cowan},
+  {Desert}, {Fraine}, {Langton}, {Morley}, and {Showman}}]{deming15}
+{Deming} D, {Knutson} H, {Kammer} J et~al. (2015) {Spitzer Secondary Eclipses
+  of the Dense, Modestly-irradiated, Giant Exoplanet HAT-P-20b Using
+  Pixel-level Decorrelation}. \apj 805:132
+
+\bibitem[{{Demory} et~al.(2013){Demory}, {de Wit}, {Lewis}, {Fortney}, {Zsom},
+  {Seager}, {Knutson}, {Heng}, {Madhusudhan}, {Gillon}, {Barclay}, {Desert},
+  {Parmentier}, and {Cowan}}]{demory13}
+{Demory} BO, {de Wit} J, {Lewis} N et~al. (2013) {Inference of Inhomogeneous
+  Clouds in an Exoplanet Atmosphere}. \apjl 776:L25
+
+\bibitem[{{Demory} et~al.(2016){Demory}, {Gillon}, {de Wit}, {Madhusudhan},
+  {Bolmont}, {Heng}, {Kataria}, {Lewis}, {Hu}, {Krick}, {Stamenkovi{\'c}},
+  {Benneke}, {Kane}, and {Queloz}}]{demory16}
+{Demory} BO, {Gillon} M, {de Wit} J et~al. (2016) {A map of the large day-night
+  temperature gradient of a super-Earth exoplanet}. \nat 532:207--209
+
+\bibitem[{{D{\'e}sert} et~al.(2009){D{\'e}sert}, {Lecavelier des Etangs},
+  {H{\'e}brard}, {Sing}, {Ehrenreich}, {Ferlet}, and {Vidal-Madjar}}]{desert09}
+{D{\'e}sert} JM, {Lecavelier des Etangs} A, {H{\'e}brard} G et~al. (2009)
+  {Search for Carbon Monoxide in the Atmosphere of the Transiting Exoplanet HD
+  189733b}. \apj 699:478--485
+
+\bibitem[{{Diamond-Lowe} et~al.(2014){Diamond-Lowe}, {Stevenson}, {Bean},
+  {Line}, and {Fortney}}]{diamond-lowe14}
+{Diamond-Lowe} H, {Stevenson} KB, {Bean} JL, {Line} MR {Fortney} JJ (2014) {New
+  Analysis Indicates No Thermal Inversion in the Atmosphere of HD 209458b}.
+  \apj 796:66
+
+\bibitem[{{Dittmann} et~al.(2017){Dittmann}, {Irwin}, {Charbonneau}, {Bonfils},
+  {Astudillo-Defru}, {Haywood}, {Berta-Thompson}, {Newton}, {Rodriguez},
+  {Winters}, {Tan}, {Almenara}, {Bouchy}, {Delfosse}, {Forveille}, {Lovis},
+  {Murgas}, {Pepe}, {Santos}, {Udry}, {W{\"u}nsche}, {Esquerdo}, {Latham}, and
+  {Dressing}}]{dittmann17}
+{Dittmann} JA, {Irwin} JM, {Charbonneau} D et~al. (2017) {A temperate rocky
+  super-Earth transiting a nearby cool star}. \nat 544:333--336
+
+\bibitem[{{Dragomir} et~al.(2015){Dragomir}, {Benneke}, {Pearson},
+  {Crossfield}, {Eastman}, {Barman}, and {Biddle}}]{dragomir15}
+{Dragomir} D, {Benneke} B, {Pearson} KA et~al. (2015) {Rayleigh Scattering in
+  the Atmosphere of the Warm Exo-Neptune GJ 3470b}. \apj 814:102
+
+\bibitem[{{Dressing} and {Charbonneau}(2015)}]{dressing15}
+{Dressing} CD {Charbonneau} D (2015) {The Occurrence of Potentially Habitable
+  Planets Orbiting M Dwarfs Estimated from the Full Kepler Dataset and an
+  Empirical Measurement of the Detection Sensitivity}. \apj 807:45
+
+\bibitem[{{Ehrenreich} et~al.(2015){Ehrenreich}, {Bourrier}, {Wheatley},
+  {Lecavelier des Etangs}, {H{\'e}brard}, {Udry}, {Bonfils}, {Delfosse},
+  {D{\'e}sert}, {Sing}, and {Vidal-Madjar}}]{ehrenreich15}
+{Ehrenreich} D, {Bourrier} V, {Wheatley} PJ et~al. (2015) {A giant comet-like
+  cloud of hydrogen escaping the warm Neptune-mass exoplanet GJ 436b}. \nat
+  522:459--461
+
+\bibitem[{{Espinoza} et~al.(2017){Espinoza}, {Fortney}, {Miguel}, {Thorngren},
+  and {Murray-Clay}}]{espinoza17}
+{Espinoza} N, {Fortney} JJ, {Miguel} Y, {Thorngren} D {Murray-Clay} R (2017)
+  {Metal Enrichment Leads to Low Atmospheric C/O Ratios in Transiting Giant
+  Exoplanets}. \apjl 838:L9
+
+\bibitem[{{Evans} et~al.(2016){Evans}, {Sing}, {Wakeford}, {Nikolov},
+  {Ballester}, {Drummond}, {Kataria}, {Gibson}, {Amundsen}, and
+  {Spake}}]{evans16}
+{Evans} TM, {Sing} DK, {Wakeford} HR et~al. (2016) {Detection of H$_{2}$O and
+  Evidence for TiO/VO in an Ultra-hot Exoplanet Atmosphere}. \apjl 822:L4
+
+\bibitem[{{Fortney}(2005)}]{fortney05}
+{Fortney} JJ (2005) {The effect of condensates on the characterization of
+  transiting planet atmospheres with transmission spectroscopy}. \mnras
+  364:649--653
+
+\bibitem[{{Fortney} et~al.(2008){Fortney}, {Lodders}, {Marley}, and
+  {Freedman}}]{fortney08}
+{Fortney} JJ, {Lodders} K, {Marley} MS {Freedman} RS (2008) {A Unified Theory
+  for the Atmospheres of the Hot and Very Hot Jupiters: Two Classes of
+  Irradiated Atmospheres}. \apj 678:1419-1435
+
+\bibitem[{{Fortney} et~al.(2013){Fortney}, {Mordasini}, {Nettelmann},
+  {Kempton}, {Greene}, and {Zahnle}}]{fortney13}
+{Fortney} JJ, {Mordasini} C, {Nettelmann} N et~al. (2013) {A Framework for
+  Characterizing the Atmospheres of Low-mass Low-density Transiting Planets}.
+  \apj 775:80
+
+\bibitem[{{Fraine} et~al.(2014){Fraine}, {Deming}, {Benneke}, {Knutson},
+  {Jord{\'a}n}, {Espinoza}, {Madhusudhan}, {Wilkins}, and {Todorov}}]{fraine14}
+{Fraine} J, {Deming} D, {Benneke} B et~al. (2014) {Water vapour absorption in
+  the clear atmosphere of a Neptune-sized exoplanet}. \nat 513:526--529
+
+\bibitem[{{Gibson} et~al.(2011){Gibson}, {Pont}, and {Aigrain}}]{gibson11}
+{Gibson} NP, {Pont} F {Aigrain} S (2011) {A new look at NICMOS transmission
+  spectroscopy of HD 189733, GJ-436 and XO-1: no conclusive evidence for
+  molecular features}. \mnras 411:2199--2213
+
+\bibitem[{{Gillon} et~al.(2017){Gillon}, {Triaud}, {Demory}, {Jehin}, {Agol},
+  {Deck}, {Lederer}, {de Wit}, {Burdanov}, {Ingalls}, {Bolmont}, {Leconte},
+  {Raymond}, {Selsis}, {Turbet}, {Barkaoui}, {Burgasser}, {Burleigh}, {Carey},
+  {Chaushev}, {Copperwheat}, {Delrez}, {Fernandes}, {Holdsworth}, {Kotze}, {Van
+  Grootel}, {Almleaky}, {Benkhaldoun}, {Magain}, and {Queloz}}]{gillon17}
+{Gillon} M, {Triaud} AHMJ, {Demory} BO et~al. (2017) {Seven temperate
+  terrestrial planets around the nearby ultracool dwarf star TRAPPIST-1}. ArXiv
+  e-prints
+
+\bibitem[{{Greene} et~al.(2016){Greene}, {Line}, {Montero}, {Fortney},
+  {Lustig-Yaeger}, and {Luther}}]{greene16}
+{Greene} TP, {Line} MR, {Montero} C et~al. (2016) {Characterizing Transiting
+  Exoplanet Atmospheres with JWST}. \apj 817:17
+
+\bibitem[{{Griffith} et~al.(2013){Griffith}, {Turner}, {Zellem}, {Tinetti}, and
+  {Teske}}]{griffith13}
+{Griffith} CA, {Turner} JD, {Zellem} R, {Tinetti} G {Teske} J (2013)
+  {Interpreting low spectral resolution data of transiting exoplanets}.
+  European Planetary Science Congress 2013, held 8-13 September in London,
+  UK~Online at: <A href=``http://meetingscopernicusorg/epsc2013''>
+  http://meetingscopernicusorg/epsc2013</A>, idEPSC2013-883 8:EPSC2013-883
+
+\bibitem[{{Haynes} et~al.(2015){Haynes}, {Mandell}, {Madhusudhan}, {Deming},
+  and {Knutson}}]{haynes15}
+{Haynes} K, {Mandell} AM, {Madhusudhan} N, {Deming} D {Knutson} H (2015)
+  {Spectroscopic Evidence for a Temperature Inversion in the Dayside Atmosphere
+  of Hot Jupiter WASP-33b}. \apj 806:146
+
+\bibitem[{{Heng}(2016)}]{heng16}
+{Heng} K (2016) {A Cloudiness Index for Transiting Exoplanets Based on the
+  Sodium and Potassium Lines: Tentative Evidence for Hotter Atmospheres Being
+  Less Cloudy at Visible Wavelengths}. \apjl 826:L16
+
+\bibitem[{{Huitson} et~al.(2013){Huitson}, {Sing}, {Pont}, {Fortney},
+  {Burrows}, {Wilson}, {Ballester}, {Nikolov}, {Gibson}, {Deming}, {Aigrain},
+  {Evans}, {Henry}, {Lecavelier des Etangs}, {Showman}, {Vidal-Madjar}, and
+  {Zahnle}}]{huitson13}
+{Huitson} CM, {Sing} DK, {Pont} F et~al. (2013) {An HST optical-to-near-IR
+  transmission spectrum of the hot Jupiter WASP-19b: detection of atmospheric
+  water and likely absence of TiO}. \mnras 434:3252--3274
+
+\bibitem[{{Ingalls} et~al.(2016){Ingalls}, {Krick}, {Carey}, {Stauffer},
+  {Lowrance}, {Grillmair}, {Buzasi}, {Deming}, {Diamond-Lowe}, {Evans},
+  {Morello}, {Stevenson}, {Wong}, {Capak}, {Glaccum}, {Laine}, {Surace}, and
+  {Storrie-Lombardi}}]{ingalls16}
+{Ingalls} JG, {Krick} JE, {Carey} SJ et~al. (2016) {Repeatability and Accuracy
+  of Exoplanet Eclipse Depths Measured with Post-cryogenic Spitzer}. \aj 152:44
+
+\bibitem[{{Jord{\'a}n} et~al.(2013){Jord{\'a}n}, {Espinoza}, {Rabus},
+  {Eyheramendy}, {Sing}, {D{\'e}sert}, {Bakos}, {Fortney}, {L{\'o}pez-Morales},
+  {Maxted}, {Triaud}, and {Szentgyorgyi}}]{jordan13}
+{Jord{\'a}n} A, {Espinoza} N, {Rabus} M et~al. (2013) {A Ground-based Optical
+  Transmission Spectrum of WASP-6b}. \apj 778:184
+
+\bibitem[{{Kammer} et~al.(2015){Kammer}, {Knutson}, {Line}, {Fortney},
+  {Deming}, {Burrows}, {Cowan}, {Triaud}, {Agol}, {Desert}, {Fulton}, {Howard},
+  {Laughlin}, {Lewis}, {Morley}, {Moses}, {Showman}, and {Todorov}}]{kammer15}
+{Kammer} JA, {Knutson} HA, {Line} MR et~al. (2015) {Spitzer Secondary Eclipse
+  Observations of Five Cool Gas Giant Planets and Empirical Trends in Cool
+  Planet Emission Spectra}. \apj 810:118
+
+\bibitem[{{Kipping} and {Tinetti}(2010)}]{kipping10}
+{Kipping} DM {Tinetti} G (2010) {Nightside pollution of exoplanet transit
+  depths}. \mnras 407:2589--2598
+
+\bibitem[{{Knutson} et~al.(2007){Knutson}, {Charbonneau}, {Allen}, {Fortney},
+  {Agol}, {Cowan}, {Showman}, {Cooper}, and {Megeath}}]{knutson07}
+{Knutson} HA, {Charbonneau} D, {Allen} LE et~al. (2007) {A map of the day-night
+  contrast of the extrasolar planet HD 189733b}. \nat 447:183--186
+
+\bibitem[{{Knutson} et~al.(2008){Knutson}, {Charbonneau}, {Allen}, {Burrows},
+  and {Megeath}}]{knutson08}
+{Knutson} HA, {Charbonneau} D, {Allen} LE, {Burrows} A {Megeath} ST (2008) {The
+  3.6-8.0 {$\mu$}m Broadband Emission Spectrum of HD 209458b: Evidence for an
+  Atmospheric Temperature Inversion}. \apj 673:526-531
+
+\bibitem[{{Knutson} et~al.(2014){Knutson}, {Benneke}, {Deming}, and
+  {Homeier}}]{knutson14a}
+{Knutson} HA, {Benneke} B, {Deming} D {Homeier} D (2014) {A featureless
+  transmission spectrum for the Neptune-mass exoplanet GJ436b}. \nat 505:66--68
+
+\bibitem[{{Kreidberg} et~al.(2014{\natexlab{a}}){Kreidberg}, {Bean},
+  {D{\'e}sert}, {Benneke}, {Deming}, {Stevenson}, {Seager}, {Berta-Thompson},
+  {Seifahrt}, and {Homeier}}]{kreidberg14a}
+{Kreidberg} L, {Bean} JL, {D{\'e}sert} JM et~al. (2014{\natexlab{a}}) {Clouds
+  in the atmosphere of the super-Earth exoplanet GJ1214b}. \nat 505:69--72
+
+\bibitem[{{Kreidberg} et~al.(2014{\natexlab{b}}){Kreidberg}, {Bean},
+  {D{\'e}sert}, {Line}, {Fortney}, {Madhusudhan}, {Stevenson}, {Showman},
+  {Charbonneau}, {McCullough}, {Seager}, {Burrows}, {Henry}, {Williamson},
+  {Kataria}, and {Homeier}}]{kreidberg14b}
+{Kreidberg} L, {Bean} JL, {D{\'e}sert} JM et~al. (2014{\natexlab{b}}) {A
+  Precise Water Abundance Measurement for the Hot Jupiter WASP-43b}. \apjl
+  793:L27
+
+\bibitem[{{Kreidberg} et~al.(2015){Kreidberg}, {Line}, {Bean}, {Stevenson},
+  {D{\'e}sert}, {Madhusudhan}, {Fortney}, {Barstow}, {Henry}, {Williamson}, and
+  {Showman}}]{kreidberg15b}
+{Kreidberg} L, {Line} MR, {Bean} JL et~al. (2015) {A Detection of Water in the
+  Transmission Spectrum of the Hot Jupiter WASP-12b and Implications for Its
+  Atmospheric Composition}. \apj 814:66
+
+\bibitem[{{Lecavelier Des Etangs} et~al.(2008{\natexlab{a}}){Lecavelier Des
+  Etangs}, {Pont}, {Vidal-Madjar}, and {Sing}}]{lecavelier08b}
+{Lecavelier Des Etangs} A, {Pont} F, {Vidal-Madjar} A {Sing} D
+  (2008{\natexlab{a}}) {Rayleigh scattering in the transit spectrum of HD
+  189733b}. \aap 481:L83--L86
+
+\bibitem[{{Lecavelier Des Etangs} et~al.(2008{\natexlab{b}}){Lecavelier Des
+  Etangs}, {Vidal-Madjar}, {D{\'e}sert}, and {Sing}}]{lecavelier08}
+{Lecavelier Des Etangs} A, {Vidal-Madjar} A, {D{\'e}sert} JM {Sing} D
+  (2008{\natexlab{b}}) {Rayleigh scattering by H$_{2}$ in the extrasolar planet
+  HD 209458b}. \aap 485:865--869
+
+\bibitem[{{Line} et~al.(2014){Line}, {Knutson}, {Wolf}, and {Yung}}]{line14}
+{Line} MR, {Knutson} H, {Wolf} AS {Yung} YL (2014) {A Systematic Retrieval
+  Analysis of Secondary Eclipse Spectra. II. A Uniform Analysis of Nine Planets
+  and their C to O Ratios}. \apj 783:70
+
+\bibitem[{{Line} et~al.(2016){Line}, {Stevenson}, {Bean}, {Desert}, {Fortney},
+  {Kreidberg}, {Madhusudhan}, {Showman}, and {Diamond-Lowe}}]{line16}
+{Line} MR, {Stevenson} KB, {Bean} J et~al. (2016) {No Thermal Inversion and a
+  Solar Water Abundance for the Hot Jupiter HD 209458b from HST/WFC3
+  Spectroscopy}. \aj 152:203
+
+\bibitem[{{Madhusudhan}(2012)}]{madhusudhan12}
+{Madhusudhan} N (2012) {C/O Ratio as a Dimension for Characterizing
+  Exoplanetary Atmospheres}. \apj 758:36
+
+\bibitem[{{Madhusudhan} and {Burrows}(2012)}]{madhu12}
+{Madhusudhan} N {Burrows} A (2012) {Analytic Models for Albedos, Phase Curves,
+  and Polarization of Reflected Light from Exoplanets}. \apj 747:25
+
+\bibitem[{{Madhusudhan} et~al.(2011){Madhusudhan}, {Harrington}, {Stevenson},
+  {Nymeyer}, {Campo}, {Wheatley}, {Deming}, {Blecic}, {Hardy}, {Lust},
+  {Anderson}, {Collier-Cameron}, {Britt}, {Bowman}, {Hebb}, {Hellier},
+  {Maxted}, {Pollacco}, and {West}}]{madhusudhan11}
+{Madhusudhan} N, {Harrington} J, {Stevenson} KB et~al. (2011) {A high C/O ratio
+  and weak thermal inversion in the atmosphere of exoplanet WASP-12b}. \nat
+  469:64--67
+
+\bibitem[{{Madhusudhan} et~al.(2014){Madhusudhan}, {Amin}, and
+  {Kennedy}}]{madhusudhan14}
+{Madhusudhan} N, {Amin} MA {Kennedy} GM (2014) {Toward Chemical Constraints on
+  Hot Jupiter Migration}. \apjl 794:L12
+
+\bibitem[{{McCullough} et~al.(2014){McCullough}, {Crouzet}, {Deming}, and
+  {Madhusudhan}}]{mccullough14}
+{McCullough} PR, {Crouzet} N, {Deming} D {Madhusudhan} N (2014) {Water Vapor in
+  the Spectrum of the Extrasolar Planet HD 189733b. I. The Transit}. \apj
+  791:55
+
+\bibitem[{{Miller-Ricci Kempton} et~al.(2012){Miller-Ricci Kempton}, {Zahnle},
+  and {Fortney}}]{kempton12}
+{Miller-Ricci Kempton} E, {Zahnle} K {Fortney} JJ (2012) {The Atmospheric
+  Chemistry of GJ 1214b: Photochemistry and Clouds}. \apj 745:3
+
+\bibitem[{{Mordasini} et~al.(2016){Mordasini}, {van Boekel}, {Molli{\`e}re},
+  {Henning}, and {Benneke}}]{mordasini16}
+{Mordasini} C, {van Boekel} R, {Molli{\`e}re} P, {Henning} T {Benneke} B (2016)
+  {The Imprint of Exoplanet Formation History on Observable Present-day Spectra
+  of Hot Jupiters}. \apj 832:41
+
+\bibitem[{{Morello} et~al.(2015){Morello}, {Waldmann}, {Tinetti}, {Howarth},
+  {Micela}, and {Allard}}]{morello15}
+{Morello} G, {Waldmann} IP, {Tinetti} G et~al. (2015) {Revisiting Spitzer
+  Transit Observations with Independent Component Analysis: New Results for the
+  GJ 436 System}. \apj 802:117
+
+\bibitem[{{Morley} et~al.(2013){Morley}, {Fortney}, {Kempton}, {Marley},
+  {Visscher}, and {Zahnle}}]{morley13}
+{Morley} CV, {Fortney} JJ, {Kempton} EMR et~al. (2013) {Quantitatively
+  Assessing the Role of Clouds in the Transmission Spectrum of GJ 1214b}. \apj
+  775:33
+
+\bibitem[{{Morley} et~al.(2015){Morley}, {Fortney}, {Marley}, {Zahnle}, {Line},
+  {Kempton}, {Lewis}, and {Cahoy}}]{morley15}
+{Morley} CV, {Fortney} JJ, {Marley} MS et~al. (2015) {Thermal Emission and
+  Reflected Light Spectra of Super Earths with Flat Transmission Spectra}. \apj
+  815:110
+
+\bibitem[{{Morley} et~al.(2017{\natexlab{a}}){Morley}, {Knutson}, {Line},
+  {Fortney}, {Thorngren}, {Marley}, {Teal}, and {Lupu}}]{morley17}
+{Morley} CV, {Knutson} H, {Line} M et~al. (2017{\natexlab{a}}) {Forward and
+  Inverse Modeling of the Emission and Transmission Spectrum of GJ 436b:
+  Investigating Metal Enrichment, Tidal Heating, and Clouds}. \aj 153:86
+
+\bibitem[{{Morley} et~al.(2017{\natexlab{b}}){Morley}, {Kreidberg},
+  {Rustamkulov}, {Robinson}, and {Fortney}}]{morley17b}
+{Morley} CV, {Kreidberg} L, {Rustamkulov} Z, {Robinson} T {Fortney} JJ
+  (2017{\natexlab{b}}) {Observing the Atmospheres of Known Temperate
+  Earth-sized Planets with JWST}. ArXiv e-prints
+
+\bibitem[{{Moses} et~al.(2013){Moses}, {Madhusudhan}, {Visscher}, and
+  {Freedman}}]{moses13}
+{Moses} JI, {Madhusudhan} N, {Visscher} C {Freedman} RS (2013) {Chemical
+  Consequences of the C/O Ratio on Hot Jupiters: Examples from WASP-12b,
+  CoRoT-2b, XO-1b, and HD 189733b}. \apj 763:25
+
+\bibitem[{{Mousis} et~al.(2014){Mousis}, {Fletcher}, {Lebreton}, {Wurz},
+  {Cavali{\'e}}, {Coustenis}, {Courtin}, {Gautier}, {Helled}, {Irwin}, {Morse},
+  {Nettelmann}, {Marty}, {Rousselot}, {Venot}, {Atkinson}, {Waite}, {Reh},
+  {Simon}, {Atreya}, {Andr{\'e}}, {Blanc}, {Daglis}, {Fischer}, {Geppert},
+  {Guillot}, {Hedman}, {Hueso}, {Lellouch}, {Lunine}, {Murray}, {O`Donoghue},
+  {Rengel}, {S{\'a}nchez-Lavega}, {Schmider}, {Spiga}, {Spilker}, {Petit},
+  {Tiscareno}, {Ali-Dib}, {Altwegg}, {Bolton}, {Bouquet}, {Briois}, {Fouchet},
+  {Guerlet}, {Kostiuk}, {Lebleu}, {Moreno}, {Orton}, and {Poncy}}]{mousis14}
+{Mousis} O, {Fletcher} LN, {Lebreton} JP et~al. (2014) {Scientific rationale
+  for Saturn's in situ exploration}. \planss 104:29--47
+
+\bibitem[{{Nikolov} et~al.(2014){Nikolov}, {Sing}, {Pont}, {Burrows},
+  {Fortney}, {Ballester}, {Evans}, {Huitson}, {Wakeford}, {Wilson}, {Aigrain},
+  {Deming}, {Gibson}, {Henry}, {Knutson}, {Lecavelier des Etangs}, {Showman},
+  {Vidal-Madjar}, and {Zahnle}}]{nikolov14}
+{Nikolov} N, {Sing} DK, {Pont} F et~al. (2014) {Hubble Space Telescope hot
+  Jupiter transmission spectral survey: a detection of Na and strong optical
+  absorption in HAT-P-1b}. \mnras 437:46--66
+
+\bibitem[{{{\"O}berg} et~al.(2011){{\"O}berg}, {Murray-Clay}, and
+  {Bergin}}]{oberg11}
+{{\"O}berg} KI, {Murray-Clay} R {Bergin} EA (2011) {The Effects of Snowlines on
+  C/O in Planetary Atmospheres}. \apjl 743:L16
+
+\bibitem[{{Oreshenko} et~al.(2016){Oreshenko}, {Heng}, and
+  {Demory}}]{oreshenko16}
+{Oreshenko} M, {Heng} K {Demory} BO (2016) {Optical phase curves as diagnostics
+  for aerosol composition in exoplanetary atmospheres}. \mnras 457:3420--3429
+
+\bibitem[{{Parmentier} et~al.(2013){Parmentier}, {Showman}, and
+  {Lian}}]{parmentier13}
+{Parmentier} V, {Showman} AP {Lian} Y (2013) {3D mixing in hot Jupiters
+  atmospheres. I. Application to the day/night cold trap in HD 209458b}. \aap
+  558:A91
+
+\bibitem[{{Parmentier} et~al.(2016){Parmentier}, {Fortney}, {Showman},
+  {Morley}, and {Marley}}]{parmentier16}
+{Parmentier} V, {Fortney} JJ, {Showman} AP, {Morley} C {Marley} MS (2016)
+  {Transitions in the Cloud Composition of Hot Jupiters}. \apj 828:22
+
+\bibitem[{{Pont} et~al.(2008){Pont}, {Knutson}, {Gilliland}, {Moutou}, and
+  {Charbonneau}}]{pont08}
+{Pont} F, {Knutson} H, {Gilliland} RL, {Moutou} C {Charbonneau} D (2008)
+  {Detection of atmospheric haze on an extrasolar planet: the 0.55-1.05
+  {$\mu$}m transmission spectrum of HD 189733b with the HubbleSpaceTelescope}.
+  \mnras 385:109--118
+
+\bibitem[{{Raghavan} et~al.(2010){Raghavan}, {McAlister}, {Henry}, {Latham},
+  {Marcy}, {Mason}, {Gies}, {White}, and {ten Brummelaar}}]{raghavan10}
+{Raghavan} D, {McAlister} HA, {Henry} TJ et~al. (2010) {A Survey of Stellar
+  Families: Multiplicity of Solar-type Stars}. \apjs 190:1--42
+
+\bibitem[{{Rauscher} et~al.(2007){Rauscher}, {Menou}, {Seager}, {Deming},
+  {Cho}, and {Hansen}}]{rauscher07}
+{Rauscher} E, {Menou} K, {Seager} S et~al. (2007) {Toward Eclipse Mapping of
+  Hot Jupiters}. \apj 664:1199--1209
+
+\bibitem[{{Ricker} et~al.(2014){Ricker}, {Winn}, {Vanderspek}, {Latham},
+  {Bakos}, {Bean}, {Berta-Thompson}, {Brown}, {Buchhave}, {Butler}, {Butler},
+  {Chaplin}, {Charbonneau}, {Christensen-Dalsgaard}, {Clampin}, {Deming},
+  {Doty}, {De Lee}, {Dressing}, {Dunham}, {Endl}, {Fressin}, {Ge}, {Henning},
+  {Holman}, {Howard}, {Ida}, {Jenkins}, {Jernigan}, {Johnson}, {Kaltenegger},
+  {Kawai}, {Kjeldsen}, {Laughlin}, {Levine}, {Lin}, {Lissauer}, {MacQueen},
+  {Marcy}, {McCullough}, {Morton}, {Narita}, {Paegert}, {Palle}, {Pepe},
+  {Pepper}, {Quirrenbach}, {Rinehart}, {Sasselov}, {Sato}, {Seager},
+  {Sozzetti}, {Stassun}, {Sullivan}, {Szentgyorgyi}, {Torres}, {Udry}, and
+  {Villasenor}}]{ricker14}
+{Ricker} GR, {Winn} JN, {Vanderspek} R et~al. (2014) {Transiting Exoplanet
+  Survey Satellite (TESS)}. In: Space Telescopes and Instrumentation 2014:
+  Optical, Infrared, and Millimeter Wave, \procspie, vol 9143, p 914320,
+  \doi{10.1117/12.2063489}
+
+\bibitem[{{Robinson}(2017)}]{robinson17}
+{Robinson} TD (2017) {A Theory of Exoplanet Transits with Light Scattering}.
+  \apj 836:236
+
+\bibitem[{{Robinson} et~al.(2014){Robinson}, {Maltagliati}, {Marley}, and
+  {Fortney}}]{robinson14}
+{Robinson} TD, {Maltagliati} L, {Marley} MS {Fortney} JJ (2014) {Titan solar
+  occultation observations reveal transit spectra of a hazy world}. Proceedings
+  of the National Academy of Science 111:9042--9047
+
+\bibitem[{{Schwartz} and {Cowan}(2015)}]{schwartz15}
+{Schwartz} JC {Cowan} NB (2015) {Balancing the energy budget of short-period
+  giant planets: evidence for reflective clouds and optical absorbers}. \mnras
+  449:4192--4203
+
+\bibitem[{{Schwarz} et~al.(2015){Schwarz}, {Brogi}, {de Kok}, {Birkby}, and
+  {Snellen}}]{schwarz15}
+{Schwarz} H, {Brogi} M, {de Kok} R, {Birkby} J {Snellen} I (2015) {Evidence
+  against a strong thermal inversion in HD 209458b from high-dispersion
+  spectroscopy}. \aap 576:A111
+
+\bibitem[{{Seager} and {Sasselov}(2000)}]{seager00}
+{Seager} S {Sasselov} DD (2000) {Theoretical Transmission Spectra during
+  Extrasolar Giant Planet Transits}. \apj 537:916--921
+
+\bibitem[{{Seager} et~al.(2000){Seager}, {Whitney}, and {Sasselov}}]{seager00b}
+{Seager} S, {Whitney} BA {Sasselov} DD (2000) {Photometric Light Curves and
+  Polarization of Close-in Extrasolar Giant Planets}. \apj 540:504--520
+
+\bibitem[{{Showman} and {Ingersoll}(1998)}]{showman98}
+{Showman} AP {Ingersoll} AP (1998) {Interpretation of Galileo Probe Data and
+  Implications for Jupiter's Dry Downdrafts}. \icarus 132:205--220
+
+\bibitem[{{Showman} et~al.(2009){Showman}, {Fortney}, {Lian}, {Marley},
+  {Freedman}, {Knutson}, and {Charbonneau}}]{showman09}
+{Showman} AP, {Fortney} JJ, {Lian} Y et~al. (2009) {Atmospheric Circulation of
+  Hot Jupiters: Coupled Radiative-Dynamical General Circulation Model
+  Simulations of HD 189733b and HD 209458b}. \apj 699:564--584
+
+\bibitem[{{Sing} et~al.(2011{\natexlab{a}}){Sing}, {D{\'e}sert}, {Fortney},
+  {Lecavelier Des Etangs}, {Ballester}, {Cepa}, {Ehrenreich},
+  {L{\'o}pez-Morales}, {Pont}, {Shabram}, and {Vidal-Madjar}}]{sing11b}
+{Sing} DK, {D{\'e}sert} JM, {Fortney} JJ et~al. (2011{\natexlab{a}}) {Gran
+  Telescopio Canarias OSIRIS transiting exoplanet atmospheric survey: detection
+  of potassium in XO-2b from narrowband spectrophotometry}. \aap 527:A73
+
+\bibitem[{{Sing} et~al.(2011{\natexlab{b}}){Sing}, {Pont}, {Aigrain},
+  {Charbonneau}, {D{\'e}sert}, {Gibson}, {Gilliland}, {Hayek}, {Henry},
+  {Knutson}, {Lecavelier Des Etangs}, {Mazeh}, and {Shporer}}]{sing11}
+{Sing} DK, {Pont} F, {Aigrain} S et~al. (2011{\natexlab{b}}) {Hubble Space
+  Telescope transmission spectroscopy of the exoplanet HD 189733b:
+  high-altitude atmospheric haze in the optical and near-ultraviolet with
+  STIS}. \mnras 416:1443--1455
+
+\bibitem[{{Sing} et~al.(2013){Sing}, {Lecavelier des Etangs}, {Fortney},
+  {Burrows}, {Pont}, {Wakeford}, {Ballester}, {Nikolov}, {Henry}, {Aigrain},
+  {Deming}, {Evans}, {Gibson}, {Huitson}, {Knutson}, {Showman}, {Vidal-Madjar},
+  {Wilson}, {Williamson}, and {Zahnle}}]{sing13}
+{Sing} DK, {Lecavelier des Etangs} A, {Fortney} JJ et~al. (2013) {HST
+  hot-Jupiter transmission spectral survey: evidence for aerosols and lack of
+  TiO in the atmosphere of WASP-12b}. \mnras 436:2956--2973
+
+\bibitem[{{Sing} et~al.(2016){Sing}, {Fortney}, {Nikolov}, {Wakeford},
+  {Kataria}, {Evans}, {Aigrain}, {Ballester}, {Burrows}, {Deming},
+  {D{\'e}sert}, {Gibson}, {Henry}, {Huitson}, {Knutson}, {Lecavelier Des
+  Etangs}, {Pont}, {Showman}, {Vidal-Madjar}, {Williamson}, and
+  {Wilson}}]{sing16}
+{Sing} DK, {Fortney} JJ, {Nikolov} N et~al. (2016) {A continuum from clear to
+  cloudy hot-Jupiter exoplanets without primordial water depletion}. \nat
+  529:59--62
+
+\bibitem[{{Smith} et~al.(2008){Smith}, {Zavodny}, {Rahmer}, and
+  {Bonati}}]{smith08}
+{Smith} RM, {Zavodny} M, {Rahmer} G {Bonati} M (2008) {A theory for image
+  persistence in HgCdTe photodiodes}. In: High Energy, Optical, and Infrared
+  Detectors for Astronomy III, \procspie, vol 7021, p 70210J,
+  \doi{10.1117/12.789372}
+
+\bibitem[{{Snellen} et~al.(2010){Snellen}, {de Kok}, {de Mooij}, and
+  {Albrecht}}]{snellen10}
+{Snellen} IAG, {de Kok} RJ, {de Mooij} EJW {Albrecht} S (2010) {The orbital
+  motion, absolute mass and high-altitude winds of exoplanet HD209458b}. \nat
+  465:1049--1051
+
+\bibitem[{{Stevenson}(2016)}]{stevenson16}
+{Stevenson} KB (2016) {Quantifying and Predicting the Presence of Clouds in
+  Exoplanet Atmospheres}. \apjl 817:L16
+
+\bibitem[{{Stevenson} et~al.(2010){Stevenson}, {Harrington}, {Nymeyer},
+  {Madhusudhan}, {Seager}, {Bowman}, {Hardy}, {Deming}, {Rauscher}, and
+  {Lust}}]{stevenson10}
+{Stevenson} KB, {Harrington} J, {Nymeyer} S et~al. (2010) {Possible
+  thermochemical disequilibrium in the atmosphere of the exoplanet GJ 436b}.
+  \nat 464:1161--1164
+
+\bibitem[{{Stevenson} et~al.(2012){Stevenson}, {Harrington}, {Fortney},
+  {Loredo}, {Hardy}, {Nymeyer}, {Bowman}, {Cubillos}, {Bowman}, and
+  {Hardin}}]{stevenson12}
+{Stevenson} KB, {Harrington} J, {Fortney} JJ et~al. (2012) {Transit and Eclipse
+  Analyses of the Exoplanet HD 149026b Using BLISS Mapping}. \apj 754:136
+
+\bibitem[{{Stevenson} et~al.(2014{\natexlab{a}}){Stevenson}, {Bean},
+  {Madhusudhan}, and {Harrington}}]{stevenson14b}
+{Stevenson} KB, {Bean} JL, {Madhusudhan} N {Harrington} J (2014{\natexlab{a}})
+  {Deciphering the Atmospheric Composition of WASP-12b: A Comprehensive
+  Analysis of its Dayside Emission}. \apj 791:36
+
+\bibitem[{{Stevenson} et~al.(2014{\natexlab{b}}){Stevenson}, {D{\'e}sert},
+  {Line}, {Bean}, {Fortney}, {Showman}, {Kataria}, {Kreidberg}, {McCullough},
+  {Henry}, {Charbonneau}, {Burrows}, {Seager}, {Madhusudhan}, {Williamson}, and
+  {Homeier}}]{stevenson14}
+{Stevenson} KB, {D{\'e}sert} JM, {Line} MR et~al. (2014{\natexlab{b}}) {Thermal
+  structure of an exoplanet atmosphere from phase-resolved emission
+  spectroscopy}. Science 346:838--841
+
+\bibitem[{{Stevenson} et~al.(2016){Stevenson}, {Bean}, {Seifahrt}, {Gilbert},
+  {Line}, {D{\'e}sert}, and {Fortney}}]{stevenson16b}
+{Stevenson} KB, {Bean} JL, {Seifahrt} A et~al. (2016) {A Search for Water in
+  the Atmosphere of HAT-P-26b Using LDSS-3C}. \apj 817:141
+
+\bibitem[{{Stevenson} et~al.(2017){Stevenson}, {Line}, {Bean}, {D{\'e}sert},
+  {Fortney}, {Showman}, {Kataria}, {Kreidberg}, and {Feng}}]{stevenson17}
+{Stevenson} KB, {Line} MR, {Bean} JL et~al. (2017) {Spitzer Phase Curve
+  Constraints for WASP-43b at 3.6 and 4.5 {$\mu$}m}. \aj 153:68
+
+\bibitem[{{Sullivan} et~al.(2015){Sullivan}, {Winn}, {Berta-Thompson},
+  {Charbonneau}, {Deming}, {Dressing}, {Latham}, {Levine}, {McCullough},
+  {Morton}, {Ricker}, {Vanderspek}, and {Woods}}]{sullivan15}
+{Sullivan} PW, {Winn} JN, {Berta-Thompson} ZK et~al. (2015) {The Transiting
+  Exoplanet Survey Satellite: Simulations of Planet Detections and
+  Astrophysical False Positives}. \apj 809:77
+
+\bibitem[{{Swain} et~al.(2008){Swain}, {Vasisht}, and {Tinetti}}]{swain08}
+{Swain} MR, {Vasisht} G {Tinetti} G (2008) {The presence of methane in the
+  atmosphere of an extrasolar planet}. \nat 452:329--331
+
+\bibitem[{{Tinetti} et~al.(2007){Tinetti}, {Vidal-Madjar}, {Liang}, {Beaulieu},
+  {Yung}, {Carey}, {Barber}, {Tennyson}, {Ribas}, {Allard}, {Ballester},
+  {Sing}, and {Selsis}}]{tinetti07}
+{Tinetti} G, {Vidal-Madjar} A, {Liang} MC et~al. (2007) {Water vapour in the
+  atmosphere of a transiting extrasolar planet}. \nat 448:169--171
+
+\bibitem[{{Turco} et~al.(1979){Turco}, {Hamill}, {Toon}, {Whitten}, and
+  {Kiang}}]{turco79}
+{Turco} RP, {Hamill} P, {Toon} OB, {Whitten} RC {Kiang} CS (1979) {A
+  One-Dimensional Model Describing Aerosol Formation and Evolution in the
+  Stratosphere: I. Physical Processes and Mathematical Analogs.} Journal of
+  Atmospheric Sciences 36:699--717
+
+\bibitem[{{Vidal-Madjar} et~al.(2003){Vidal-Madjar}, {Lecavelier des Etangs},
+  {D{\'e}sert}, {Ballester}, {Ferlet}, {H{\'e}brard}, and
+  {Mayor}}]{vidal-madjar03}
+{Vidal-Madjar} A, {Lecavelier des Etangs} A, {D{\'e}sert} JM et~al. (2003) {An
+  extended upper atmosphere around the extrasolar planet HD209458b}. \nat
+  422:143--146
+
+\bibitem[{{Vidal-Madjar} et~al.(2004){Vidal-Madjar}, {D{\'e}sert}, {Lecavelier
+  des Etangs}, {H{\'e}brard}, {Ballester}, {Ehrenreich}, {Ferlet}, {McConnell},
+  {Mayor}, and {Parkinson}}]{vidal-madjar04}
+{Vidal-Madjar} A, {D{\'e}sert} JM, {Lecavelier des Etangs} A et~al. (2004)
+  {Detection of Oxygen and Carbon in the Hydrodynamically Escaping Atmosphere
+  of the Extrasolar Planet HD 209458b}. \apjl 604:L69--L72
+
+\bibitem[{{Wakeford} and {Sing}(2015)}]{wakeford15}
+{Wakeford} HR {Sing} DK (2015) {Transmission spectral properties of clouds for
+  hot Jupiter exoplanets}. \aap 573:A122
+
+\bibitem[{{Wakeford} et~al.(2017){Wakeford}, {Visscher}, {Lewis}, {Kataria},
+  {Marley}, {Fortney}, and {Mandell}}]{wakeford17}
+{Wakeford} HR, {Visscher} C, {Lewis} NK et~al. (2017) {High-temperature
+  condensate clouds in super-hot Jupiter atmospheres}. \mnras 464:4247--4254
+
+\bibitem[{{Zhou} et~al.(2017){Zhou}, {Apai}, {Lew}, and {Schneider}}]{zhou17}
+{Zhou} Y, {Apai} D, {Lew} BWP {Schneider} G (2017) {A Physical Model-based
+  Correction for Charge Traps in the Hubble Space Telescope's Wide Field Camera
+  3 Near-IR Detector and Its Applications to Transiting Exoplanets and Brown
+  Dwarfs}. \aj 153:243
+
+\end{thebibliography}
+\end{document}
+
