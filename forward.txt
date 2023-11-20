@@ -1,0 +1,26 @@
+The recently launched JWST has revolutionized the characterization of exoplanet atmospheres with transits, eclipses, and phase curves. As noted in the original version of this chapter, JWST provides broader wavelength coverage, higher measurement precision, and greater spectral resolution than the previous generation of space telescopes, opening the door to characterizing a wider range of exoplanet atmospheres in more detail than ever before. Just one year into science operations, JWST has already started to deliver on this promise. The state of the art is changing too quickly to merit a full update to this chapter, so here we add a few science highlights and a preview of what is still to come.
+
+Transiting exoplanet science with JWST started off with a bang, with a 26$\sigma$ detection of carbon dioxide (CO$_2$) for the hot Saturn WASP-39b,first appearing on the arXiv just one month after the observations were completed (REF).  This was followed by a panchromatic spectrum from 0.6 - 5 $\mu$m for the same planet, revealing additional spectral features from H$_2$O, CO, Na, and SO$_2$ \citep{ALL}. The presence of SO$_2$ in WASP-39b was the first big surprise from JWST -- this molecule is not expected in thermochemical equilibrium conditions; however, it quickly emerged that SO2 is naturally explained by photochemical reactions driven by the high incident ultraviolet radiation on the planet \citep{tsai23}. This chemical complexity is rapidly becoming a theme from early JWST results, which have also shown  
+
+
+The planet's metallicity is roughly 10x solar, and the carbon-to-oxygen  ratio is substellar, in good agrement with predictions from core accretion models of planet formation.  This measurement sets the stage for dozens of upcoming measurements of gas giant chemical composition. In addition to chemical composition, other m
+
+Additional observations of gas giants are already begininning to show diversity in chemical composition, with a range of metallicities from sub-stellar to super-Saturn. The 
+
+The signal-to-noise of the measurements is so high that they enable Eclipse mapping , measurements of cloud composition
+
+
+JWST has also pushed forward our knowledge of smaller planets. The first observations of sub-Neptunes are now emerging, including a full-orbit phase curve for the benchmark planet GJ 1214b and a transmission spectrum for the habitable-zone sub-Neptune K2-18b. After many years of work on GJ 1214b, the phase curve finally indicates a high metallicity composition (100 - 1000x solar metallicity; Kempton et al. 2023, Gao et al. 2023). K2-18b   
+
+Perhaps the most highly anticipated JWST results are for rocky planets orbiting M-dwarfs. At the time of writing, no atmospheres have been definitively detected yet for these planets. Features are present in several transmission spectra, but it is not clear whether they are due to stellar contamination or the planet atmospheres \citep{lim23, KEVINS GROUP}. Thermal emission measurements
+
+
+
+methane
+
+detection of 
+
+first measurements of thermal emission from rocky exoplanets
+
+The high science potential of transit observations have motivated 
+ large fraction of telescope time for exoplanets
